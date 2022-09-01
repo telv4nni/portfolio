@@ -31,7 +31,7 @@ int main(void)
         check += modulo;
     }
     //Check validity
-    if ((number >= 4000000000000000 && number < 50000000000000000 && (check % 10) == 0) || (number >= 4000000000000 && number < 50000000000000 && (check % 10) == 0))
+    if ((number >= 4000000000000000 && number < 5000000000000000 && (check % 10) == 0) || (number >= 4000000000000 && number < 5000000000000 && (check % 10) == 0))
     {
         printf("VISA\n");
     }
