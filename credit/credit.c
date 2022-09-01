@@ -15,13 +15,13 @@ int main(void)
         modulo = 2 * ((number / 10) % 10);
         number = number / 100;
         //Check if multiplied number is 2 digits
-        if(modulo > 9)
+        if (modulo > 9)
         {
             modulo = 1 + (modulo % 10);
         }
         //Sum every other number
         check = check + modulo;
-   }
+    }
     //Add numbers not multiplied
     number = card;
     for (long i = number; i > 0; i = i / 100)
