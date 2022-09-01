@@ -9,9 +9,8 @@ int main(void)
     long check = 0;
 
     //Multiply every other digit
-    for (int i = 0; i < 8; i++)
+    for (int i = 0; i < 2; i++)
     {
-        //Get modulo from the second to last number
         check += 2 * ((number / 10) % 10);
     }
     printf("%li \n", check);
