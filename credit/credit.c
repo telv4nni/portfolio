@@ -10,7 +10,7 @@ int main(void)
     long check = 0;
 
     //Multiply every other digit
-    for (int i = 0; i < 3; i++)
+    for (int i = 0; i < 2; i++)
     {
         modulo = 2 * ((number / 10) % 10);
         //Check if number is 2 digits
