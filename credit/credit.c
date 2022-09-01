@@ -23,6 +23,7 @@ int main(void)
         check += modulo;
    }
     //Add numbers not multiplied
+    number = card;
     for (int i = number; i > 9; i = i / 100)
     {
         modulo = number % 10;
