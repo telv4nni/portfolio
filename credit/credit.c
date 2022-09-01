@@ -8,5 +8,5 @@ int main(void)
     {
         long number = get_long("What's the card number?");
     }
-    while (number);
+    while (number > );
 }
