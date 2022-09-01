@@ -18,7 +18,7 @@ int main(void)
         {
             modulo = 1 + (modulo % 10);
         }
-        check + modulo;
+        check = check + modulo;
    }
     printf("%li \n", check);
 
