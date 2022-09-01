@@ -18,6 +18,7 @@ int main(void)
         {
             modulo = 1 + (modulo % 10);
         }
+        //Sum every other number
         check = check + modulo;
    }
     printf("%li \n", check);
