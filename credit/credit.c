@@ -10,7 +10,7 @@ int main(void)
     long check = 0;
 
     //Multiply every other digit
-    for (long i = number; i == 0; i = i / 100)
+    for (long i = number; i > 0; i = i / 100)
     {
         modulo = 2 * ((number / 10) % 10);
         number = number / 100;
@@ -25,7 +25,7 @@ int main(void)
    }
     //Add numbers not multiplied
     number = card;
-    for (long i = number; i == 0; i = i / 100)
+    for (long i = number; i > 0; i = i / 100)
     {
         modulo = number % 10;
         number = number / 100;
