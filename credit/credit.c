@@ -16,7 +16,7 @@ int main(void)
         //Check if number is 2 digits
         if(modulo > 9)
         {
-            modulo = (modulo / 10) + (modulo % 10);
+            modulo = 1 + (modulo % 10);
         }
         check += modulo;
     }
