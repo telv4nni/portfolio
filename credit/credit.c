@@ -30,6 +30,22 @@ int main(void)
         number = number / 100;
         check += modulo;
     }
-
-    printf("%li \n", check);
+    //Check validity
+        printf("%li \n", check);
+    if (number >= 100000000000000 && number < 10000000000000000 && (check % 10) == 0)
+    {
+        printf("AMEX\n");
+    }
+    else if (number >= 1000000000000000 && number < 100000000000000000 && (check % 10) == 0)
+    {
+        printf("MASTERCARD\n");
+    }
+    else if ((number >= 1000000000000000 && number < 100000000000000000 && (check % 10) == 0) || (number >= 1000000000000 && number < 10000000000000 && (check % 10) == 0))
+    {
+        printf("VISA\n");
+    }
+    else
+    {
+        printf("INVALID\n");
+    }
 }
