@@ -9,17 +9,20 @@ int main(void)
         size = get_int("Choose size of the pyramid (1-8): ");
     } while (size<1 || size>8);
 
-    //Column
+    int row = size;
+    //Switch Column
     for (int i=0; i<size; i++)
     {
-        //Row
-        for(int j=0; j<size; j++)
+        //Draw a Row
+        for(int j=0; j<row; j++)
         {
-            do
-            {
-                printf(" ");
-            } while 
+            printf(" ");
         }
-        printf("#\n");
+        for (int j=row; j<row; j--)
+        {
+            printf("#");
+        }
+        printf("\n");
+        row--;
     }
 }
