@@ -9,11 +9,11 @@ int main(void)
     long check = 0;
 
     //Multiply every other digit
-for (int )
+    for (int i = 0; i < 8; i++)
+    {
         //Get modulo from the second to last number
         check += 2 * ((number / 10) % 10);
     }
-    while (number > 0);
     printf("%li \n", check);
 
 }
