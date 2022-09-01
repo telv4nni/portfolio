@@ -11,7 +11,7 @@ int main(void)
     //Make a line
     for(int i=0, i<size, i++)
     {
-        printf("");
+        printf(" ");
     }
     //Make next row
 }
