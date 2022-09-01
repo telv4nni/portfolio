@@ -10,7 +10,7 @@ int main(void)
     long check = 0;
 
     //Multiply every other digit
-    for (int i = number; i > 9; i = i / 100)
+    for (int i = number; i > 0; i = i / 100)
     {
         modulo = 2 * ((number / 10) % 10);
         number = number / 100;
@@ -30,9 +30,9 @@ int main(void)
         number = number / 100;
         check += modulo;
     }
+
     //Check validity
     printf("%li\n", check);
-
     if ((number >= 4000000000000000 && number < 5000000000000000 && (check % 10) == 0) || (number >= 4000000000000 && number < 5000000000000 && (check % 10) == 0))
     {
         printf("VISA\n");
