@@ -9,7 +9,7 @@ int main(void)
     long check = 0;
 
     //Multiply every other digit
-    for (int i = number; i <= 10; i = i / 100)
+    for (int i = number; i >= 100; i = i / 100)
     {
         check += 2 * ((number / 10) % 10);
     }
