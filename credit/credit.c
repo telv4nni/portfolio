@@ -27,7 +27,6 @@ int main(void)
     number = card;
     for (long i = number; i == 0; i = i / 100)
     {
-        if (modulo > 9)
         modulo = number % 10;
         number = number / 100;
         check = check + modulo;
