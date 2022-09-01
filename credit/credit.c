@@ -23,7 +23,10 @@ int main(void)
         check += modulo;
    }
     //Add numbers not multiplied
-
+    for (int i = number; i > 9; i = i / 100)
+    {
+        
+    }
 
     printf("%li \n", check);
 }
