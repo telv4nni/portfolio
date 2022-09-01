@@ -22,5 +22,4 @@ int main(void)
         check = check + modulo;
    }
     printf("%li \n", check);
-
 }
