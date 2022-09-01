@@ -10,7 +10,7 @@ int main(void)
     long check = 0;
 
     //Multiply every other digit
-    for (int i = 0; i < 3; i++)
+    for (int i = number; i > 99; i = i / 100)
     {
         modulo = 2 * ((number / 10) % 10);
         number = number/100;
