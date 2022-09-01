@@ -19,7 +19,7 @@ int main(void)
             printf(" ");
         }
                    //Draw blocks
-         for(int k=row; k > row; k--)
+         for(int k=0; k > row; k--)
         {
             printf("#");
         }
