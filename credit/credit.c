@@ -31,7 +31,6 @@ int main(void)
         check += modulo;
     }
     //Check validity
-        printf("%li \n", check);
     if (number >= 100000000000000 && number < 1000000000000000 && (check % 10) == 0)
     {
         printf("AMEX\n");
