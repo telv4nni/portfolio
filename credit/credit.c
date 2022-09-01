@@ -39,7 +39,7 @@ int main(void)
     {
         printf("VISA\n");
     }
-    else if (number >= 340000000000000 && number < 380000000000000 && (check % 10) == 0)
+    else if ((number >= 340000000000000 && number < 350000000000000 && (check % 10) == 0) || (number >= 370000000000000 && number < 380000000000000 && (check % 10) == 0))
     {
         printf("AMEX\n");
     }
