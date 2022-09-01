@@ -17,7 +17,7 @@ int main(void)
     {
         //Draw a Row
         //Draw empty space
-        for (int j = 0; j < row; j++)
+        for (int j = 1; j < row; j++)
         {
             printf(" ");
         }
