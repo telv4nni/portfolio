@@ -14,5 +14,6 @@ int main(void)
     {
         printf(" ");
     }
+    printf("#")
     //Make next row
 }
