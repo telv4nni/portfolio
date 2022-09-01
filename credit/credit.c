@@ -35,11 +35,11 @@ int main(void)
     {
         printf("VISA\n");
     }
-    else if (number >= 510000000000000 && number < 1000000000000000 && (check % 10) == 0)
+    else if (number >= 340000000000000 && number < 370000000000000 && (check % 10) == 0)
     {
         printf("AMEX\n");
     }
-    else if (number >= 3400000000000000 && number < 3800000000000000 && (check % 10) == 0)
+    else if (number >= 5100000000000000 && number < 5600000000000000 && (check % 10) == 0)
     {
         printf("MASTERCARD\n");
     }
