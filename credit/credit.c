@@ -9,11 +9,10 @@ int main(void)
     long check = 0;
 
     //Multiply every other digit
-    do
+    for (int i = 1; i < number; i*100)
     {
         check += 2 * ((number / 10) % 10);
     }
-    while (number >= 10);
     printf("%li \n", check);
 
 }
