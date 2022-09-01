@@ -21,7 +21,6 @@ int main(void)
         }
         //Sum every other number
         check = check + modulo;
-        printf("%li\n", check);
    }
     //Add numbers not multiplied
     number = card;
@@ -30,7 +29,6 @@ int main(void)
         modulo = number % 10;
         number = number / 100;
         check = check + modulo;
-        printf("%li\n", check);
     }
     number = card;
     //Check validity
