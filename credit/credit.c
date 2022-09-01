@@ -9,7 +9,7 @@ int main(void)
     //Multiply every other digit
     do
     {
-        check
+        check = number/10;
     }
     while (check > 100)
     printf("%li", check);
