@@ -6,12 +6,18 @@ int main(void)
     //get card number from user
     const long card = get_long("What's the card number? ");
     long number = card;
+    long modulo;
     long check = 0;
 
     //Multiply every other digit
     for (int i = number; i > 10; i = i / 100)
     {
-        check += 2 * ((number / 10) % 10);
+        modulo = 2 * ((number / 10) % 10);
+        if(modulo > 9)
+        {
+            modulo = (modulo / 10) + (modulo % 10)
+        }
+        check += modulo
     }
     printf("%li \n", check);
 
