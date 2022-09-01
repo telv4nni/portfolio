@@ -4,7 +4,6 @@
 int main(void)
 {
     //get card number from user
-    long number = get_long("What's the card number? ");
+    const long number = get_long("What's the card number? ");
 
-    
 }
