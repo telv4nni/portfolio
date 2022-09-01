@@ -10,7 +10,7 @@ int main(void)
     long check = 0;
 
     //Multiply every other digit
-    for (int i = number; i > 99; i = i / 100)
+    for (int i = number; i > 9; i = i / 100)
     {
         modulo = 2 * ((number / 10) % 10);
         number = number/100;
@@ -22,5 +22,8 @@ int main(void)
         //Sum every other number
         check += modulo;
    }
+    //Add numbers not multiplied
+
+
     printf("%li \n", check);
 }
