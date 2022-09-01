@@ -10,16 +10,17 @@ int main(void)
     long check = 0;
 
     //Multiply every other digit
-    for (int i = 0; i < 1; i++)
+    for (int i = 0; i < 3; i++)
     {
         modulo = 2 * ((number / 10) % 10);
+        number = number/100;
         //Check if multiplied number is 2 digits
         if(modulo > 9)
         {
             modulo = 1 + (modulo % 10);
         }
         //Sum every other number
-        check = check + modulo;
+        check += modulo;
    }
     printf("%li \n", check);
 }
