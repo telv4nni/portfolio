@@ -10,6 +10,7 @@ int main(void)
     } while (size<1 || size>8);
 
     int row = size;
+    
     //Switch Column
     for (int i=0; i<size; i++)
     {
@@ -19,12 +20,16 @@ int main(void)
         {
             printf(" ");
         }
+
         //Draw left blocks
         for(int k=0; k < i+1; k++)
         {
             printf("#");
         }
+
+        //Middle hole
         printf("  ");
+
         //Draw right blocks
         for(int k=0; k < i+1; k++)
         {
