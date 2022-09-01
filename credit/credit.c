@@ -13,6 +13,7 @@ int main(void)
     for (int i = number; i > 10; i = i / 100)
     {
         modulo = 2 * ((number / 10) % 10);
+        //Check if number is 2 digits
         if(modulo > 9)
         {
             modulo = (modulo / 10) + (modulo % 10)
