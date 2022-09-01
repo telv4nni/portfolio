@@ -13,7 +13,7 @@ int main(void)
     for (int i = number; i > 9; i = i / 100)
     {
         modulo = 2 * ((number / 10) % 10);
-        number = number/100;
+        number = number / 100;
         //Check if multiplied number is 2 digits
         if(modulo > 9)
         {
@@ -25,7 +25,9 @@ int main(void)
     //Add numbers not multiplied
     for (int i = number; i > 9; i = i / 100)
     {
-        
+        modulo = number % 10;
+        number = number / 100;
+        check += modulo;
     }
 
     printf("%li \n", check);
