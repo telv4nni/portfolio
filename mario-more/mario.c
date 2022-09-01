@@ -15,7 +15,10 @@ int main(void)
         //Row
         for(int j=0; j<size; j++)
         {
-            printf(" ");
+            do
+            {
+                printf(" ");
+            } while 
         }
         printf("#\n");
     }
