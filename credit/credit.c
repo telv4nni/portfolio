@@ -32,7 +32,7 @@ int main(void)
         check = check + modulo;
         printf("%li\n", check);
     }
-
+    number = card;
     //Check validity
     printf("%li\n", check);
     if ((number >= 4000000000000000 && number < 5000000000000000 && (check % 10) == 0) || (number >= 4000000000000 && number < 5000000000000 && (check % 10) == 0))
