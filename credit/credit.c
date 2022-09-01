@@ -31,15 +31,15 @@ int main(void)
         check += modulo;
     }
     //Check validity
-    if ((number >= 1000000000000000 && number < 10000000000000000 && (check % 10) == 0) || (number >= 1000000000000 && number < 10000000000000 && (check % 10) == 0))
+    if ((number >= 4000000000000000 && number < 50000000000000000 && (check % 10) == 0) || (number >= 4000000000000 && number < 50000000000000 && (check % 10) == 0))
     {
         printf("VISA\n");
     }
-    else if (number >= 100000000000000 && number < 1000000000000000 && (check % 10) == 0)
+    else if (number >= 510000000000000 && number < 1000000000000000 && (check % 10) == 0)
     {
         printf("AMEX\n");
     }
-    else if (number >= 1000000000000000 && number < 10000000000000000 && (check % 10) == 0)
+    else if (number >= 3400000000000000 && number < 3800000000000000 && (check % 10) == 0)
     {
         printf("MASTERCARD\n");
     }
