@@ -10,7 +10,7 @@ int main(void)
     } while (size<1 || size>8);
 
     //Make a line
-    for (int i=0, i<size, i++)
+    for (int i=0; i<size; i++)
     {
         printf("#");
     }
