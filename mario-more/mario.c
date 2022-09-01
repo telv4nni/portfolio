@@ -18,7 +18,8 @@ int main(void)
         {
             printf(" ");
         }
-        for (int j=row; j<=row; j--)
+                   //Draw blocks
+         for(int k=row; k > 1; k--)
         {
             printf("#");
         }
