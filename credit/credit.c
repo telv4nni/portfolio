@@ -7,11 +7,8 @@ int main(void)
     const long number = get_long("What's the card number? ");
     long check = number;
     //Multiply every other digit
-    do
-    {
-        check = number/10;
-    }
-    while (check > 100)
+ 
+        check = number % 10;
     printf("%li", check);
 
 }
