@@ -12,8 +12,10 @@ int main(void)
     //Make empty space
     for (int i=0; i<size; i++)
     {
-        printf(" ");
+        for(int j=0; j<size; j++)
+        {
+            printf(" ");
+        }
+        printf("#\n");
     }
-    printf("#")
-    //Make next row
 }
