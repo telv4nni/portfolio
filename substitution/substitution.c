@@ -7,38 +7,45 @@ int main(int argc, string argv[])
 {
     string convert(string key);
     string encrypt(string key, string plaintext);
-    // Check if proper number of arguments
-    if (argc != 2)
+    int check(int numberofarguments, string key);
+
+    check(argc, argv[1]);
+    convert(argv[1]);
+    string plaintext = get_string("plaintext: ");
+    encrypt(argv[1], plaintext);
+}
+
+int check(int numberofarguments, string key)
+{
+// Check if proper number of arguments
+    if (numberofarguments != 2)
         {
             printf("Usage: ./substitution key\n");
             return 1;
         }
     // Check if argument is correct length
-    if (strlen(argv[1]) != 26)
+    if (strlen(key) != 26)
         {
             printf("Key must contain 26 characters.\n");
             return 1;
         }
     // Check if argument is valid
-    for (int i = 0; i < strlen(argv[1]); i++)
+    for (int i = 0; i < strlen(key); i++)
     {
-        for (int n = i + 1; n < strlen(argv[1]); n++)
+        for (int n = i + 1; n < strlen(key); n++)
         {
-            if (argv[1][i] == argv[1][n])
+            if (key[i] == key[n])
             {
             printf("Key invalid\n");
             return 1;
             }
         }
-        if (isalpha(argv[1][i]) == 0)
+        if (isalpha(key[i]) == 0)
         {
             printf("Key invalid\n");
             return 1;
         }
     }
-    string plaintext = get_string("plaintext: ");
-    convert (argv[1]);
-    encrypt (argv[1], plaintext);
 }
 
 string convert(string key)
