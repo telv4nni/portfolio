@@ -38,8 +38,7 @@ int main(int argc, string argv[])
         }
         else if islower(plaintext[i])
         {
-            ciphertext[i] = argv[1][plaintext[i]-65];
-            ciphertext[i] = tolower(ciphertext[i]);
+            ciphertext[i] = argv[1][plaintext[i]-97];
         }
     }
     printf("Ciphertext: %s", ciphertext);
