@@ -26,7 +26,7 @@ int main(int argc, string argv[])
     {
         if (islower(argv[1][i]))
         {
-            toupper(argv[1][i]);
+           argv[1][i] = toupper(argv[1][i]);
         }
     }
     //make encryption
@@ -39,7 +39,7 @@ int main(int argc, string argv[])
         else if islower(plaintext[i])
         {
             ciphertext[i] = argv[1][plaintext[i]-65];
-            tolower(ciphertext[i]);
+            ciphertext[i] = tolower(ciphertext[i]);
         }
     }
     printf("Ciphertext: %s", ciphertext);
