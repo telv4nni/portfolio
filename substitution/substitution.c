@@ -37,7 +37,6 @@ int main(int argc, string argv[])
         }
     }
     string plaintext = get_string("plaintext: ");
-    string ciphertext = plaintext;
     convert (argv[1]);
     encrypt (argv[1], plaintext);
 }
@@ -57,6 +56,7 @@ string convert(string key)
 
 string encrypt(string key, string plaintext)
 {
+    string ciphertext = plaintext;
     for (int i = 0; i < strlen(plaintext); i++)
     {
         if isupper(plaintext[i])
@@ -70,4 +70,5 @@ string encrypt(string key, string plaintext)
         }
     }
     printf("ciphertext: %s\n", ciphertext);
+    return ciphertext;
 }
