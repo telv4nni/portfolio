@@ -13,9 +13,15 @@ int main(int argc, string argv[])
             return 1;
         }
     // Check if argument is correct length
-     if (strlen(argv[1]) != 26)
+    if (strlen(argv[1]) != 26)
         {
             printf("Key must contain 26 characters.\n");
+            return 1;
+        }
+    // Check if argument is valid
+    if (strlen(argv[1]) != 26)
+        {
+            printf("Key invalid\n");
             return 1;
         }
 
