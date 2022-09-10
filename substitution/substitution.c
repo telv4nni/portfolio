@@ -6,6 +6,7 @@
 int main(int argc, string argv[])
 {
     string convert(string key);
+    string encrypt(string key);
     // Check if proper number of arguments
     if (argc != 2)
         {
@@ -37,32 +38,34 @@ int main(int argc, string argv[])
     }
     string plaintext = get_string("plaintext: ");
     string ciphertext = plaintext;
-
     convert (argv[1]);
-    //make encryption
+    encrypt (argv[1]);
+string convert(string key)
+{
+    //convert key to uppercase
+    for (int i = 0; i < strlen(key); i++)
+    {
+        if (islower(key[i]))
+        {
+           key[i] = toupper(key[i]);
+        }
+    }
+    return key;
+}
+
+string encrypt(string key)
+{
     for (int i = 0; i < strlen(plaintext); i++)
     {
         if isupper(plaintext[i])
         {
-            ciphertext[i] = argv[1][(int)plaintext[i] - 65];
+            ciphertext[i] = key[(int)plaintext[i] - 65];
         }
         else if islower(plaintext[i])
         {
-            ciphertext[i] = argv[1][(int)plaintext[i] - 97];
+            ciphertext[i] = key[(int)plaintext[i] - 97];
             ciphertext[i] = tolower(ciphertext[i] );
         }
     }
     printf("ciphertext: %s\n", ciphertext);
-}
-string convert(string key)
-{
-    //convert key to uppercase
-    for (int i = 0; i < strlen(key[1]); i++)
-    {
-        if (islower((int)key[1][i]))
-        {
-           key[1][i] = toupper(key[1][i]);
-        }
-    }
-    return key;
 }
