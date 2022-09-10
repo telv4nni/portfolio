@@ -30,5 +30,8 @@ int main(int argc, string argv[])
         }
     }
 
-    
+    for (int i = 0; i < strlen(plaintext); i++)
+    {
+        ciphertext[i] = plaintext[i + ]
+    }
 }
