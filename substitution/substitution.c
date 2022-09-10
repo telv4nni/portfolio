@@ -4,5 +4,5 @@
 
 int main(int argc, string argv[])
 {
-
+    printf("plaintext: ")
 }
