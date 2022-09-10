@@ -10,16 +10,16 @@ int main(int argc, string argv[])
 
     // Check if proper number of arguments
     if (argc != 2)
-        {
-            printf("Usage: ./substitution key\n");
-            return 1;
-        }
+     {
+        printf("Usage: ./substitution key\n");
+        return 1;
+     }
     // Check if argument is correct length
     if (strlen(argv[1]) != 26)
-        {
-            printf("Key must contain 26 characters.\n");
-            return 1;
-        }
+    {
+         printf("Key must contain 26 characters.\n");
+        return 1;
+    }
     // Check if argument is valid
     for (int i = 0; i < strlen(argv[1]); i++)
     {
@@ -27,8 +27,8 @@ int main(int argc, string argv[])
         {
             if (argv[1][i] == argv[1][n])
             {
-            printf("Key invalid\n");
-            return 1;
+                printf("Key invalid\n");
+                return 1;
             }
         }
         if (isalpha(argv[1][i]) == 0)
@@ -39,8 +39,8 @@ int main(int argc, string argv[])
     }
 
     string plaintext = get_string("plaintext: ");
-    convert (argv[1]);
-    encrypt (argv[1], plaintext);
+    convert(argv[1]);
+    encrypt(argv[1], plaintext);
 }
 
 
@@ -51,7 +51,7 @@ string convert(string key)
     {
         if (islower(key[i]))
         {
-           key[i] = toupper(key[i]);
+             key[i] = toupper(key[i]);
         }
     }
     return key;
@@ -69,7 +69,7 @@ string encrypt(string key, string plaintext)
         else if islower(plaintext[i])
         {
             ciphertext[i] = key[(int)plaintext[i] - 97];
-            ciphertext[i] = tolower(ciphertext[i] );
+            ciphertext[i] = tolower(ciphertext[i]);
         }
     }
     printf("ciphertext: %s\n", ciphertext);
