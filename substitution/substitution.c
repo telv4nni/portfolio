@@ -19,12 +19,14 @@ int main(int argc, string argv[])
             return 1;
         }
     // Check if argument is valid
-    if (isalpha(argv[1]))
+    for (int i = 0; i < strlen(argv[1]); i++)
+    {
+        if (isalpha(argv[1][i]) == 0)
         {
             printf("Key invalid\n");
             return 1;
         }
-
+    }
     string plaintext = get_string("plaintext: ");
     string ciphertext = plaintext;
 
