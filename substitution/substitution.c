@@ -29,7 +29,7 @@ int main(int argc, string argv[])
             toupper(argv[1][i]);
         }
     }
-
+    //make encryption
     for (int i = 0; i < strlen(plaintext); i++)
     {
         if isupper(plaintext[i])
@@ -39,6 +39,8 @@ int main(int argc, string argv[])
         else if islower(plaintext[i])
         {
             ciphertext[i] = argv[1][plaintext[i]-65];
+            tolower(ciphertext[i]);
         }
     }
+    printf("Ciphertext: %s", ciphertext);
 }
