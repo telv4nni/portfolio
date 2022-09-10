@@ -6,7 +6,7 @@
 int main(int argc, string argv[])
 {
     string convert(string key);
-    string encrypt(string key);
+    string encrypt(string key, string plaintext);
     // Check if proper number of arguments
     if (argc != 2)
         {
@@ -39,7 +39,9 @@ int main(int argc, string argv[])
     string plaintext = get_string("plaintext: ");
     string ciphertext = plaintext;
     convert (argv[1]);
-    encrypt (argv[1]);
+    encrypt (argv[1], plaintext);
+}
+
 string convert(string key)
 {
     //convert key to uppercase
@@ -53,7 +55,7 @@ string convert(string key)
     return key;
 }
 
-string encrypt(string key)
+string encrypt(string key, string plaintext)
 {
     for (int i = 0; i < strlen(plaintext); i++)
     {
