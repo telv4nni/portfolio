@@ -34,11 +34,11 @@ int main(int argc, string argv[])
     {
         if isupper(plaintext[i])
         {
-            ciphertext[i] = argv[1][plaintext[i]-65];
+            ciphertext[i] = argv[1][(int)plaintext[i] - 65];
         }
         else if islower(plaintext[i])
         {
-            ciphertext[i] = argv[1][plaintext[i]-97];
+            ciphertext[i] = argv[1][(int)plaintext[i] - 97];
         }
     }
     printf("Ciphertext: %s", ciphertext);
