@@ -32,7 +32,13 @@ int main(int argc, string argv[])
 
     for (int i = 0; i < strlen(plaintext); i++)
     {
-        if isupper()
-        ciphertext[i] = plaintext[i] + argv[1][plaintext[i]-65];
+        if isupper(plaintext[i])
+        {
+            ciphertext[i] = argv[1][plaintext[i]-65];
+        }
+        else if islower(plaintext[i])
+        {
+            ciphertext[i] = argv[1][plaintext[i]-65];
+        }
     }
 }
