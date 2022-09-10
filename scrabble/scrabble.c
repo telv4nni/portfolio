@@ -41,11 +41,11 @@ int compute_score(string word)
     {
         if (word[i] >= 65 && word[i] < 91)
         {
-            score += POINTS[word[i-65]];
+            score += POINTS[int(word[i-65])];
         }
         else if (word[i] >= 97 && word[i] < 123)
         {
-            score += POINTS[word[i-97]];
+            score += POINTS[int(word[i-97])];
         }
     }
     return score;
