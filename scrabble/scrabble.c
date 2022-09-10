@@ -42,6 +42,7 @@ int compute_score(string word)
         if (word[i] >= 65 && word[i] < 91)
         {
             score += POINTS[(int)word[i-65]];
+            printf("Score is %i", score);
         }
         else if (word[i] >= 97 && word[i] < 123)
         {
