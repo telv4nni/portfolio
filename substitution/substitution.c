@@ -5,6 +5,7 @@
 
 int main(int argc, string argv[])
 {
+    string convert(string);
     // Check if proper number of arguments
     if (argv[2] != NULL || argv[1] == NULL)
         {
@@ -44,3 +45,5 @@ int main(int argc, string argv[])
     }
     printf("Ciphertext: %s\n", ciphertext);
 }
+
+string convert()
