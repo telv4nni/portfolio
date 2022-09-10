@@ -20,8 +20,15 @@ int main(int argc, string argv[])
 
     string plaintext = get_string("Plaintext: ");
     string ciphertext;
+
+    //convert key to uppercase
     for (int i = 0; i < strlen(argv[1]); i++)
     {
-        if (argv[1][i] islower())
+        if (islower(argv[1][i])
+        {
+            toupper(argv[1][i]);
+        }
     }
+
+    
 }
