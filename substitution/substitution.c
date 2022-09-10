@@ -4,5 +4,7 @@
 
 int main(int argc, string argv[])
 {
-    printf("plaintext: ")
+    string plaintext = get_string("Plaintext: ");
+    string ciphertext;
+    
 }
