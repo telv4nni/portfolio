@@ -19,7 +19,7 @@ int main(int argc, string argv[])
             return 1;
         }
 
-    string plaintext = get_string("Plaintext: ");
+    string plaintext = get_string("plaintext: ");
     string ciphertext = plaintext;
 
     //convert key to uppercase
@@ -43,5 +43,5 @@ int main(int argc, string argv[])
             ciphertext[i] = tolower(ciphertext[i] );
         }
     }
-    printf("Ciphertext: %s\n", ciphertext);
+    printf("ciphertext: %s\n", ciphertext);
 }
