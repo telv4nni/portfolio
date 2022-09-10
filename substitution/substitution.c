@@ -20,8 +20,8 @@ int main(int argc, string argv[])
 
     string plaintext = get_string("Plaintext: ");
     string ciphertext;
-    printf("%c\n", argv[1][2]);
     for (int i = 0; i < strlen(argv[1]); i++)
     {
+        if (argv[1][i] islower())
     }
 }
