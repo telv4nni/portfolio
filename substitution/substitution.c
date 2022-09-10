@@ -19,7 +19,7 @@ int main(int argc, string argv[])
         }
 
     string plaintext = get_string("Plaintext: ");
-    string ciphertext;
+    string ciphertext = 0;
 
     //convert key to uppercase
     for (int i = 0; i < strlen(argv[1]); i++)
