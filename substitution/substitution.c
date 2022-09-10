@@ -46,6 +46,7 @@ int check(int numberofarguments, string key)
             return 1;
         }
     }
+    return 0;
 }
 
 string convert(string key)
