@@ -21,7 +21,14 @@ int main(int argc, string argv[])
     // Check if argument is valid
     for (int i = 0; i < strlen(argv[1]); i++)
     {
-        if (argv[1])
+        for (int n = 0; n < strlen(argv1[1]); n++)
+        {
+            if argv[1][i] == argv[1][n]
+            {
+            printf("Key invalid\n");
+            return 1;
+            }
+        }
         if (isalpha(argv[1][i]) == 0)
         {
             printf("Key invalid\n");
