@@ -19,7 +19,7 @@ int main(int argc, string argv[])
         }
 
     string plaintext = get_string("Plaintext: ");
-    string ciphertext = 0;
+    string ciphertext = plaintext;
 
     //convert key to uppercase
     for (int i = 0; i < strlen(argv[1]); i++)
@@ -35,13 +35,13 @@ int main(int argc, string argv[])
         if isupper(plaintext[i])
         {
             int arg = (int)plaintext[i] - 65;
-            ciphertext[i] = argv[1][arg];
+            //ciphertext[i] = argv[1][arg];
         }
         else if islower(plaintext[i])
         {
             int arg = (int)plaintext[i] - 97;
-            ciphertext[i] = argv[1][arg];
+           // ciphertext[i] = argv[1][arg];
         }
     }
-    printf("Ciphertext: %s", ciphertext);
+    printf("Ciphertext: %s\n", ciphertext);
 }
