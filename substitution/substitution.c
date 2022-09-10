@@ -24,7 +24,7 @@ int main(int argc, string argv[])
     //convert key to uppercase
     for (int i = 0; i < strlen(argv[1]); i++)
     {
-        if (islower(argv[1][i])
+        if (islower(argv[1][i]))
         {
             toupper(argv[1][i]);
         }
