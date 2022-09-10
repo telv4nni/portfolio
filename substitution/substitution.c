@@ -19,7 +19,7 @@ int main(int argc, string argv[])
             return 1;
         }
     // Check if argument is valid
-    if (strlen(argv[1]) != 26)
+    if (isalpha(argv[1]) == 0)
         {
             printf("Key invalid\n");
             return 1;
