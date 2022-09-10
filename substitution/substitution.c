@@ -7,7 +7,7 @@ int main(int argc, string argv[])
 {
     string convert(string);
     // Check if proper number of arguments
-    if (argv[2] != NULL || argv[1] == NULL)
+    if (argc != 2)
         {
             printf("Usage: ./substitution key\n");
             return 1;
@@ -45,5 +45,3 @@ int main(int argc, string argv[])
     }
     printf("Ciphertext: %s\n", ciphertext);
 }
-
-string convert()
