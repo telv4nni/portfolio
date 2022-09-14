@@ -80,10 +80,13 @@ bool vote(string name)
 // Print the winner (or winners) of the election
 void print_winner(void)
 {
-    string winner;
-    for (int i = 0; i < candidate_count; i++)
+    string winner = candidates[0].votes;
+    for (int i = 1; i < candidate_count; i++)
     {
-        if (candidates[i].votes > )
+        if (candidates[i].votes > winner)
+        {
+            winner = candidates[i].votes;
+        }
     }
     return;
 }
