@@ -103,7 +103,7 @@ bool vote(int rank, string name, int ranks[])
     {
         if (strcmp(name, candidates[i] == 0;))
         {
-            
+
             return true;
         }
     }
@@ -113,7 +113,7 @@ bool vote(int rank, string name, int ranks[])
 // Update preferences given one voter's ranks
 void record_preferences(int ranks[])
 {
-    // TODO
+    ranks[] = 
     return;
 }
 
