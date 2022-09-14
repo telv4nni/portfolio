@@ -157,7 +157,20 @@ void sort_pairs(void)
 {
     for (int i = 0; i < pair_count; i++)
     {
-        
+        for (int j = 0; j < pair_count; j++)
+        {
+            if ((pairs[i].winner - pairs[i].loser) < (pairs[j].winner - pairs[j].loser))
+            {
+                int winner;
+                int loser;
+                winner = pairs[i].winner;
+                loser = pairs[i].loser;
+                pairs[i].winner = pairs[j].winner;
+                pairs[i].loser = pairs[i].loser;
+                pairs[j].winner = winner;
+                pairs[j].loser = loser;
+            }
+        }
     }
     return;
 }
