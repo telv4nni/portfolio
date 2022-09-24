@@ -197,15 +197,17 @@ void lock_pairs(void)
 }
 int check_cycle(int winner, int loser)
 {
+    int tmploser;
     for (int i = 0; i < pair_count; i++)
     {
     if (locked[loser][i] == true)
         {
-            check_cycle(loser, i);
             if (locked[loser][i] == locked[winner][loser])
             {
                 return 1;
             }
+            check_cycle(loser, i);
+
         }
     }
     return 0;
