@@ -194,11 +194,14 @@ void lock_pairs(void)
     }
     return;
 }
-void check_cycle(int first, int second)
+void check_cycle(int winner, int loser)
 {
-    if (locked[first][second] == TRUE)
+    for (int i = 0; i < pair_count; i++)
     {
-        check_cycle[second][]
+    if (locked[loser][i] == TRUE)
+        {
+            check_cycle[loser][i];
+        }
     }
 }
 // Print the winner of the election
