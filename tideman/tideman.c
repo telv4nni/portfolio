@@ -194,7 +194,14 @@ void lock_pairs(void)
     }
     return;
 }
+void check_cycle(int first, int second)
+{
+    check_cycle; 
+    if (locked[first][second] == TRUE)
+    {
 
+    }
+}
 // Print the winner of the election
 void print_winner(void)
 {
