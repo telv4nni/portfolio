@@ -194,7 +194,7 @@ void lock_pairs(void)
     }
     return;
 }
-void check_cycle(int winner, int loser)
+bool check_cycle(int winner, int loser)
 {
     for (int i = 0; i < pair_count; i++)
     {
