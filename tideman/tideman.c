@@ -32,6 +32,7 @@ void record_preferences(int ranks[]);
 void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
+bool check_cycle(int winner, int loser);
 void print_winner(void);
 
 int main(int argc, string argv[])
