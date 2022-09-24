@@ -192,7 +192,7 @@ void lock_pairs(void)
         }
         checklock = 0;
     }
-return;
+    return;
 }
 
 // Print the winner of the election
