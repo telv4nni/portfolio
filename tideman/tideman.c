@@ -177,6 +177,7 @@ void lock_pairs(void)
     //if (locked[pairs[i].loser][j] == false)
     for (int i = 0; i < pair_count; i++)
     {
+        //check if it creates a cycle, if does return 1
         for (int j = 0; j < pair_count; j++)
         {
             if ((locked[pairs[i].loser][j] == true) && (i != j))
@@ -184,6 +185,7 @@ void lock_pairs(void)
                 checklock = 1;
             }
         }
+        //change locked value if no cycle
         if (checklock == 0)
         {
             locked[pairs[i].winner][pairs[i].loser] = true;
