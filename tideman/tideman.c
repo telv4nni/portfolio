@@ -158,12 +158,12 @@ void sort_pairs(void)
             {
                 int winner;
                 int loser;
-                winner = pairs[j].winner;
-                loser = pairs[j].loser;
-                pairs[j].winner = pairs[i].winner;
-                pairs[j].loser = pairs[i].loser;
-                pairs[i].winner = winner;
-                pairs[i].loser = loser;
+                winner = pairs[i].winner;
+                loser = pairs[i].loser;
+                pairs[i].winner = pairs[j].winner;
+                pairs[i].loser = pairs[j].loser;
+                pairs[j].winner = winner;
+                pairs[j].loser = loser;
             }
         }
     }
