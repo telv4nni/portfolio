@@ -32,7 +32,7 @@ void record_preferences(int ranks[]);
 void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
-bool check_cycle(int winner, int loser);
+int check_cycle(int winner, int loser);
 void print_winner(void);
 
 int main(int argc, string argv[])
@@ -179,29 +179,29 @@ void lock_pairs(void)
     for (int i = 0; i < pair_count; i++)
     {
         //check if it creates a cycle, if does return 1
-        for (int j = 0; j < pair_count; j++)
-        {
-            if (((locked[pairs[i].loser][j] == true) && (pairs[i].loser != j)) || locked[pairs[i].loser][pairs[i].winner] == true)
-            {
-                checklock = 1;
-            }
-        }
+        //for (int j = 0; j < pair_count; j++)
+        //{
+           // if (((locked[pairs[i].loser][j] == true) && (pairs[i].loser != j)) || locked[pairs[i].loser][pairs[i].winner] == true)
+            //{
+             //   checklock = 1;
+            //}
+        //}
         //change locked value if no cycle
-        if (checklock == 0)
+        if (check_cycle(pairs[i].winner, pairs[i].loser) == 0)
         {
             locked[pairs[i].winner][pairs[i].loser] = true;
         }
-        checklock = 0;
+        //checklock = 0;
     }
     return;
 }
-bool check_cycle(int winner, int loser)
+int check_cycle(int winner, int loser)
 {
     for (int i = 0; i < pair_count; i++)
     {
     if (locked[loser][i] == true)
         {
-            check_cycle[loser][i];
+            check_cycle(loser, i);
             if (locked[loser][i] == locked[winner][loser])
             {
                 return 1;
