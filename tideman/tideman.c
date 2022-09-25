@@ -205,14 +205,21 @@ int check_cycle(int winner, int loser)
 // Print the winner of the election
 void print_winner(void)
 {
-    int loser;
+    int checklock;
     for (int i = 0; i < pair_count; i++)
     {
+        checklock = 0;
         for (int j = 0; j < pair_count; j++)
         {
-            if (locked[i][j] == true)
+            if (locked[i][j] == false)
+            {
+                checklock++;
+            }
+            if (checklock == pair_count)
+            {
+                printf("%s\n", candidates[i]);
+            }
         }
     }
-    printf("%s\n", candidates[pairs[0].winner]);
     return;
 }
