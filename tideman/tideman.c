@@ -211,7 +211,7 @@ void print_winner(void)
         checklock = 0;
         for (int j = 0; j < pair_count; j++)
         {
-            if (locked[i][j] == false)
+            if (locked[j][i] == false)
             {
                 checklock++;
             }
