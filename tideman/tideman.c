@@ -206,7 +206,7 @@ int check_cycle(int winner, int loser)
             {
                 return 1;
             }
-            check_cycle(loser, i);
+            check_cycle(i, loser);
 
         }
     }
