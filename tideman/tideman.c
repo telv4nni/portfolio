@@ -189,13 +189,14 @@ int check_cycle(int winner, int loser)
     for (int i = 0; i < pair_count; i++)
     {
     //check if the loser of pair already have an arrow towards someone else
-    if (locked[loser][i] == true)
-        {
-            //check if there's an arrow towards winner
+                //check if there's an arrow towards winner
             if (locked[i][winner] == true)
             {
                 return 1;
             }
+    if (locked[loser][i] == true)
+        {
+
             //check another pair if there's an arrow towards winner
             check_cycle(winner, i);
         }
