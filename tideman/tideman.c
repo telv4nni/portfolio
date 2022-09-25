@@ -174,23 +174,13 @@ void sort_pairs(void)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
-    //if (locked[pairs[i].loser][j] == false)
     for (int i = 0; i < pair_count; i++)
     {
-        //check if it creates a cycle, if does return 1
-        //for (int j = 0; j < pair_count; j++)
-        //{
-           // if (((locked[pairs[i].loser][j] == true) && (pairs[i].loser != j)) || locked[pairs[i].loser][pairs[i].winner] == true)
-            //{
-             //   checklock = 1;
-            //}
-        //}
-        //change locked value if no cycle
+        //check if cycle exist, return true if not
         if (check_cycle(pairs[i].winner, pairs[i].loser) == 0)
         {
             locked[pairs[i].winner][pairs[i].loser] = true;
         }
-        //checklock = 0;
     }
     return;
 }
@@ -198,12 +188,15 @@ int check_cycle(int winner, int loser)
 {
     for (int i = 0; i < pair_count; i++)
     {
+    //check if the loser of pair already have an arrow towards someone else
     if (locked[loser][i] == true)
         {
+            //check if there's an arrow towards winner
             if (locked[i][winner] == true)
             {
                 return 1;
             }
+            //check another pair if there's an arrow towards winner
             check_cycle(winner, i);
         }
     }
