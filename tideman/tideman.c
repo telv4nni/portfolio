@@ -205,6 +205,7 @@ int check_cycle(int winner, int loser)
 // Print the winner of the election
 void print_winner(void)
 {
-    printf("%)
+    if preferences[pair[0].winner]]
+    printf("%s", candidates[pair[0].winner])
     return;
 }
