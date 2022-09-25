@@ -202,7 +202,7 @@ int check_cycle(int winner, int loser)
     {
     if (locked[loser][i] == true)
         {
-            if (locked[loser][i] == locked[winner][loser])
+            if (locked[i][winner] == true)
             {
                 return 1;
             }
