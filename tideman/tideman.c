@@ -177,7 +177,7 @@ void lock_pairs(void)
     for (int i = 0; i < pair_count; i++)
     {
         //check if cycle exist, return true if not
-        if ((check_cycle(pairs[i].winner, pairs[i].loser) == 0) && (locked[pairs[i].loser][pairs[i].winner] = false))
+        if (check_cycle(pairs[i].winner, pairs[i].loser) == 0)
         {
             locked[pairs[i].winner][pairs[i].loser] = true;
         }
@@ -186,6 +186,10 @@ void lock_pairs(void)
 }
 int check_cycle(int winner, int loser)
 {
+    if (locked[loser][winner] == true)
+    {
+        return 1;
+    }
     for (int i = 0; i < pair_count; i++)
     {
     //check if the loser of pair already have an arrow towards someone else
