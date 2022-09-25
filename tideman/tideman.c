@@ -205,6 +205,6 @@ int check_cycle(int winner, int loser)
 // Print the winner of the election
 void print_winner(void)
 {
-    // TODO
+    printf("%)
     return;
 }
