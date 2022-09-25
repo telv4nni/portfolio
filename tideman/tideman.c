@@ -197,7 +197,6 @@ void lock_pairs(void)
 }
 int check_cycle(int winner, int loser)
 {
-    int tmploser;
     for (int i = 0; i < pair_count; i++)
     {
     if (locked[loser][i] == true)
