@@ -79,7 +79,7 @@ int main(int argc, string argv[])
         {
             string name = get_string("Rank %i: ", j + 1);
 
-           if (!vote(j, name, ranks))
+            if (!vote(j, name, ranks))
             {
                 printf("Invalid vote.\n");
                 return 3;
@@ -186,22 +186,23 @@ void lock_pairs(void)
 }
 int check_cycle(int winner, int loser)
 {
-    if (locked[loser][winner] == true)
+    if (winner == loser)
     {
         return 1;
     }
-    for (int i = 0; i < pair_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
-    //check if the loser of pair already have an arrow towards someone else
-    if (locked[loser][i] == true)
+        //check if the loser of pair already have an arrow towards someone else
+        if (locked[loser][i] == true)
         {
             //check if there's an arrow towards winner
-            if (locked[i][winner] == true)
+            //if (locked[i][winner] == true)
+            if (check_cycle(winner, i) == 1)
             {
                 return 1;
             }
             //check another pair if there's an arrow towards winner
-            check_cycle(winner, i);
+            //check_cycle(winner, i);
         }
     }
     return 0;
@@ -210,16 +211,16 @@ int check_cycle(int winner, int loser)
 void print_winner(void)
 {
     int checklock;
-    for (int i = 0; i < pair_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
         checklock = 0;
-        for (int j = 0; j < pair_count; j++)
+        for (int j = 0; j < candidate_count; j++)
         {
             if (locked[j][i] == false)
             {
                 checklock++;
             }
-            if (checklock == pair_count)
+            if (checklock == candidate_count)
             {
                 printf("%s\n", candidates[i]);
             }
