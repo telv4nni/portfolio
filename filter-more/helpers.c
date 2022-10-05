@@ -100,8 +100,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            Gx[i][j] = image[i][j];
-            Gy[i][j] = image[i][j];
+            temp[i][j] = image[i][j];
+            //Gy[i][j] = image[i][j];
         }
     }
 
@@ -131,9 +131,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     }
                     //Multiply in kernel
                     //Add pixel to Gx sum
-                    Gxredsum += (Gx[i + k][j + l].rgbtRed * l);
-                    Gxgreensum += (Gx[i + k][j + l].rgbtGreen * l);
-                    Gxbluesum += (Gx[i + k][j + l].rgbtBlue * l);
+                    Gxredsum += (temp[i + k][j + l].rgbtRed * l);
+                    Gxgreensum += (temp[i + k][j + l].rgbtGreen * l);
+                    Gxbluesum += (temp[i + k][j + l].rgbtBlue * l);
                     if (k == 0)
                     {
                         Gxredsum *= 2;
@@ -141,9 +141,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         Gxbluesum *= 2;
                     }
                     //Add pixel to Gy sum
-                    Gyredsum += (Gx[i + k][j + l].rgbtRed * k);
-                    Gygreensum += (Gx[i + k][j + l].rgbtGreen * k);
-                    Gybluesum += (Gx[i + k][j + l].rgbtBlue * k);
+                    Gyredsum += (temp[i + k][j + l].rgbtRed * k);
+                    Gygreensum += (temp[i + k][j + l].rgbtGreen * k);
+                    Gybluesum += (temp[i + k][j + l].rgbtBlue * k);
                     if (l == 0)
                     {
                         Gyredsum *= 2;
