@@ -52,7 +52,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     for (int i = 0; i < height; i++)
     {
         //Next Pixel
-        for (int j = 0; j < width; j++)
+        for (int j = 0; j < width - 1; j++)
         {
             int sumred = 0;
             int sumgreen = 0;
@@ -69,7 +69,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                         continue;
                     }
                     //check if theres a pixel in the column
-                    if ((j + l) < 0 || (j + l) > width)
+                    if ((j + l) < 0 || (j + l) > width - 1)
                     {
                         continue;
                     }
