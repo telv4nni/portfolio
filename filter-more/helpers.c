@@ -37,7 +37,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-    RGBTRIPLE average;
+    RGBTRIPLE temp[height][width];
     //Go to next row
     for (int i = 0; i < height; i++)
     {
