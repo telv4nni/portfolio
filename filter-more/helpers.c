@@ -155,6 +155,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             red = (round(sqrt(pow(Gxredsum, 2) + pow(Gyredsum, 2))));
             green = (round(sqrt(pow(Gxgreensum, 2) + pow(Gygreensum, 2))));
             blue = (round(sqrt(pow(Gxbluesum, 2) + pow(Gybluesum, 2))));
+            //Check if greater than 255
             if (red > 255)
             {
                 red = 255;
@@ -167,6 +168,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             {
                 blue = 255;
             }
+            //Replace pixels in image
             image[i][j].rgbtRed = red;
             image[i][j].rgbtGreen = green;
             image[i][j].rgbtBlue = blue;
