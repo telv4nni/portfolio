@@ -141,9 +141,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         Gxbluesum *= 2;
                     }
                     //Add pixel to Gy sum
-                    Gyredsum += (Gy[i + k][j + l].rgbtRed * k);
-                    Gygreensum += (Gy[i + k][j + l].rgbtGreen * k);
-                    Gybluesum += (Gy[i + k][j + l].rgbtBlue * k);
+                    Gyredsum += (Gx[i + k][j + l].rgbtRed * k);
+                    Gygreensum += (Gx[i + k][j + l].rgbtGreen * k);
+                    Gybluesum += (Gx[i + k][j + l].rgbtBlue * k);
                     if (l == 0)
                     {
                         Gyredsum *= 2;
