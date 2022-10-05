@@ -164,8 +164,5 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             image[i][j].rgbtBlue = blue;
         }
     }
-
-    //Multiply adjacent pixels by kernel
-    //Combine Gx and Gy in image
     return;
 }
