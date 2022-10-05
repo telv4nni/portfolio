@@ -80,6 +80,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     pxlcount++;
                 }
             }
+            //make pixel blurred
+            image[i][j].rgbtRed = round(sumred / pxlcount);
+            image[i][j].rgbtGreen = round(sumgreen / pxlcount);
         }
     }
     return;
