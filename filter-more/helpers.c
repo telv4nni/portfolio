@@ -161,8 +161,20 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             //Gygreensum /= pxlcount;
             //Gybluesum /= pxlcount;
             image[i][j].rgbtRed = (round(sqrt(pow(Gxredsum, 2) + pow(Gyredsum, 2))));
+            if (image[i][j].rgbtRed > 255)
+            {
+                image[i][j].rgbtRed = 255;
+            }
             image[i][j].rgbtGreen = (round(sqrt(pow(Gxgreensum, 2) + pow(Gygreensum, 2))));
+            if (image[i][j].rgbtGreen > 255)
+            {
+                image[i][j].rgbtGreen = 255;
+            }
             image[i][j].rgbtBlue = (round(sqrt(pow(Gxbluesum, 2) + pow(Gybluesum, 2))));
+            if (image[i][j].rgbtBlue > 255)
+            {
+                image[i][j].rgbtBlue = 255;
+            }
         }
     }
 
