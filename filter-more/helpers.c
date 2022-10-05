@@ -42,7 +42,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     //copy all the pixels from image to temp image
     for (int i = 0; i < height; i++)
     {
-        for (int j = 0; j < (width - 1); j++)
+        for (int j = 0; j < width; j++)
         {
             temp[i][j] = image[i][j];
         }
