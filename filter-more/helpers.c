@@ -130,12 +130,17 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         continue;
                     }
                     //Multiply in kernel
+                    //Add pixel to Gx sum
                     Gxredsum += (Gx[i + k][j + l].rgbtRed * k);
                     Gxgreensum += (Gx[i + k][j + l].rgbtGreen * k);
                     Gxbluesum += (Gx[i + k][j + l].rgbtBlue * k);
-
-
-
+                    if (k == 0)
+                    {
+                        Gxredsum * 2;
+                        Gxgreensum * 2;
+                        Gxbluesum *2;
+                    }
+                    pxlcount++;
                 }
             }
         }
