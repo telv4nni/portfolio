@@ -102,6 +102,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             temp[i][j] = image[i][j];
         }
     }
+    //Make kernel modifiers
+    int xkernel[3][3] = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}};
+    int ykernel[3][3] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}};
 
     //Loop rows
     for (int i = 0; i < height; i++)
@@ -129,9 +132,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     }
                     //Multiply in kernel
                     //Add pixel to Gx sum
-                    Gxredsum += (temp[i + k][j + l].rgbtRed * l);
-                    Gxgreensum += (temp[i + k][j + l].rgbtGreen * l);
-                    Gxbluesum += (temp[i + k][j + l].rgbtBlue * l);
+                    Gxredsum += (temp[i + k][j + l].rgbtRed * xkernel[k + 1]);
+                    Gxgreensum += (temp[i + k][j + l].rgbtGreen * xkernel[k + 1]);
+                    Gxbluesum += (temp[i + k][j + l].rgbtBlue * xkernel[k + 1]);
                     if (k == 0)
                     {
                         Gxredsum *= 2;
@@ -139,9 +142,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         Gxbluesum *= 2;
                     }
                     //Add pixel to Gy sum
-                    Gyredsum += (temp[i + k][j + l].rgbtRed * k);
-                    Gygreensum += (temp[i + k][j + l].rgbtGreen * k);
-                    Gybluesum += (temp[i + k][j + l].rgbtBlue * k);
+                    Gyredsum += (temp[i + k][j + l].rgbtRed * ykernel[l + 1]);
+                    Gygreensum += (temp[i + k][j + l].rgbtGreen * ykernel[l + 1]);
+                    Gybluesum += (temp[i + k][j + l].rgbtBlue * ykernel[l + 1]);
                     if (l == 0)
                     {
                         Gyredsum *= 2;
