@@ -144,7 +144,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     Gyredsum += Gy[i + k][j + l].rgbtRed;
                     Gygreensum += Gy[i + k][j + l].rgbtGreen;
                     Gybluesum += Gy[i + k][j + l].rgbtBlue;
-                    if ()
+                    if (l == 0)
                     {
                         Gyredsum * 2;
                         Gygreensum * 2;
