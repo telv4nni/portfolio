@@ -112,8 +112,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < width; j++)
         {
             //initialize sums
-            int Gyredsum = 0, Gygreensum = 0, Gybluesum = 0;
-            int Gxredsum = 0, Gxgreensum = 0, Gxbluesum = 0;
+            float Gyredsum = 0, Gygreensum = 0, Gybluesum = 0;
+            float Gxredsum = 0, Gxgreensum = 0, Gxbluesum = 0;
             int pxlcount = 0;
             //Check adjacent pixels
             for (int k = -1; k < 2; k++)
