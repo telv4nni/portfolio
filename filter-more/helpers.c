@@ -54,7 +54,32 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         //Next Pixel
         for (int j = 0; j < width; j++)
         {
-            
+            int sumred;
+            int sumgreen;
+            int sumblue;
+            int pxlcount;
+            //Check adjacent pixels
+            for (int k = -1; k < 2; k++)
+            {
+                for (int l = -1; l < 2; l++)
+                {
+                    //check if theres a pixel in the row
+                    if ((i + k) < 0 || (i + k) > height)
+                    {
+                        continue;
+                    }
+                    //check if theres a pixel in the column
+                    if ((j + l) < 0 || (j + l) > width)
+                    {
+                        continue;
+                    }
+                    //Add pixel to sum
+                    sumred += temp[i + k][j + l].rgbtRed;
+                    sumgreen += temp[i + k][j + l].rgbtGreen;
+                    sumblue += temp[i + k][j + l].rgbtBlue;
+                    pxlcount++;
+                }
+            }
         }
     }
     return;
