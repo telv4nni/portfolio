@@ -143,6 +143,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     pxlcount++;
                 }
             }
+            Gxredsum / pxlcount;
+            Gxgreensum / pxlcount;
+            Gxbluesum / pxlcount;
         }
     }
 
