@@ -109,7 +109,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     //Loop rows
     for (int i = 0; i < height; i++)
     {
-    //Loop columns
+        //Loop columns
         for (int j = 0; j < width; j++)
         {
             //initialize sums
@@ -135,7 +135,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     Gxredsum += (temp[i + k][j + l].rgbtRed * xkernel[k + 1][l + 1]);
                     Gxgreensum += (temp[i + k][j + l].rgbtGreen * xkernel[k + 1][l + 1]);
                     Gxbluesum += (temp[i + k][j + l].rgbtBlue * xkernel[k + 1][l + 1]);
-                    
+
                     //Add pixel to Gy sum
                     Gyredsum += (temp[i + k][j + l].rgbtRed * ykernel[k + 1][l + 1]);
                     Gygreensum += (temp[i + k][j + l].rgbtGreen * ykernel[k + 1][l + 1]);
