@@ -38,35 +38,13 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
     RGBTRIPLE average;
-    average.rgbtRed = 0;
-    average.rgbtGreen = 0;
-    average.rgbtBlue = 0;
     //Go to next row
     for (int i = 0; i < height; i++)
     {
         //Go to next pixel
         for (int j = 0; j < (width - 1); j++)
         {
-            int pxltoblur = 0;
-            for(int column = -1; column < 2; column++)
-            {
-                //Sum all of the nearby pixels
-                for (int row = -1; row < 2; row++)
-                {
-                    if ((i + column) >= 0 && (i + column) < height && (j + row) >= 0 && (j + row) < (width - 1))
-                    {
-                        average.rgbtRed += image[i + column][j + row].rgbtRed;
-                        average.rgbtGreen += image[i + column][j + row].rgbtGreen;
-                        average.rgbtBlue += image[i + column][j + row].rgbtBlue;
-                        pxltoblur++;
-                    }
-                }
-            }
-            //Change pixel to average value
-            average.rgbtRed = round(average.rgbtRed) / pxltoblur;
-            average.rgbtBlue = round(average.rgbtBlue) / pxltoblur;
-            average.rgbtGreen = round(average.rgbtGreen) / pxltoblur;
-            image[i][j] = average;
+
         }
     }
     return;
