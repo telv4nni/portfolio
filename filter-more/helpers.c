@@ -154,12 +154,12 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 }
             }
             //Divide sum by count of pixels
-            Gxredsum /= pxlcount;
-            Gxgreensum /= pxlcount;
-            Gxbluesum /= pxlcount;
-            Gyredsum /= pxlcount;
-            Gygreensum /= pxlcount;
-            Gybluesum /= pxlcount;
+            //Gxredsum /= pxlcount;
+            //Gxgreensum /= pxlcount;
+            //Gxbluesum /= pxlcount;
+           // Gyredsum /= pxlcount;
+            //Gygreensum /= pxlcount;
+            //Gybluesum /= pxlcount;
             image[i][j].rgbtRed = (round(sqrt(pow(Gxredsum, 2) + pow(Gyredsum, 2))));
             image[i][j].rgbtGreen = (round(sqrt(pow(Gxgreensum, 2) + pow(Gygreensum, 2))));
             image[i][j].rgbtBlue = (round(sqrt(pow(Gxbluesum, 2) + pow(Gybluesum, 2))));
