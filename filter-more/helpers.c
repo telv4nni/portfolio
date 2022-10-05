@@ -47,7 +47,16 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             temp[i][j] = image[i][j];
         }
     }
-    
+    //Sum adjacent pixels
+    //Next Row
+    for (int i = 0; i < height; i++)
+    {
+        //Next Pixel
+        for (int j = 0; j < width; j++)
+        {
+            
+        }
+    }
     return;
 }
 
