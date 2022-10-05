@@ -111,12 +111,28 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     //Loop columns
         for (int j = 0; j < width; j++)
         {
-            //initialize 
+            //initialize sums
+            int Gyredsum, Gygreensum, Gybluesum;
+            int Gxredsum, Gxgreensum, Gxbluesum;
+            int pxlcount = 0;
             //Check adjacent pixels
             for (int k = -1; k < 2; k++)
             {
                 for (int l = -1; l < 2; l++)
                 {
+                    //check if pixel exists
+                    if ((i + k) < 0 || (i + k) > height)
+                    {
+                        continue;
+                    }
+                    if ((j + l) < 0 || (j + l) > width)
+                    {
+                        continue;
+                    }
+                    //Multiply in kernel
+                    Gx[i][j]
+
+
 
                 }
             }
