@@ -112,8 +112,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < width; j++)
         {
             //initialize sums
-            int Gyredsum, Gygreensum, Gybluesum;
-            int Gxredsum, Gxgreensum, Gxbluesum;
+            int Gyredsum = 0, Gygreensum = 0, Gybluesum = 0;
+            int Gxredsum = 0, Gxgreensum = 0, Gxbluesum = 0;
             int pxlcount = 0;
             //Check adjacent pixels
             for (int k = -1; k < 2; k++)
@@ -136,9 +136,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     Gxbluesum += (Gx[i + k][j + l].rgbtBlue * l);
                     if (k == 0)
                     {
-                        Gxredsum * 2;
-                        Gxgreensum * 2;
-                        Gxbluesum *2;
+                        Gxredsum *= 2;
+                        Gxgreensum *= 2;
+                        Gxbluesum *= 2;
                     }
                     //Add pixel to Gy sum
                     Gyredsum += (Gy[i + k][j + l].rgbtRed * k);
@@ -146,23 +146,23 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     Gybluesum += (Gy[i + k][j + l].rgbtBlue * k);
                     if (l == 0)
                     {
-                        Gyredsum * 2;
-                        Gygreensum * 2;
-                        Gybluesum *2;
+                        Gyredsum *= 2;
+                        Gygreensum *= 2;
+                        Gybluesum *= 2;
                     }
                     pxlcount++;
                 }
             }
             //Divide sum by count of pixels
-            Gxredsum / pxlcount;
-            Gxgreensum / pxlcount;
-            Gxbluesum / pxlcount;
-            Gyredsum / pxlcount;
-            Gygreensum / pxlcount;
-            Gybluesum / pxlcount;
+            Gxredsum /= pxlcount;
+            Gxgreensum /= pxlcount;
+            Gxbluesum /= pxlcount;
+            Gyredsum /= pxlcount;
+            Gygreensum /= pxlcount;
+            Gybluesum /= pxlcount;
             image[i][j].rgbtRed = (round(sqrt(pow(Gxredsum, 2) + pow(Gyredsum, 2))));
             image[i][j].rgbtGreen = (round(sqrt(pow(Gxgreensum, 2) + pow(Gygreensum, 2))));
-            image[i][j].rgbtBlue = (round(sqrt(pow(Gxbluesum, 2) + pow(Gyredblue, 2))));
+            image[i][j].rgbtBlue = (round(sqrt(pow(Gxbluesum, 2) + pow(Gybluesum, 2))));
         }
     }
 
