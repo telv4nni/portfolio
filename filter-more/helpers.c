@@ -114,7 +114,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             //initialize sums
             float Gyredsum = 0, Gygreensum = 0, Gybluesum = 0;
             float Gxredsum = 0, Gxgreensum = 0, Gxbluesum = 0;
-            int pxlcount = 0;
+            int red, green, blue;
             //Check adjacent pixels
             for (int k = -1; k < 2; k++)
             {
@@ -150,31 +150,26 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         Gygreensum *= 2;
                         Gybluesum *= 2;
                     }
-                    pxlcount++;
                 }
             }
-            //Divide sum by count of pixels
-            //Gxredsum /= pxlcount;
-            //Gxgreensum /= pxlcount;
-            //Gxbluesum /= pxlcount;
-           // Gyredsum /= pxlcount;
-            //Gygreensum /= pxlcount;
-            //Gybluesum /= pxlcount;
-            image[i][j].rgbtRed = (round(sqrt(pow(Gxredsum, 2) + pow(Gyredsum, 2))));
-            if (image[i][j].rgbtRed > 255)
+            red = (round(sqrt(pow(Gxredsum, 2) + pow(Gyredsum, 2))));
+            green = (round(sqrt(pow(Gxgreensum, 2) + pow(Gygreensum, 2))));
+            blue = (round(sqrt(pow(Gxbluesum, 2) + pow(Gybluesum, 2))));
+            if (red > 255)
             {
-                image[i][j].rgbtRed = 255;
+                red = 255;
             }
-            image[i][j].rgbtGreen = (round(sqrt(pow(Gxgreensum, 2) + pow(Gygreensum, 2))));
-            if (image[i][j].rgbtGreen > 255)
+            if (green > 255)
             {
-                image[i][j].rgbtGreen = 255;
+                green = 255;
             }
-            image[i][j].rgbtBlue = (round(sqrt(pow(Gxbluesum, 2) + pow(Gybluesum, 2))));
-            if (image[i][j].rgbtBlue > 255)
+            if (blue > 255)
             {
-                image[i][j].rgbtBlue = 255;
+                blue = 255;
             }
+            image[i][j].rgbtRed = red;
+            image[i][j].rgbtGreen = green;
+            image[i][j].rgbtBlue = blue;
         }
     }
 
