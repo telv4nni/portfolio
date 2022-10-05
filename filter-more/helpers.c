@@ -57,7 +57,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             int sumred;
             int sumgreen;
             int sumblue;
-            int pxlcount;
+            int pxlcount = 0;
             //Check adjacent pixels
             for (int k = -1; k < 2; k++)
             {
@@ -83,6 +83,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             //make pixel blurred
             image[i][j].rgbtRed = round(sumred / pxlcount);
             image[i][j].rgbtGreen = round(sumgreen / pxlcount);
+            image[i][j].rgbtBlue = round(sumblue / pxlcount);
         }
     }
     return;
