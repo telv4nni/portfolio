@@ -130,7 +130,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         continue;
                     }
                     //Multiply in kernel
-                    Gx[i][j]
+                    Gx[i + k][j + l] * k
 
 
 
