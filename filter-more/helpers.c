@@ -52,7 +52,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     for (int i = 0; i < height; i++)
     {
         //Next Pixel
-        for (int j = 0; j < width - 1; j++)
+        for (int j = 0; j < width; j++)
         {
             int sumred = 0;
             int sumgreen = 0;
