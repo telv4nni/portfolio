@@ -160,7 +160,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             Gyredsum / pxlcount;
             Gygreensum / pxlcount;
             Gybluesum / pxlcount;
-            image[i][j].rgbtBlue = 
+            image[i][j].rgbtRed = (pow(Gxredsum, 2) + pow(Gyredsum, 2));
         }
     }
 
