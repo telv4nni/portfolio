@@ -93,10 +93,37 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
     //create Gx and Gy
+    RGBTRIPLE Gx[height][width];
+    RGBTRIPLE Gy[height][width];
     //copy pixels from image to Gx and Gy
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            Gx[i][j] = image[i][j];
+            Gy[i][j] = image[i][j];
+        }
+    }
+
     //Loop rows
+    for (int i = 0; i < height; i++)
+    {
     //Loop columns
-    //Check adjacent pixels
-    //
+        for (int j = 0; j < width; j++)
+        {
+            //initialize 
+            //Check adjacent pixels
+            for (int k = -1; k < 2; k++)
+            {
+                for (int l = -1; l < 2; l++)
+                {
+
+                }
+            }
+        }
+    }
+
+    //Multiply adjacent pixels by kernel
+    //Combine Gx and Gy in image
     return;
 }
