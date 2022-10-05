@@ -54,9 +54,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         //Next Pixel
         for (int j = 0; j < width; j++)
         {
-            int sumred;
-            int sumgreen;
-            int sumblue;
+            int sumred = 0;
+            int sumgreen = 0;
+            int sumblue = 0;
             int pxlcount = 0;
             //Check adjacent pixels
             for (int k = -1; k < 2; k++)
