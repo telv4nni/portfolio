@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 
 
     //loop until file ends
-    while (fread(datablock, 1, BLOCK_SIZE, file) == BLOCK_SIZE)
+    while (fread(&datablock, 1, BLOCK_SIZE, file) == BLOCK_SIZE)
         {
             //check if it's jpg
             if (datablock[0] == 0xff && datablock[1] == 0xd8 && datablock[2] == 0xff && (datablock[3] & 0xf0) == 0xe0)
@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
                 //save recovered block to new file if jpg found
                 if (!(counter == 0))
                 {
-                    fwrite(&recoveredimage, 1, BLOCK_SIZE, recoveredimage);
+                    fwrite(&datablock, 1, BLOCK_SIZE, recoveredimage);
                 }
             }
         }
