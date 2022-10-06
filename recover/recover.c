@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 typedef uint8_t BYTE;
+const int BLOCK_SIZE = 512;
 
 int main(int argc, char *argv[])
 {
@@ -17,5 +18,5 @@ int main(int argc, char *argv[])
         printf("Could not open *file*.raw");
         return 1;
     }
-    
+
 }
