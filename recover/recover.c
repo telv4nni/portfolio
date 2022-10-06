@@ -45,10 +45,13 @@ int main(int argc, char *argv[])
 
                     //open new file
                     FILE *recoveredimage = fopen(filename, "w");
-
-                    //save recovered block to new file
-                    fwrite(&file, 1, BLOCK_SIZE, recoveredimage);
                     counter++;
+
+                    //save recovered block to new file if jpg found
+                    if (!(counter == 0))
+                    {
+                        fwrite(&file, 1, BLOCK_SIZE, recoveredimage);
+                    }
                 }
             }
         }
