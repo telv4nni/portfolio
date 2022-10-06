@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    BYTE *datablock = malloc(BLOCK_SIZE);
+    BYTE datablock[BLOCK_SIZE];
 
     //create name of new file and file counter
     char filename[8];
@@ -53,11 +53,10 @@ int main(int argc, char *argv[])
                 //save recovered block to new file if jpg found
                 if (!(counter == 0))
                 {
-                    fwrite(&file, 1, BLOCK_SIZE, recoveredimage);
+                    fwrite(&recoveredimage, 1, BLOCK_SIZE, recoveredimage);
                 }
             }
         }
-    free(datablock);
     free(file);
     return 0;
 }
