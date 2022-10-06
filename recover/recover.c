@@ -44,10 +44,10 @@ int main(int argc, char *argv[])
                 {
                     //save recovered blocks to new file
                     fwrite(file, 1, BLOCK_SIZE, recoveredimage);
-                    free(recoveredimage);
                 }
             }
         }
+    free(recoveredimage);
     }
     free(datablock);
     free(file);
