@@ -55,7 +55,6 @@ int main(int argc, char *argv[])
             }
         }
     fclose(recoveredimage);
-    free(file);
-    free(recoveredimage);
+    fclose(file);
     return 0;
 }
