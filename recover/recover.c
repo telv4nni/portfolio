@@ -42,8 +42,10 @@ int main(int argc, char *argv[])
                 {
                     //change name of new file
                     sprintf(filename, "%03i.jpg", counter);
+                    
                     //open new file
                     FILE *recoveredimage = fopen(filename, "w");
+
                     //save recovered blocks to new file
                     fwrite(file, 1, BLOCK_SIZE, recoveredimage);
                     counter++;
