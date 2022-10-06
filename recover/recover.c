@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
                 while (fread(datablock, 1, BLOCK_SIZE, file) == BLOCK_SIZE)
                 {
                     //save recovered blocks to new file
-                    fwrite(file, BLOCK_SIZE, 1, recoveredimage);
+                    fwrite(file, 1, BLOCK_SIZE, recoveredimage);
                     free(recoveredimage);
                 }
             }
