@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
         {
             if (datablock[4] >= 0xe0 && datablock[4] <= 0xef)
             {
-                fwrite
+                fwrite(file)
             }
         }
     }
