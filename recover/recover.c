@@ -47,12 +47,11 @@ int main(int argc, char *argv[])
                 sprintf(filename, "%03i.jpg", counter);
                 recoveredimage = fopen(filename, "w");
                 counter++;
-
-                //save recovered block to new file if jpg found
-                if (!(counter == 0))
-                {
-                    fwrite(&datablock, 1, BLOCK_SIZE, recoveredimage);
-                }
+            }
+            //save recovered block to new file if jpg found
+            if (!(counter == 0))
+            {
+                fwrite(&datablock, 1, BLOCK_SIZE, recoveredimage);
             }
         }
     free(file);
