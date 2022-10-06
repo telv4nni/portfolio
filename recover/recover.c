@@ -25,19 +25,25 @@ int main(int argc, char *argv[])
     BYTE *datablock = malloc(BLOCK_SIZE);
 
     //loop through images
-    for (int i = 0; i <)
-    FILE *recoveredimage = fopen(sprintf(i, "%03i.jpg", 8), "w");
-    //check if it's jpg
-    if (datablock[0] == 0xff && datablock[1] == 0xd8 && datablock[2] == 0xff)
+    for (int i = 0; i < sizeof(file); i++)
     {
-        if (datablock[4] >= 0xe0 && datablock[4] <= 0xef)
+    FILE *recoveredimage = fopen(sprintf(i, "%03i.jpg", 8), "w");
+        //check if it's jpg
+        if (datablock[0] == 0xff && datablock[1] == 0xd8 && datablock[2] == 0xff)
         {
-            //loop until image ends
-            while (fread(datablock, 1, BLOCK_SIZE, file) == BLOCK_SIZE)
+            if (datablock[4] >= 0xe0 && datablock[4] <= 0xef)
             {
-                //save recovered blocks to new file
-                fwrite(file, BLOCK_SIZE, 1, recoveredimage);
+                //loop until image ends
+                while (fread(datablock, 1, BLOCK_SIZE, file) == BLOCK_SIZE)
+                {
+                    //save recovered blocks to new file
+                    fwrite(file, BLOCK_SIZE, 1, recoveredimage);
+                    free(recoveredimage);
+                }
             }
         }
     }
+    free(datablock);
+    free(file);
+    return 0;
 }
