@@ -18,6 +18,7 @@ int main(int argc, char *argv[])
         printf("Could not open *file*.raw");
         return 1;
     }
+    
 
     while (fread())
 }
