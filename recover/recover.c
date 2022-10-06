@@ -30,7 +30,10 @@ int main(int argc, char *argv[])
         //check if it's jpg
         if (datablock[0] == 0xff && datablock[1] == 0xd8 && datablock[2] == 0xff)
         {
-            if (datablock[4] == )
+            if (datablock[4] >= 0xe0 && datablock[4] <= 0xef)
+            {
+                fwrite
+            }
         }
     }
 }
