@@ -46,10 +46,10 @@ int main(int argc, char *argv[])
                     FILE *recoveredimage = fopen(filename, "w");
                     //save recovered blocks to new file
                     fwrite(file, 1, BLOCK_SIZE, recoveredimage);
+                    counter++;
                 }
             }
         }
-    free(recoveredimage);
     free(datablock);
     free(file);
     return 0;
