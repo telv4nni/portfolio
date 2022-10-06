@@ -40,6 +40,8 @@ int main(int argc, char *argv[])
             {
                 if (datablock[3] >= 0xe0 && datablock[3] <= 0xef)
                 {
+                    
+
                     //change name of new file
                     sprintf(filename, "%03i.jpg", counter);
 
