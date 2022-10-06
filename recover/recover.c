@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
                 }
             }
         }
-    free(recoveredimage);
+        free(recoveredimage);
     }
     free(datablock);
     free(file);
