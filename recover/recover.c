@@ -33,27 +33,26 @@ int main(int argc, char *argv[])
 
     //loop until file ends
     while (fread(&datablock, 1, BLOCK_SIZE, file) == BLOCK_SIZE)
+    {
+        //check if it's jpg
+        if (datablock[0] == 0xff && datablock[1] == 0xd8 && datablock[2] == 0xff && (datablock[3] & 0xf0) == 0xe0)
         {
-            //check if it's jpg
-            if (datablock[0] == 0xff && datablock[1] == 0xd8 && datablock[2] == 0xff && (datablock[3] & 0xf0) == 0xe0)
-            {
-                //close file if it ends
-                if (!(counter == 0))
-                {
-                    fclose(recoveredimage);
-                }
-
-                //open new file
-                sprintf(filename, "%03i.jpg", counter);
-                recoveredimage = fopen(filename, "w");
-                counter++;
-            }
-            //save recovered block to new file if jpg found
+            //close file if it ends
             if (!(counter == 0))
             {
-                fwrite(&datablock, 1, BLOCK_SIZE, recoveredimage);
+                fclose(recoveredimage);
             }
+            //open new file
+            sprintf(filename, "%03i.jpg", counter);
+            recoveredimage = fopen(filename, "w");
+            counter++;
         }
+        //save recovered block to new file if jpg found
+        if (!(counter == 0))
+        {
+            fwrite(&datablock, 1, BLOCK_SIZE, recoveredimage);
+        }
+    }
     fclose(recoveredimage);
     fclose(file);
     return 0;
