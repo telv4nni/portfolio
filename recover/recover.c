@@ -38,15 +38,14 @@ int main(int argc, char *argv[])
             //check if it's jpg
             if (datablock[0] == 0xff && datablock[1] == 0xd8 && datablock[2] == 0xff && (datablock[3] & 0xf0) == 0xe0)
             {
+                //close file if it ends
                 if (!(counter == 0))
                 {
                     fclose(recoveredimage);
                 }
 
-                //change name of new file
-                sprintf(filename, "%03i.jpg", counter);
-
                 //open new file
+                sprintf(filename, "%03i.jpg", counter);
                 recoveredimage = fopen(filename, "w");
                 counter++;
 
