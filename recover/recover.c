@@ -54,6 +54,7 @@ int main(int argc, char *argv[])
                 fwrite(&datablock, 1, BLOCK_SIZE, recoveredimage);
             }
         }
+    fclose(recoveredimage);
     free(file);
     free(recoveredimage);
     return 0;
