@@ -24,12 +24,11 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    BYTE datablock[BLOCK_SIZE];
 
-    //create name of new file and file counter
+    BYTE datablock[BLOCK_SIZE];
     char filename[8];
     int counter = 0;
-    FILE *recoveredimage;
+    FILE *recoveredimage = NULL;
 
 
     //loop until file ends
