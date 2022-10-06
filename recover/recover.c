@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
                 //close file if it ends
                 if (!(counter == 0))
                 {
-                    fclose(recoveredimage);val
+                    fclose(recoveredimage);
                 }
 
                 //open new file
@@ -55,6 +55,6 @@ int main(int argc, char *argv[])
             }
         }
     free(file);
-    fclose(recoveredimage);
+    free(recoveredimage);
     return 0;
 }
