@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
     for (int i = 0; i < sizeof(file); i++)
     {
     //create name of new file
-    char filename[];
+    char filename[8];
     sprintf(filename, "%03i.jpg", i);
     //open new file
     FILE *recoveredimage = fopen(filename, "w");
