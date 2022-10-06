@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <cs50.h>
 
 typedef uint8_t BYTE;
 const int BLOCK_SIZE = 512;
@@ -29,7 +30,7 @@ int main(int argc, char *argv[])
     for (int i = 0; i < sizeof(file); i++)
     {
     string filename = i;
-    FILE *recoveredimage = fopen(sprintf(i, "%03i.jpg", 8), "w");
+    FILE *recoveredimage = fopen(sprintf(filename, "%03s.jpg", 8), "w");
         //check if it's jpg
         if (datablock[0] == 0xff && datablock[1] == 0xd8 && datablock[2] == 0xff)
         {
