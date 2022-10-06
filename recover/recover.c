@@ -28,6 +28,7 @@ int main(int argc, char *argv[])
     //loop through images
     for (int i = 0; i < sizeof(file); i++)
     {
+    string filename = i;
     FILE *recoveredimage = fopen(sprintf(i, "%03i.jpg", 8), "w");
         //check if it's jpg
         if (datablock[0] == 0xff && datablock[1] == 0xd8 && datablock[2] == 0xff)
