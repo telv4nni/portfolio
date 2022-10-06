@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 
     BYTE *datablock = malloc(BLOCK_SIZE);
 
-
+    FILE *recoveredimage = fopen(i, "w");
     //check if it's jpg
     if (datablock[0] == 0xff && datablock[1] == 0xd8 && datablock[2] == 0xff)
     {
