@@ -31,7 +31,7 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    
+
     return toupper(word[0]) - 'A';
 }
 
@@ -39,8 +39,8 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
-    FILE *file = fopen(dictionary, "r");
-    if (file == NULL)
+    FILE *dic = fopen(dictionary, "r");
+    if (dic == NULL)
     {
         return false;
     }
