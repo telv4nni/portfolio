@@ -31,6 +31,10 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
+    while (fread(&c, sizeof(char), 1, file))
+    {
+        
+    }
     return toupper(word[0]) - 'A';
 }
 
