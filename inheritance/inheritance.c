@@ -58,7 +58,7 @@ person *create_family(int generations)
 
         if (r0 == 0)
         {
-             p->alleles[0] = parent0->alleles[0];
+            p->alleles[0] = parent0->alleles[0];
         }
         else
         {
