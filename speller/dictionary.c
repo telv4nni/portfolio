@@ -119,9 +119,16 @@ bool unload(void)
     // TODO
     node *cursor = malloc(sizeof(node));
     node *remove = malloc(sizeof(node));
-    for (int i = 0, i = N, i++)
+    for (int i = 0, i < N, i++)
     {
-        cursor = table[i];
+        cursor = table[i]->next;
+        while (cursor->next != NULL)
+        {
+            remove = cursor;
+            cursor = cursor->next;
+            free(remove);
+        }
     }
+    free(cursor);
     return false;
 }
