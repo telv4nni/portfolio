@@ -93,13 +93,14 @@ bool load(const char *dictionary)
         //be sure to set pointers in the correct order
         if (table[hashv] == NULL)
         {
-            newnode->next = NULL;
+            table[hashv] = newnode;
         }
         else
         {
-            newnode->next = table[hashv]->next;
+            newnode->next = table[hashv];
+            table[hashv] = newnode;
         }
-        table[hashv] = newnode;
+
         wordcount++;
 
     }
