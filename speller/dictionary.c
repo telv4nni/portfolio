@@ -28,8 +28,10 @@ bool check(const char *word)
 {
     // TODO
     //Hash word to obtain a hash value
+    int index = hash(word);
     //Access linked list at that index in the hash table
     //Traverse linked list, looking for the word
+    
     return false;
 }
 
