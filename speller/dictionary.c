@@ -46,15 +46,16 @@ bool load(const char *dictionary)
     }
     //read strings from file one at a time
         //fscanf will return EOF once it reaches end of file
-    char buffer[LENGTH+1];
-    while (fscanf(dic, %s, buffer == "EOF"))
+    char word[LENGTH+1];
+    while (fscanf(dic, %s, word) == "EOF")
     {
-        
+        //create a new node for each word
+            node *
+            //use malloc
+            //remember to check if return value is NULL
+            //copy word into node using strcpy
     }
-    //create a new node for each word
-        //use malloc
-        //remember to check if return value is NULL
-        //copy word into node using strcpy
+
     //hash word to obtain a hash value
         //use hash function
         //function takes a string and returns an index
