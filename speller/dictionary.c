@@ -50,11 +50,17 @@ bool load(const char *dictionary)
     while (fscanf(dic, %s, word) == "EOF")
     {
         //create a new node for each word
-            node *newnode = malloc(sizeof(node));
-            //use malloc
-            //remember to check if return value is NULL
-            if (newnode )
-            //copy word into node using strcpy
+        //use malloc
+        node *newnode = malloc(sizeof(node));
+
+        //remember to check if return value is NULL
+        if (newnode == NULL)
+        {
+            return false;
+        }
+
+        //copy word into node using strcpy
+        strcopy(newnode->word, word);
     }
 
     //hash word to obtain a hash value
