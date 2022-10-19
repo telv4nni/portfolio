@@ -38,7 +38,6 @@ unsigned int hash(const char *word)
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
-    // TODO
     //Open dictionary file
     FILE *dic = fopen(dictionary, "r");
     if (dic == NULL)
@@ -47,6 +46,7 @@ bool load(const char *dictionary)
     }
     //read strings from file one at a time
         //fscanf will return EOF once it reaches end of file
+    while (fscanf())
     //create a new node for each word
         //use malloc
         //remember to check if return value is NULL
