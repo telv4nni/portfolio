@@ -103,8 +103,8 @@ bool load(const char *dictionary)
         else
         {
             newnode->next = table[hashv];
-            table[hashv]->next = newnode;
         }
+        table[hashv]->next = newnode;
         wordcount++;
     }
 
