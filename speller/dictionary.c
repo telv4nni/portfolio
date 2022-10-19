@@ -128,7 +128,10 @@ bool unload(void)
     node *remove = malloc(sizeof(node));
     for (int i = 0; i < N; i++)
     {
+        if (table[i]->next != NULL)
+        {
         cursor = table[i]->next;
+        }
         while (cursor->next != NULL)
         {
             remove = cursor;
