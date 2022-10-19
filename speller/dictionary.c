@@ -127,7 +127,6 @@ bool unload(void)
             cursor = cursor->next;
             free(remove);
         }
-        free(remove);
         if (cursor == NULL && i == (N - 1))
         {
             return true;
