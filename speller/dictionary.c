@@ -41,10 +41,8 @@ bool check(const char *word)
             free(cursor);
             return true;
         }
-        else
-        {
-            cursor = cursor->next;
-        }
+        cursor = cursor->next;
+
     }
     return false;
 }
