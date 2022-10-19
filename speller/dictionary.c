@@ -89,7 +89,7 @@ bool load(const char *dictionary)
         //use hash function
         //function takes a string and returns an index
         int hashv;
-        hashv = hash(wordtmp);
+        hashv = hash(newnode->word);
 
             //insert node into hash table at that location
         //recall that hash table is an array of linked lists
