@@ -95,14 +95,8 @@ bool load(const char *dictionary)
             //insert node into hash table at that location
         //recall that hash table is an array of linked lists
         //be sure to set pointers in the correct order
-        if (table[hashv] == NULL)
-        {
-            newnode->next = NULL;
-        }
-        else
-        {
-            newnode->next = table[hashv]->next;
-        }
+
+        newnode = table[hashv]->next;
         table[hashv]->next = newnode;
         wordcount++;
     }
