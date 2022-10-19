@@ -52,7 +52,11 @@ bool load(const char *dictionary)
         //remember to check if return value is NULL
         //copy word into node using strcpy
     //hash word to obtain a hash value
+        //use hash function
+        //function takes a string and returns an index
     //insert node into hash table at that location
+        //recall that hash table is an array of linked lists
+        //be sure to set pointers in the correct order
     return true;
 }
 
