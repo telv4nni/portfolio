@@ -31,7 +31,11 @@ bool check(const char *word)
     int index = hash(word);
     //Access linked list at that index in the hash table
     //Traverse linked list, looking for the word
-    int *cursor;
+    int *cursor = table[index]->next;
+    while (cursor != NULL)
+    {
+
+    }
     return false;
 }
 
