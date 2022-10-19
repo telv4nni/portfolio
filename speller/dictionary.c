@@ -31,10 +31,19 @@ bool check(const char *word)
     int index = hash(word);
     //Access linked list at that index in the hash table
     //Traverse linked list, looking for the word
-    int *cursor = table[index]->next;
+    node *cursor = malloc(sizeof(node));
+    cursor = table[index]->next;
+
     while (cursor != NULL)
     {
-        if (strcasecmp(word, ))
+        if (strcasecmp(word, cursor.word))
+        {
+            return true;
+        }
+        else
+        {
+            cursor = cursor->next;
+        }
     }
     return false;
 }
