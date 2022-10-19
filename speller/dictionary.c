@@ -120,10 +120,7 @@ bool unload(void)
     for (int i = 0; i < N; i++)
     {
         node *cursor = table[i];
-        if (table[i]->next != NULL)
-        {
-        cursor = table[i]->next;
-        }
+
         while (cursor->next != NULL)
         {
             remove = cursor;
