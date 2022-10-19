@@ -116,10 +116,10 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
-    node *cursor = malloc(sizeof(node));
     node *remove = malloc(sizeof(node));
     for (int i = 0; i < N; i++)
     {
+        node *cursor = table[i];
         if (table[i]->next != NULL)
         {
         cursor = table[i]->next;
