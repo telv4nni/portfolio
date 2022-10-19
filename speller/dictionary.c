@@ -96,8 +96,8 @@ bool load(const char *dictionary)
         //recall that hash table is an array of linked lists
         //be sure to set pointers in the correct order
 
-        newnode = table[hashv]->next;
-        table[hashv]->next = newnode;
+        newnode->next = table[hashv];
+        table[hashv] = newnode;
         wordcount++;
     }
 
