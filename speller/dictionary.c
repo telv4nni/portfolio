@@ -33,7 +33,7 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-
+    
     return toupper(word[0]) - 'A';
 }
 
@@ -48,7 +48,7 @@ bool load(const char *dictionary)
     }
     //read strings from file one at a time
         //fscanf will return EOF once it reaches end of file
-    char wordtmp[LENGTH+1];
+    char wordtmp[LENGTH + 1];
     while (fscanf(dic, "%s", wordtmp) != EOF)
     {
         //create a new node for each word
