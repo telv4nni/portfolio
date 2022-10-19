@@ -3,6 +3,7 @@
 #include <ctype.h>
 #include <stdbool.h>
 #include <stdio.h>
+#include <string.h>
 
 #include "dictionary.h"
 
@@ -60,7 +61,7 @@ bool load(const char *dictionary)
         }
 
         //copy word into node using strcpy
-        strcopy(newnode->word, wordtmp);
+        strcpy(newnode->word, wordtmp);
 
             //hash word to obtain a hash value
         //use hash function
@@ -71,8 +72,8 @@ bool load(const char *dictionary)
             //insert node into hash table at that location
         //recall that hash table is an array of linked lists
         //be sure to set pointers in the correct order
-        newnode->next = 
-        table[hashv]->next = newnode->next;
+        newnode->next = table[hashv]->next;
+        table[hashv]->next = newnode;
     }
 
 
