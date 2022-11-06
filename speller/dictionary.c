@@ -129,7 +129,6 @@ bool unload(void)
         }
         if (cursor == NULL && i == (N - 1))
         {
-            free(cursor);
             return true;
         }
     }
