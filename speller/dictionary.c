@@ -76,6 +76,7 @@ bool load(const char *dictionary)
         //remember to check if return value is NULL
         if (newnode == NULL)
         {
+            unload();
             return false;
         }
 
