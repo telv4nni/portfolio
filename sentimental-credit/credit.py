@@ -3,8 +3,8 @@ from cs50 import get_string
 
 def main():
     number = getnumber()
-    checksum = checksum(number)
-    validate(checksum)
+    check = checksum(number)
+    validate(check)
 
 
 
@@ -65,7 +65,11 @@ def checksum(creditnumber):
 
 
 def validate(checksum):
-    
+    if checksum == 1:
+        print("INVALID")
+    # else:
+
+
 
 
 
