@@ -31,6 +31,8 @@ def checkcard(creditnumber):
                     # Add odd number
                     sum += num // 10
                     sum += num % 10
+                else:
+                    sum += num
             else:
                 #add even number
                 sum += num
