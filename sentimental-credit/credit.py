@@ -11,7 +11,7 @@ def main():
 
 def getnumber():
     while True:
-        number = input("Number: ")
+        number = get_string("Number: ")
         if int(number):
             return number
 
@@ -59,9 +59,8 @@ def checksum(creditnumber):
             else:
                 # Add odd number
                 sum += num
-    print(sum)
+                
     sum = sum % 10
-    print(sum)
     if sum == 0:
         return 0
     else:
@@ -72,20 +71,21 @@ def validate(checksum, number):
     if checksum == 1:
         print("INVALID")
     else:
+        firstdigit = int(number[0])
+        seconddigit = int(number[1])
         # Check if AMEX card
-        if number[0] == 3:
-            if number[1] == 4 or number[1] == 7:
+        if firstdigit == 3:
+            if seconddigit == 4 or seconddigit == 7:
                 print("AMEX")
         # Check if Mastercard
-        elif number[0] == 5:
-            if number[1] is [1, 2, 3, 4, 5]:
+        elif firstdigit == 5:
+            if seconddigit is [1, 2, 3, 4, 5]:
                 print("MASTERCARD")
         # Check if VISA
-        elif int(number[0]) == 4:
+        elif firstdigit == 4:
             print("VISA")
         else:
             print("INVALID")
-    print(number[0])
 
 
 
