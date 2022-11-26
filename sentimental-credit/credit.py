@@ -62,7 +62,7 @@ def checksum(creditnumber):
     print(sum)
     sum = sum % 10
     print(sum)
-    if (sum % 10) == 0:
+    if sum == 0:
         return 0
     else:
         return 1
