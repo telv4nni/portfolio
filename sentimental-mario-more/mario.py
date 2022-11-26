@@ -4,13 +4,13 @@ def get_height():
     while True:
         height = get_int("What's pyramid height? ")
         if height > 0 and height <= 8:
-            break
+            return height
 
 def printpyramid():
-for i in range(height):
+    for i in range(height):
         print("#")
 
 def main():
     printpyramid()
-    
+
 main()
