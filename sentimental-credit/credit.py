@@ -14,18 +14,19 @@ def getnumber():
             return number
 
 
-def checkcard(number):
+def checkcard(creditnumber):
     check = sum = 0
-    cardlen = len(number)
+    cardlen = len(creditnumber)
 
     if cardlen % 2 == 0:
         for i in range(cardlen):
-            if digit * 2 > 10:
-                digit = int(number[i - 1]) * 2
-                sum += digit // 10
-                sum += digit % 10
+            num = int(creditnumber[i])
+            if (num * 2) > 10:
+                num = num * 2
+                sum += num // 10
+                sum += num % 10
             else:
-               sum = digit
+               sum += num
 
     print(sum)
 
