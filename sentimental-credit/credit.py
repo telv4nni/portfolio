@@ -72,6 +72,7 @@ def validate(checksum, number):
     if checksum == 1:
         print("INVALID")
     else:
+        # Check if right length
         if len(number) in [13, 15, 16]:
             firstdigit = int(number[0])
             seconddigit = int(number[1])
@@ -79,7 +80,7 @@ def validate(checksum, number):
             if firstdigit == 3 and seconddigit == 4 or seconddigit == 7:
                 print("AMEX")
             # Check if Mastercard
-            elif firstdigit == 5 and seconddigit is [1, 2, 3, 4, 5]:
+            elif firstdigit == 5 and seconddigit in [1, 2, 3, 4, 5]:
                 print("MASTERCARD")
             # Check if VISA
             elif firstdigit == 4:
