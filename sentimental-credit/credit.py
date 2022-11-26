@@ -69,7 +69,7 @@ def validate(checksum):
     if checksum == 1:
         print("INVALID")
     else:
-        re.search(r('43?...), number)
+        if number = re.match()
 
 
 
