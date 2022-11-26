@@ -81,7 +81,7 @@ def validate(checksum, number):
             if number[1] is [1, 2, 3, 4, 5]:
                 print("MASTERCARD")
         # Check if VISA
-        elif number[0] == 4:
+        elif int(number[0]) == 4:
             print("VISA")
         else:
             print("INVALID")
