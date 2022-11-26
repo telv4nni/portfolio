@@ -22,11 +22,12 @@ def checkcard(number):
         for i in range(cardlen):
             digit = int(number[i - 1]) * 2
             if digit > 10:
-                sum = digit[0] + digit[1]
+                sum += digit // 10
+                sum += digit % 10
             else:
                sum = digit
 
-    print(digit)
+    print(sum)
 
 
 
