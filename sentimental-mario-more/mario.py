@@ -14,14 +14,8 @@ def printpyramid(n):
         #draw a new row
         for j in range(row):
             #draw empty space
-            print(" ", end="")
-        #Draw left blocks
-        #count hashes
-        count = 1
-        for k in range(size - count):
-            print("#", end="")
-            count + 1
-        print()
+            print(" ", end="" * size)
+            print("#", end="" * size)
 
 
 def main():
