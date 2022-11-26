@@ -60,7 +60,7 @@ def checksum(creditnumber):
                 # Add odd number
                 sum += num
     print(sum)
-    if sum % 10 == 0:
+    if (sum % 10) == 0:
         return 0
     else:
         return 1
