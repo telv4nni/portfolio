@@ -8,16 +8,13 @@ def get_height():
 
 def printpyramid(n):
     size = n
-    row = size
-    #switch column
+    #left side
     for i in range(size):
-        #draw a new row
-        for j in range(row):
-            #draw empty space
-            print(" " * (row - i), end="")
-
+        print(" " * (size - i), end="")
         print("#" * i, end="")
-        print()
+    #right side
+        print(" ", end="")
+        print("#" * i)
 
 
 def main():
