@@ -37,7 +37,7 @@ def checkcard(creditnumber):
                 #add even number
                 sum += num
 
-
+    print(num)
     print(sum)
 
 
