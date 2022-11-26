@@ -9,14 +9,19 @@ def get_height():
 def printpyramid(n):
     size = n
     row = size
-    //switch column
+    #switch column
     for i in range(size):
-        //draw a new row
+        #draw a new row
         for j in range(row):
-            //draw empty space
-            print(" ")
-        //Draw left blocks
-        for k in range
+            #draw empty space
+            print(" ", end="")
+        #Draw left blocks
+        #count hashes
+        count = 1
+        for k in range(size - count):
+            print("#", end="")
+            count + 1
+        print()
 
 
 def main():
