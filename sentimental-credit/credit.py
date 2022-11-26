@@ -9,7 +9,7 @@ def main():
 
 def getnumber():
     while True:
-        number = get_string("Number: ")
+        number = input("Number: ")
         if int(number):
             return number
 
@@ -21,12 +21,12 @@ def checkcard(number):
     if cardlen % 2 == 0:
         for i in range(cardlen):
             digit = int(2 * number[i])
-            if digit > 10:
-                sum = digit[0] + digit[1]
-            else:
-                sum = digit
+            #if digit > 10:
+                #sum = digit[0] + digit[1]
+            #else:
+               #sum = digit
 
-    print(sum)
+    print(digit)
 
 
 
