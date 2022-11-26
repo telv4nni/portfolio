@@ -36,7 +36,7 @@ def checkcard(creditnumber):
                 else:
                     sum += num
             else:
-                #add even number
+                # add even number
                 sum += num
     else:
         # if number of digits is odd, start counting from second digit
