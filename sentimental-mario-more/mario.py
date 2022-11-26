@@ -11,8 +11,8 @@ def printpyramid(n):
         print(" ", end="")
     print("#", end="")
     print(" ", end="")
-    for i in range(n-1)
-    print()
+    for i in range(n-1):
+        print("#")
 
 def main():
     h = get_height()
