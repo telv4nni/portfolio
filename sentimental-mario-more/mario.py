@@ -14,8 +14,10 @@ def printpyramid(n):
         #draw a new row
         for j in range(row):
             #draw empty space
-            print(" ", end="" * size)
-            print("#", end="" * size)
+            print(" ", end="" * row)
+
+        print("#", end="" * i)
+        print()
 
 
 def main():
