@@ -80,6 +80,8 @@ def validate(checksum, number):
         # Check if VISA
         if number[0] == 4:
             print("VISA")
+        else:
+            print("INVALID")
 
 
 
