@@ -70,7 +70,7 @@ def validate(checksum):
         print("INVALID")
     else:
         # Check if AMEX card
-        match = re.match(r'py', number)
+        match = re.match(r'[3]['4, number)
 
 
 
