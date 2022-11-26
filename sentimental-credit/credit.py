@@ -18,7 +18,9 @@ def checkcard(creditnumber):
     check = sum = 0
     cardlen = len(creditnumber)
 
+    # Check if number of digits is even or odd
     if cardlen % 2 == 0:
+        # if number of digits is even start counting from first digit
         for i in range(cardlen):
             num = int(creditnumber[i])
             if i % 2 == 1:
@@ -30,8 +32,7 @@ def checkcard(creditnumber):
                     sum += num
             else:
                 sum += num
-    #else:
-        #for i in range(creditnumber[i]):
+        #if number of digits is odd start counting from second digit
 
 
     print(sum)
