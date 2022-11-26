@@ -6,8 +6,8 @@ def get_height():
         if height > 0 and height <= 8:
             return height
 
-def printpyramid():
-    for i in range(height):
+def printpyramid(n):
+    for i in range(n):
         print("#")
 
 def main():
