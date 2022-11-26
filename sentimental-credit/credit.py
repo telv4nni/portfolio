@@ -8,7 +8,6 @@ def main():
     validate(check, number)
 
 
-
 def getnumber():
     while True:
         number = input("Number: ")
@@ -89,8 +88,6 @@ def validate(checksum, number):
                 print("INVALID")
         else:
             print("INVALID")
-
-
 
 
 main()
