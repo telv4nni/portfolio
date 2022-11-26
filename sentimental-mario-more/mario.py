@@ -9,7 +9,7 @@ def get_height():
 def printpyramid(n):
     size = n
     #left side
-    for i in range(size):
+    for i in range(1, size):
         print(" " * (size - i), end="")
         print("#" * i, end="")
     #right side
