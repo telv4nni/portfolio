@@ -14,7 +14,9 @@ def getnumber():
             return number
 
 
-def checkcard(number):
+def checkcard(number / 2):
+    check = 0
     for i in range(number):
-        check = number(number - (i + 1))
+        check += 2 * (number(number - (i * 2 - 1)))
+
 
