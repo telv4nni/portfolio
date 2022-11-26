@@ -75,7 +75,7 @@ def validate(checksum):
                 print("AMEX")
         # Check if Mastercard
         if number[0] == 5:
-            if number[1] is in [1, 2, 3, 4, 5]:
+            if number[1] is [1, 2, 3, 4, 5]:
                 print("MASTERCARD")
         # Check if VISA
         if number[0] == 4:
