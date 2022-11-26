@@ -16,10 +16,7 @@ def getnumber():
 
 def checkcard(number):
     check = sum = 0
-    cardlen = len(number)
-
-    if cardlen != 13 and cardlen != 15 and cardlen != 16:
-        print("INVALID")
+    cardlen = len(str(number))
 
     if cardlen % 2 == 0:
         for i in range(cardlen):
@@ -28,6 +25,8 @@ def checkcard(number):
                 sum = digit[0] + digit[1]
             else:
                 sum = digit
+
+    print(sum)
 
 
 
