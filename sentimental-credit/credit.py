@@ -20,8 +20,8 @@ def checkcard(creditnumber):
 
     if cardlen % 2 == 0:
         for i in range(cardlen):
-            if i % 2 == 0:
-                num = int(creditnumber[i])
+            num = int(creditnumber[i])
+            if i % 2 == 1:
                 if (num * 2) > 10:
                     num = num * 2
                     sum += num // 10
