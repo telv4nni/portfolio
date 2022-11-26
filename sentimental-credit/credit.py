@@ -73,7 +73,7 @@ def validate(checksum, number):
         print("INVALID")
     else:
         length = len(number)
-        if length is [13, 15, 16]:
+        if length == 13 or length == 15 or length == 16:
             firstdigit = int(number[0])
             seconddigit = int(number[1])
             # Check if AMEX card
