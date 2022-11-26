@@ -1,3 +1,4 @@
+import re
 from cs50 import get_string
 
 
@@ -67,7 +68,8 @@ def checksum(creditnumber):
 def validate(checksum):
     if checksum == 1:
         print("INVALID")
-    # else:
+    else:
+        re.search
 
 
 
