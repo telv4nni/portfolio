@@ -75,17 +75,11 @@ def validate(checksum, number):
         firstdigit = int(number[0])
         seconddigit = int(number[1])
         # Check if AMEX card
-        if firstdigit == 3:
-            if seconddigit == 4 or seconddigit == 7:
-                print("AMEX")
-            else:
-                print("INVALID")
+        if firstdigit == 3 and seconddigit == 4 or seconddigit == 7:
+            print("AMEX")
         # Check if Mastercard
-        elif firstdigit == 5:
-            if seconddigit is [1, 2, 3, 4, 5]:
-                print("MASTERCARD")
-            else:
-                print("INVALID")
+        elif firstdigit == 5 and seconddigit is [1, 2, 3, 4, 5]:
+            print("MASTERCARD")
         # Check if VISA
         elif firstdigit == 4:
             print("VISA")
