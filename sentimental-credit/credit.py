@@ -77,14 +77,15 @@ def validate(checksum, number):
             if number[1] == 4 or number[1] == 7:
                 print("AMEX")
         # Check if Mastercard
-        if number[0] == 5:
+        elif number[0] == 5:
             if number[1] is [1, 2, 3, 4, 5]:
                 print("MASTERCARD")
         # Check if VISA
-        if number[0] == 4:
+        elif number[0] == 4:
             print("VISA")
         else:
             print("INVALID")
+    print(number[0])
 
 
 
