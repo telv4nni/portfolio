@@ -11,7 +11,7 @@ def main():
 
 def getnumber():
     while True:
-        number = get_string("Number: ")
+        number = input("Number: ")
         if int(number):
             return number
 
@@ -59,8 +59,9 @@ def checksum(creditnumber):
             else:
                 # Add odd number
                 sum += num
-                
+
     sum = sum % 10
+    print(sum)
     if sum == 0:
         return 0
     else:
@@ -86,7 +87,6 @@ def validate(checksum, number):
             print("VISA")
         else:
             print("INVALID")
-
 
 
 
