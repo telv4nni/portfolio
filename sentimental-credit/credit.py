@@ -16,7 +16,9 @@ def getnumber():
 
 def checkcard(number):
     even = odd = sum = 0
+    cardlen(len(number))
     
+
 
 main()
 
