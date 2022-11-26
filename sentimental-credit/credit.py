@@ -22,10 +22,10 @@ def checkcard(creditnumber):
     if cardlen % 2 == 0:
         # if number of digits is even start counting from first digit
         for i in range(cardlen):
-            # Multiply digit by 2
-            num = 2 * int(creditnumber[i])
             # Check if digit is odd
             if i % 2 == 0:
+                #multiply odd number by 2
+                num = 2 * int(creditnumber[i])
                 # Check if multiplied number is greater than 10
                 if num > 10:
                     # Add odd number
