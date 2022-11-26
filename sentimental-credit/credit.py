@@ -3,7 +3,8 @@ from cs50 import get_string
 
 def main():
     number = getnumber()
-    checkcard(number)
+    checksum = checksum(number)
+    validate(checksum)
 
 
 
@@ -14,7 +15,7 @@ def getnumber():
             return number
 
 
-def checkcard(creditnumber):
+def checksum(creditnumber):
     check = sum = 0
     cardlen = len(creditnumber)
 
@@ -57,10 +58,14 @@ def checkcard(creditnumber):
             else:
                 # Add odd number
                 sum += num
+    if sum % 10 == 0:
+        return 0
+    else:
+        return 1
 
-    print(num)
-    print(sum)
 
+def validate(checksum):
+    
 
 
 
