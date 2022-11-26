@@ -35,11 +35,14 @@ def checksum(creditnumber):
                 if num > 10:
                     sum += num // 10
                     sum += num % 10
+                    print(sum)
                 else:
                     sum += num
+                print(sum)
             else:
                 # add even number
                 sum += num
+                print(sum)
     else:
         # if number of digits is odd, start counting from second digit
         for i in range(cardlen):
