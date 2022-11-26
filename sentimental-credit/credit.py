@@ -20,7 +20,7 @@ def checkcard(number):
 
     if cardlen % 2 == 0:
         for i in range(cardlen):
-            digit = 2 * number[i]
+            digit = int(2 * number[i])
             if digit > 10:
                 sum = digit[0] + digit[1]
             else:
