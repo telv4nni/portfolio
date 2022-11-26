@@ -15,10 +15,8 @@ def getnumber():
 
 
 def checkcard(number):
-    check = 0
-    for i in number:
-        check += 2 * (number[i])
-    print(check)
+    even = odd = sum = 0
+    
 
 main()
 
