@@ -12,7 +12,7 @@ def getnumber():
         number = input("Number: ")
         if int(number):
             return number
-            
+
 
 def checkcard(creditnumber):
     check = sum = 0
@@ -56,7 +56,7 @@ def checkcard(creditnumber):
                     sum += num
             else:
                 # Add odd number
-                sum =+ num
+                sum += num
 
     print(num)
     print(sum)
