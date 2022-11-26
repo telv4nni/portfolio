@@ -11,6 +11,7 @@ def printpyramid(n):
         print("#")
 
 def main():
-    printpyramid(get_height())
+    h = get_height()
+    printpyramid(h)
 
 main()
