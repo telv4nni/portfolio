@@ -28,7 +28,8 @@ def checkcard(creditnumber):
             else:
                sum += num
     else:
-        
+        for i in range(creditnumber[i]):
+            
 
     print(sum)
 
