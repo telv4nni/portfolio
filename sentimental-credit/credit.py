@@ -22,6 +22,7 @@ def checkcard(creditnumber):
     if cardlen % 2 == 0:
         # if number of digits is even start counting from first digit
         for i in range(cardlen):
+            # Multiply first digit by 2
             num = int(creditnumber[i])
             if i % 2 == 1:
                 if (num * 2) > 10:
