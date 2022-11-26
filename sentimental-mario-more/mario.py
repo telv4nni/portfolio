@@ -9,12 +9,15 @@ def get_height():
 def printpyramid(n):
     size = n
     row = size
+    //switch column
     for i in range(size):
-        print(" ", end="")
-    print("#", end="")
-    print(" ", end="")
-    for i in range(n-1):
-        print("#")
+        //draw a new row
+        for j in range(row):
+            //draw empty space
+            print(" ")
+        //Draw left blocks
+        for k in range
+
 
 def main():
     h = get_height()
