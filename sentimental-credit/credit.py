@@ -27,6 +27,8 @@ def checkcard(creditnumber):
                 sum += num % 10
             else:
                sum += num
+    else:
+        
 
     print(sum)
 
