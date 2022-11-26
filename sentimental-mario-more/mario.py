@@ -10,6 +10,8 @@ def printpyramid(n):
     for i in range(n-1):
         print(" ", end="")
     print("#", end="")
+    print(" ", end="")
+    for i in range(n-1)
     print()
 
 def main():
