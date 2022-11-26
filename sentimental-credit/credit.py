@@ -3,7 +3,7 @@ from cs50 import get_int
 
 def main():
     number = getnumber()
-    checkcard()
+    checkcard(number)
 
 
 
@@ -17,4 +17,4 @@ def getnumber():
 def checkcard(number):
     for i in range(number):
         check = number(number - (i + 1))
-        
+
