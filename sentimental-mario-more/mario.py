@@ -13,7 +13,7 @@ def printpyramid(n):
         print(" " * (size - (i + 1)), end="")
         print("#" * (i + 1), end="")
     #right side
-        print(" ", end="")
+        print("  ", end="")
         print("#" * (i + 1))
 
 
