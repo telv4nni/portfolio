@@ -1,4 +1,4 @@
-from cs50 import get_int
+from cs50 import get_string
 
 
 def main():
@@ -9,14 +9,14 @@ def main():
 
 def getnumber():
     while True:
-        number = get_int("Number: ")
+        number = get_string("Number: ")
         if int(number):
             return number
 
 
 def checkcard(number):
     check = sum = 0
-    cardlen = len(str(number))
+    cardlen = len(number)
 
     if cardlen % 2 == 0:
         for i in range(cardlen):
