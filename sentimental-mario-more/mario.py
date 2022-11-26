@@ -1,9 +1,9 @@
-fron cs50 import get_int
+from cs50 import get_int
 
-while TRUE
-    height = get_int("What's pyramid height?")
-    if n > 0 or n <= 8:
+while True:
+    height = get_int("What's pyramid height? ")
+    if height > 0 or height <= 8:
         break
 
 for i in range(height):
-    print("#")
+        print("#")
