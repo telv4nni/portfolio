@@ -8,7 +8,9 @@ def get_height():
 
 def printpyramid(n):
     for i in range(n):
-        print("#")
+        print("#", end="")
+
+    print()
 
 def main():
     h = get_height()
