@@ -15,4 +15,5 @@ def getnumber():
 
 
 def checkcard(number):
-    
+    for i in range(number):
+        
