@@ -70,7 +70,16 @@ def validate(checksum):
         print("INVALID")
     else:
         # Check if AMEX card
-        match = re.match(r'[3]['4, number)
+        if number[0] == 3:
+            if number[1] == 4 or number[1] == 7:
+                print("AMEX")
+        # Check if Mastercard
+        if number[0] == 5:
+            if number[1] is in [1, 2, 3, 4, 5]:
+                print("MASTERCARD")
+        # Check if VISA
+        if number[0] == 4:
+            print("VISA")
 
 
 
