@@ -18,6 +18,12 @@ def checkcard(number):
     even = odd = sum = 0
     cardlen = len(number)
 
+    if cardlen != 13 and cardlen != 15 and cardlen != 16:
+        print("INVALID")
+
+    if cardlen % 2 == 0:
+        
+
 
 
 main()
