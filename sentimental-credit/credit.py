@@ -5,7 +5,7 @@ from cs50 import get_string
 def main():
     number = getnumber()
     check = checksum(number)
-    validate(check)
+    validate(check, number)
 
 
 
@@ -65,7 +65,7 @@ def checksum(creditnumber):
         return 1
 
 
-def validate(checksum):
+def validate(checksum, number):
     if checksum == 1:
         print("INVALID")
     else:
