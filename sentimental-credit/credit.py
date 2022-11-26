@@ -44,7 +44,7 @@ def checkcard(creditnumber):
             # Check if digit is even
             # Assign digit to check number
             num = int(creditnumber[i])
-            if i % 2 == 1:
+            if i % 2 != 0:
                 # Multiply even number by 2
                 num = 2 * num
                 # Check if multiplied number is greater than 10
