@@ -82,7 +82,7 @@ WHERE day = '28'
 AND month = '7'
 AND year = '2021'
 AND hour = '10'
-AND minute BETWEEN 5 AND 25
+AND minute BETWEEN 15 AND 25
 AND activity = 'exit'))
 OR year = '2021'
 AND month = '7'
@@ -130,7 +130,7 @@ WHERE day = '28'
 AND month = '7'
 AND year = '2021'
 AND hour = '10'
-AND minute BETWEEN 5 AND 25
+AND minute BETWEEN 15 AND 25
 AND activity = 'exit'));
 
 --Check Airports
