@@ -30,7 +30,7 @@ WHERE people.license_plate IN
         AND minute BETWEEN '0' AND '30');
 
 -- Let's check their phone calls
-SELECT DISTINCT(name), phone_number, passport_number
+SELECT caller, receiver, 
 FROM people
     JOIN bakery_security_logs
     ON bakery_security_logs.license_plate = people.license_plate
