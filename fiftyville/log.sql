@@ -180,3 +180,5 @@ SELECT name FROM people
     AND airports.abbreviation = 'CSF'));
 
     --Compare last matches with phone calls
+    SELECT name FROM people
+    WHERE 
