@@ -5,6 +5,7 @@ WHERE day = '28'
 AND month = '7'
 AND year = '2021'
 AND street LIKE 'Humphrey%';
+
 --THEFT TOOK PLACE at 10:15am, witnesses mentions bakery
 --Check security cameras at bakery
 SELECT activity, license_plate, hour, minute
@@ -13,6 +14,7 @@ WHERE day = '28'
 AND month = '7'
 AND year = '2021'
 AND hour = '10';
+
 --I should check people from license plates
 SELECT DISTINCT(name), phone_number, passport_number
 FROM people
@@ -26,4 +28,5 @@ WHERE people.license_plate IN
         AND year = '2021'
         AND hour = '10'
         AND minute BETWEEN '0' AND '30');
-    
+
+-- Let's check their phone calls
