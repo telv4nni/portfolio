@@ -70,7 +70,7 @@ WHERE caller IN
 (SELECT people.name FROM people
 JOIN bakery_security_logs ON people.license_plate = bakery_security_logs.license_plate
 WHERE people.license_plate IN
-(SELECT license_plate, hour, minute
+(SELECT license_plate
 FROM bakery_security_logs
 WHERE day = '28'
 AND month = '7'
