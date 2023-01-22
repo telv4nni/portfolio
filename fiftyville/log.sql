@@ -30,3 +30,15 @@ WHERE people.license_plate IN
         AND minute BETWEEN '0' AND '30');
 
 -- Let's check their phone calls
+SELECT DISTINCT(name), phone_number, passport_number
+FROM people
+    JOIN bakery_security_logs
+    ON bakery_security_logs.license_plate = people.license_plate
+WHERE people.license_plate IN
+    (SELECT license_plate
+    FROM bakery_security_logs
+    WHERE day = '28'
+        AND month = '7'
+        AND year = '2021'
+        AND hour = '10'
+        AND minute BETWEEN '0' AND '30');
