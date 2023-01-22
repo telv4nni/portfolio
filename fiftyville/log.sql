@@ -220,7 +220,7 @@ WHERE day = '28'
 AND month = '7'
 AND year = '2021'
 AND hour = '10'
-AND minute BETWEEN 5 AND 25
+AND minute BETWEEN 15 AND 25
 AND activity = 'exit')));
 
---Ok we have 3 Suspects Now - Bruce and Luca
+--Ok we have 2 Suspects Now - Bruce and Luca
