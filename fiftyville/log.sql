@@ -6,10 +6,10 @@ AND month = '7'
 AND year = '2021'
 AND street LIKE 'Humphrey%';
 --THEFT TOOK PLACE at 10:15am, witnesses mentions bakery
+--Check security cameras at bakery
 SELECT activity, license_plate
 FROM bakery_security_logs
 WHERE day = '28'
 AND month = '7'
 AND year = '2021'
-AND hour = '10'
-AND minute = '15';
+AND hour = '10';
