@@ -132,3 +132,9 @@ AND year = '2021'
 AND hour = '10'
 AND minute BETWEEN 5 AND 25
 AND activity = 'exit'));
+
+--Check flights tommorrow
+SELECT destination_airport_id FROM flights
+WHERE year = 2021
+AND month = 7
+AND day = 29
