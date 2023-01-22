@@ -180,5 +180,44 @@ SELECT name FROM people
     AND airports.abbreviation = 'CSF'));
 
     --Compare last matches with phone calls
-    SELECT name FROM people
-    WHERE 
+    SELECT name FROM atm_transactions
+JOIN bank_accounts ON atm_transactions.account_number = bank_accounts.account_number
+JOIN people ON bank_accounts.person_id = people.id
+WHERE year = 2021
+AND month = 7
+AND day = 28
+AND atm_location LIKE '%Leggett%'
+AND transaction_type = 'withdraw'
+AND name IN
+(
+SELECT name FROM people
+    JOIN passengers ON passengers.passport_number = people.passport_number
+    JOIN flights ON flights.id = passengers.flight_id
+    WHERE flights.id IN
+    (SELECT flights.id FROM flights
+    JOIN airports ON airports.id = flights.origin_airport_id
+    WHERE year = 2021
+    AND month = 7
+    AND day = 29
+    AND airports.abbreviation = 'CSF'))
+AND name IN(
+SELECT name, amount FROM atm_transactions
+JOIN bank_accounts ON atm_transactions.account_number = bank_accounts.account_number
+JOIN people ON bank_accounts.person_id = people.id
+WHERE year = 2021
+AND month = 7
+AND day = 28
+AND atm_location LIKE '%Leggett%'
+AND transaction_type = 'withdraw';
+AND people.name IN
+(SELECT DISTINCT(name) FROM people
+JOIN bakery_security_logs ON people.license_plate = bakery_security_logs.license_plate
+WHERE people.license_plate IN
+(SELECT license_plate
+FROM bakery_security_logs
+WHERE day = '28'
+AND month = '7'
+AND year = '2021'
+AND hour = '10'
+AND minute BETWEEN 5 AND 25
+AND activity = 'exit')));
