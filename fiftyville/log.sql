@@ -89,4 +89,5 @@ AND month = '7'
 AND year = '2021'
 AND hour = '10'
 AND minute BETWEEN 5 AND 25
-AND activity = 'exit'));
+AND activity = 'exit'))
+AND ;
