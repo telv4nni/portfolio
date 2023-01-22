@@ -102,3 +102,8 @@ AND minute BETWEEN 5 AND 25
 AND activity = 'exit'));
 
 --And check who withdrew the money at ATM
+SELECT bank.accounts.person_id, account_number, atm_location, transaction_type, amount FROM atm_transactions
+JOIN people ON atm_transactions.account_number = bank_accounts.account_number
+WHERE year = 2021
+AND month = 7
+AND day = 28;
