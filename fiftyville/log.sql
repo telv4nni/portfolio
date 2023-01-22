@@ -135,6 +135,7 @@ AND activity = 'exit'));
 
 --Check flights tommorrow
 SELECT destination_airport_id FROM flights
+JOIN airports ON airports.id = flights.origin_airport_id
 WHERE year = 2021
 AND month = 7
 AND day = 29
