@@ -29,8 +29,11 @@ WHERE people.license_plate IN
         AND hour = '10'
         AND minute BETWEEN '0' AND '30');
 
--- Let's check their phone calls
-SELECT caller, receiver, 
+-- Let's do some interviews
+SELECT name, transcript, year
+FROM interviews
+WHERE name IN
+(SELECT DISTINCT(name)
 FROM people
     JOIN bakery_security_logs
     ON bakery_security_logs.license_plate = people.license_plate
@@ -41,4 +44,4 @@ WHERE people.license_plate IN
         AND month = '7'
         AND year = '2021'
         AND hour = '10'
-        AND minute BETWEEN '0' AND '30');
+        AND minute BETWEEN '0' AND '30'));
