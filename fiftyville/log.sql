@@ -178,3 +178,5 @@ SELECT name FROM people
     AND month = 7
     AND day = 29
     AND airports.abbreviation = 'CSF'));
+
+    --Compare last matches with phone calls
