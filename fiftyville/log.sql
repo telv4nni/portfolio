@@ -30,7 +30,7 @@ WHERE people.license_plate IN
         AND minute BETWEEN '0' AND '30');
 
 -- Let's do some interviews
-SELECT name, transcript, year
+SELECT name, transcript, day, month, year
 FROM interviews
 WHERE name IN
 (SELECT DISTINCT(name)
