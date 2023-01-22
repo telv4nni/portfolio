@@ -27,7 +27,7 @@ WHERE people.license_plate IN
         AND month = '7'
         AND year = '2021'
         AND hour = '10'
-        AND minute BETWEEN '0' AND '30');
+        AND minute BETWEEN '10' AND '20');
 
 -- Let's do some interviews
 SELECT name, transcript, day, month, year
@@ -44,7 +44,7 @@ WHERE people.license_plate IN
         AND month = '7'
         AND year = '2021'
         AND hour = '10'
-        AND minute BETWEEN '0' AND '30'));
+        AND minute BETWEEN '10' AND '20'));
 
 -- nothing :(
--- 
+--
