@@ -200,7 +200,7 @@ SELECT name FROM people
     WHERE year = 2021
     AND month = 7
     AND day = 29
-    AND airports.abbreviation = 'CSF'))
+    AND airports.abbreviation = 'CSF' ORDER BY hour LIMIT 1))
 AND name IN(
 SELECT name FROM atm_transactions
 JOIN bank_accounts ON atm_transactions.account_number = bank_accounts.account_number
@@ -223,4 +223,4 @@ AND hour = '10'
 AND minute BETWEEN 5 AND 25
 AND activity = 'exit')));
 
---Ok we have 3 Suspects Now - Bruce, Diana and Luca
+--Ok we have 3 Suspects Now - Bruce and Luca
