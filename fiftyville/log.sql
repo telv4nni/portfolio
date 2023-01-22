@@ -221,3 +221,5 @@ AND year = '2021'
 AND hour = '10'
 AND minute BETWEEN 5 AND 25
 AND activity = 'exit')));
+
+--Ok we have 3 Suspects Now - Bruce, Diana and Luca
