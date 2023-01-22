@@ -110,3 +110,5 @@ AND month = 7
 AND day = 28
 AND atm_location LIKE '%Leggett%'
 AND transaction_type = 'withdraw';
+
+--Maybe compare people from phone calls to ATM users
