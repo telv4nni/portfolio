@@ -52,3 +52,16 @@ WHERE year = 2021
 AND month = 7
 AND day = 28
 AND transcript LIKE "%bakery%";
+
+--Thief was withdrawing money and left bakery in about 10 minute time frame. He was talking through the phone for less than a minute
+--Let's check cameras again
+SELECT license_plate, hour, minute
+FROM bakery_security_logs
+WHERE day = '28'
+AND month = '7'
+AND year = '2021'
+AND hour = '10'
+AND minute BETWEEN 5 AND 25
+AND activity = 'exit';
+
+--Great now let's check the phone calls
