@@ -43,8 +43,7 @@ WHERE people.license_plate IN
     WHERE day = '28'
         AND month = '7'
         AND year = '2021'
-        AND hour = '10'
-        AND minute BETWEEN '10' AND '20'));
+        AND hour = '10'));
 
 -- nothing :(
 --
