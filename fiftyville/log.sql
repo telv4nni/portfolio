@@ -66,7 +66,11 @@ AND activity = 'exit';
 
 --Great now let's check the phone calls
 SELECT caller, receiver, duration FROM phone_calls
-WHERE caller IN
+WHERE year = 2021
+AND month = 7
+AND day = 28
+AND duration < 60
+AND caller IN
 (SELECT DISTINCT(phone_number) FROM people
 JOIN bakery_security_logs ON people.license_plate = bakery_security_logs.license_plate
 WHERE people.license_plate IN
@@ -89,8 +93,4 @@ AND month = '7'
 AND year = '2021'
 AND hour = '10'
 AND minute BETWEEN 5 AND 25
-AND activity = 'exit'))
-AND year = 2021
-AND month = 7
-AND day = 28
-AND duration = 60;
+AND activity = 'exit'));
