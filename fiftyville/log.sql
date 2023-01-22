@@ -231,6 +231,7 @@ SELECT name, phone_number FROM people
 WHERE name = 'Luca'
 OR name = 'Bruce';
 
+--Compare the numbers to phone calls
 SELECT name FROM people
 WHERE phone_number IN
 (SELECT caller FROM phone_calls
@@ -238,9 +239,28 @@ WHERE year = 2021
 AND day = 28
 AND month = 7
 AND duration < 60)
+AND name in
+(SELECT name FROM people
+WHERE name = 'Luca'
+OR name = 'Bruce')
 OR phone_number IN
 (SELECT caller FROM phone_calls
 WHERE year = 2021
 AND day = 28
 AND month = 7
-AND duration < 60);
+AND duration < 60)
+AND name IN
+(SELECT name FROM people
+WHERE name = 'Luca'
+OR name = 'Bruce');
+
+-- BRUCE IS THE THIEF
+-- NOW LET'S CHECK WHERE HE IS GOING AND WHO IS HELPING HIM
+SELECT city FROM airports
+JOIN flights ON flights.destination_airport_id = airports.id
+JOIN passengers ON passengers.flight_id = flights.id
+JOIN people ON people. passport_number = passengers.passport_number
+WHERE name = 'Bruce';
+
+-- New York City then, now unveil his companion
+
