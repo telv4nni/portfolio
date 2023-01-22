@@ -67,7 +67,7 @@ AND activity = 'exit';
 --Great now let's check the phone calls
 SELECT caller FROM phone_calls
 WHERE caller IN
-(SELECT name FROM people
+(SELECT people.name FROM people
 JOIN bakery_security_logs ON people.license_plate = bakery_security_logs.license_plate
 WHERE people.license_plate IN
 (SELECT license_plate, hour, minute
