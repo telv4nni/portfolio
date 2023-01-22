@@ -226,36 +226,21 @@ AND activity = 'exit')));
 --Ok we have 2 Suspects Now - Bruce and Luca
 
 --Now lets get the phone calls
-SELECT caller, receiver, duration, day, year FROM phone_calls
-WHERE year = '2021'
-AND month = '7'
-AND day = '28'
-AND duration < '60'
-AND caller IN
-(SELECT DISTINCT(phone_number) FROM people
-JOIN bakery_security_logs ON people.license_plate = bakery_security_logs.license_plate
-WHERE people.license_plate IN
-(SELECT license_plate
-FROM bakery_security_logs
-WHERE day = '28'
-AND month = '7'
-AND year = '2021'
-AND hour = '10'
-AND minute BETWEEN 15 AND 25
-AND activity = 'exit'))
-OR year = '2021'
-AND month = '7'
-AND day = '28'
-AND duration < '60'
-AND receiver IN
-(SELECT DISTINCT(phone_number) FROM people
-JOIN bakery_security_logs ON people.license_plate = bakery_security_logs.license_plate
-WHERE people.license_plate IN
-(SELECT license_plate
-FROM bakery_security_logs
-WHERE day = '28'
-AND month = '7'
-AND year = '2021'
-AND hour = '10'
-AND minute BETWEEN 5 AND 25
-AND activity = 'exit'));
+--Check Luca's and Bruce phone number
+SELECT name, phone_number FROM people
+WHERE name = 'Luca'
+OR name = 'Bruce';
+
+SELECT name FROM people
+WHERE phone_number IN
+(SELECT caller FROM phone_calls
+WHERE year = 2021
+AND day = 28
+AND month = 7
+AND duration < 60)
+OR phone_number IN
+(SELECT caller FROM phone_calls
+WHERE year = 2021
+AND day = 28
+AND month = 7
+AND duration < 60);
