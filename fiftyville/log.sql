@@ -263,4 +263,16 @@ JOIN people ON people. passport_number = passengers.passport_number
 WHERE name = 'Bruce';
 
 -- New York City then, now unveil his companion
-
+SELECT name FROM people
+WHERE phone_number IN
+(SELECT receiver FROM phone_calls
+WHERE year = 2021
+AND day = 28
+AND month = 7
+AND duration < 60
+AND caller IN
+(
+    SELECT phone_number FROM people
+    WHERE name = 'Bruce'
+));
+--His Accomplice is Robin, now we know EVERYTHING
