@@ -201,14 +201,14 @@ SELECT name FROM people
     AND day = 29
     AND airports.abbreviation = 'CSF'))
 AND name IN(
-SELECT name, amount FROM atm_transactions
+SELECT name FROM atm_transactions
 JOIN bank_accounts ON atm_transactions.account_number = bank_accounts.account_number
 JOIN people ON bank_accounts.person_id = people.id
 WHERE year = 2021
 AND month = 7
 AND day = 28
 AND atm_location LIKE '%Leggett%'
-AND transaction_type = 'withdraw';
+AND transaction_type = 'withdraw'
 AND people.name IN
 (SELECT DISTINCT(name) FROM people
 JOIN bakery_security_logs ON people.license_plate = bakery_security_logs.license_plate
