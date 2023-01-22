@@ -93,4 +93,4 @@ AND activity = 'exit'))
 AND year = 2021
 AND month = 7
 AND day = 28
-AND duration <= 60;
+AND duration = 60;
