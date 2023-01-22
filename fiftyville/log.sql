@@ -178,7 +178,7 @@ SELECT name FROM people
     WHERE year = 2021
     AND month = 7
     AND day = 29
-    AND airports.abbreviation = 'CSF'));
+    AND airports.abbreviation = 'CSF' ORDER BY hour LIMIT 1));
 
     --Compare last matches with phone calls
     SELECT name FROM atm_transactions
