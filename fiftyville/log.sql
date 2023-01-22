@@ -18,7 +18,7 @@ SELECT *
 FROM people
     JOIN bakery_security_logs
     ON bakery_security_logs.license_plate = people.license_plate
-WHERE
+WHERE license_plate IN
     (SELECT license_plate
     FROM bakery_security_logs
     WHERE day = '28'
