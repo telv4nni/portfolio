@@ -53,7 +53,9 @@ AND month = 7
 AND day = 28
 AND transcript LIKE "%bakery%";
 
---Thief was withdrawing money and left bakery in about 10 minute time frame. He was talking through the phone for less than a minute
+--Thief was withdrawing money and left bakery in about 10 minute time frame. He was talking through the phone for less than a minute. He's taking a flight
+--out of Fiftyville tommorow. The person talking thru the phone is buying him ticket.
+--The Thief was withdrawing the money at ATM on Leggett Street.
 --Let's check cameras again
 SELECT license_plate, hour, minute
 FROM bakery_security_logs
