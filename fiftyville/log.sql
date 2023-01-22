@@ -14,7 +14,7 @@ AND month = '7'
 AND year = '2021'
 AND hour = '10';
 --I should check people from license plates
-SELECT *
+SELECT (DISTINCTname, phone_number, passport_number
 FROM people
     JOIN bakery_security_logs
     ON bakery_security_logs.license_plate = people.license_plate
