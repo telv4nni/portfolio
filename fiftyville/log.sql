@@ -156,3 +156,25 @@ SELECT name FROM people
     AND month = 7
     AND day = 29
     AND airports.abbreviation = 'CSF');
+
+-- Compare passengers with ATM
+SELECT name FROM atm_transactions
+JOIN bank_accounts ON atm_transactions.account_number = bank_accounts.account_number
+JOIN people ON bank_accounts.person_id = people.id
+WHERE year = 2021
+AND month = 7
+AND day = 28
+AND atm_location LIKE '%Leggett%'
+AND transaction_type = 'withdraw'
+AND name IN
+(
+SELECT name FROM people
+    JOIN passengers ON passengers.passport_number = people.passport_number
+    JOIN flights ON flights.id = passengers.flight_id
+    WHERE flights.id IN
+    (SELECT flights.id FROM flights
+    JOIN airports ON airports.id = flights.origin_airport_id
+    WHERE year = 2021
+    AND month = 7
+    AND day = 29
+    AND airports.abbreviation = 'CSF'));
