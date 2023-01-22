@@ -26,3 +26,4 @@ WHERE people.license_plate IN
         AND year = '2021'
         AND hour = '10'
         AND minute BETWEEN '0' AND '30');
+    
