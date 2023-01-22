@@ -7,7 +7,7 @@ AND year = '2021'
 AND street LIKE 'Humphrey%';
 --THEFT TOOK PLACE at 10:15am, witnesses mentions bakery
 --Check security cameras at bakery
-SELECT activity, license_plate
+SELECT activity, license_plate, hour, minute
 FROM bakery_security_logs
 WHERE day = '28'
 AND month = '7'
