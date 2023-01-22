@@ -94,3 +94,6 @@ AND year = '2021'
 AND hour = '10'
 AND minute BETWEEN 5 AND 25
 AND activity = 'exit'));
+
+SELECT caller, receiver FROM phone_calls
+    JOIN people.phone_number = 
