@@ -120,3 +120,14 @@ AND month = 7
 AND day = 28
 AND atm_location LIKE '%Leggett%'
 AND transaction_type = 'withdraw';
+SELECT DISTINCT(phone_number) FROM people
+JOIN bakery_security_logs ON people.license_plate = bakery_security_logs.license_plate
+WHERE people.license_plate IN
+(SELECT license_plate
+FROM bakery_security_logs
+WHERE day = '28'
+AND month = '7'
+AND year = '2021'
+AND hour = '10'
+AND minute BETWEEN 5 AND 25
+AND activity = 'exit')
