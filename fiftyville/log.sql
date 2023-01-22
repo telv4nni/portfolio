@@ -65,7 +65,7 @@ AND minute BETWEEN 5 AND 25
 AND activity = 'exit';
 
 --Great now let's check the phone calls
-SELECT caller, receiver, duration FROM phone_calls
+SELECT caller, receiver, duration, day, year FROM phone_calls
 WHERE year = 2021
 AND month = 7
 AND day = 28
