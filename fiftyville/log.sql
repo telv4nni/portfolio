@@ -100,3 +100,5 @@ AND year = '2021'
 AND hour = '10'
 AND minute BETWEEN 5 AND 25
 AND activity = 'exit'));
+
+--And check who withdrew the money at ATM
