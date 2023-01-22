@@ -143,7 +143,8 @@ JOIN airports ON airports.id = flights.origin_airport_id
 WHERE year = 2021
 AND month = 7
 AND day = 29
-AND airports.abbreviation = 'CSF';
+AND airports.abbreviation = 'CSF'
+ORDER BY hour LIMIT 1;
 
 -- Check passengers
 SELECT name FROM people
@@ -155,7 +156,7 @@ SELECT name FROM people
     WHERE year = 2021
     AND month = 7
     AND day = 29
-    AND airports.abbreviation = 'CSF');
+    AND airports.abbreviation = 'CSF' ORDER BY hour LIMIT 1);
 
 -- Compare passengers with ATM
 SELECT name FROM atm_transactions
