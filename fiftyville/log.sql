@@ -138,9 +138,21 @@ SELECT * FROM airports;
 
 --Fiftyville is CSF
 --Check flights tommorrow
-SELECT destination_airport_id FROM flights
+SELECT destination_airport_id, flights.id FROM flights
 JOIN airports ON airports.id = flights.origin_airport_id
 WHERE year = 2021
 AND month = 7
 AND day = 29
 AND airports.abbreviation = 'CSF';
+
+-- Check passengers
+SELECT name FROM people
+    JOIN passengers ON passengers.passport_number = people.passport_number
+    JOIN flights ON flights.id = passengers.flight_id
+    WHERE flights.id IN
+    (SELECT flights.id FROM flights
+    JOIN airports ON airports.id = flights.origin_airport_id
+    WHERE year = 2021
+    AND month = 7
+    AND day = 29
+    AND airports.abbreviation = 'CSF');
