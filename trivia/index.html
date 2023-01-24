@@ -14,25 +14,28 @@
                     correctanswer.addEventListener('click', function() {
                         correctanswer.style.backgroundColor = 'green';
                         message.innerHTML = "Correct!";
-                    });
+                    })
                     for (let i = 0; i < wronganswers.length; i++)
                     {
                         wronganswers[i].addEventListener('click', function() {
                             wronganswers[i].style.backgroundColor = 'red';
                             message.innerHTML = "Incorrect";
-                        });
+                        })
                     }
                     document.querySelector("#answer").addEventListener('click', function() {
                         let input = document.querySelector("#input");
+                        let message = document.querySelector("#message2");
                         if (input.value == "Sanguine")
                         {
                             input.style.backgroundColor = "green";
+                            message.innerHTML = "Correct!";
                         }
                         else
                         {
                             input.style.BackgroundColor = "red";
+                            message.innerHTML = "Incorrect";
                         }
-                    });
+                    })
                 });
         </script>
     </head>
