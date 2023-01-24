@@ -22,8 +22,8 @@
                             message.innerHTML = "Incorrect";
                         });
                     }
-                    document.querySelector("#message2").addEventListener('click' function() {
-                        let input = document.querySelector("#answer");
+                    document.querySelector("#answer").addEventListener('click', function() {
+                        let input = document.querySelector("#input");
                         if (input.value == "Sanguine")
                         {
                             input.style.Color = "green";
@@ -59,7 +59,7 @@
                 <hr>
                 <!-- TODO: Add free response question here -->
                 <h3>What is the color of the night, brother?</h3>
-                <input type="text">
+                <input type="text" id="input">
                 <button id="answer">Check Answer</button>
                 <p id="message2"></p>
             </div>
