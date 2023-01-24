@@ -23,7 +23,15 @@
                         });
                     }
                     document.querySelector("#message2").addEventListener('click' function() {
-
+                        let input = document.querySelector("input");
+                        if (input == "Sanguine")
+                        {
+                            input.style.backgroundColor = "green";
+                        }
+                        else
+                        {
+                            input.style.color = "red";
+                        }
                     });
                 });
         </script>
