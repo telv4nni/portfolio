@@ -159,7 +159,7 @@ SELECT name FROM people
     AND airports.abbreviation = 'CSF' ORDER BY hour LIMIT 1);
 
 -- Compare passengers with ATM
-SELECT name FROM atm_transactions 
+SELECT name FROM atm_transactions
 AND month = 7
 AND day = 28
 AND atm_location LIKE '%Leggett%'
@@ -256,7 +256,7 @@ OR name = 'Bruce');
 SELECT city FROM airports
 JOIN flights ON flights.destination_airport_id = airports.id
 JOIN passengers ON passengers.flight_id = flights.id
-JOIN people ON people. passport_number = passengers.passport_number
+JOIN people ON people.passport_number = passengers.passport_number
 WHERE name = 'Bruce';
 
 -- New York City then, now unveil his companion
