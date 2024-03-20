@@ -25,7 +25,7 @@
                     document.querySelector("#answer").addEventListener('click', function() {
                         let input = document.querySelector("#input");
                         let message = document.querySelector("#message2");
-                        if (input.value == "Sanguine")
+                        if (input.value.toLowerCase() == "sanguine")
                         {
                             input.style.backgroundColor = "green";
                             message.innerHTML = "Correct!";
