@@ -11,3 +11,16 @@ HTML tags:
 10. <ol>
 11. <li>
 12. <iframe>
+
+CSS properties used:
+1.font-size
+2.text-align
+3.color
+4.background
+5.margin-left
+6.font-style
+7.margin-top
+8.border
+9.width
+
+
