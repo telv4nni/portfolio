@@ -22,7 +22,7 @@ body {
 
 /* Side navigation links */
 .sidenav a {
-  color: white;
+  color: blue;
   padding: 16px;
   text-decoration: none;
   display: block;
@@ -30,7 +30,7 @@ body {
 
 /* Change color on hover */
 .sidenav a:hover {
-  background-color: #ddd;
+  background-color: blue;
   color: black;
 }
 
