@@ -1,0 +1,12 @@
+HTML tags:
+1. <main>
+2. <header>
+3. <h2>
+4. <th>
+5. <div>
+6. <a>
+7. <table>
+8. <tr>
+9. <td>
+10. <ol>
+11. <li>
