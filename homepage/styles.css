@@ -58,3 +58,7 @@ q {
 h2 {
   margin-top: 8px;
 }
+
+table {
+  border: 2px solid;
+}
