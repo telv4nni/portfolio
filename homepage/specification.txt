@@ -23,4 +23,6 @@ CSS properties used:
 8.border
 9.width
 
+Added carousel slide in city.html with bootstrap.
+
 
