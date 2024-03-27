@@ -25,4 +25,12 @@ CSS properties used:
 
 Added carousel slide in city.html with bootstrap.
 
+        <img src="img/city/pkin.jpg" alt="Pałac Kultury i Nauki" width="600" height="400"
+            title="This building is named Pałac Kultury i Nauki which translates roughly into Mansion of Culture and Science. It's most iconic building and sign of Warsaw. It was built by Soviets in 1952 in style of art deco. Right now it's used as central cultural place of Warsaw and seat of administration.">
+        <img src="img/city/zamek.jpg" alt="Zamek Królewski" width="600" height="400" class="img-fluid"
+            title="This is Royal Castle of Warsaw. It was built in XIII century and was many times expanded since this time. It was fully destroyed during II World War and rebuilt after that. Same fate happened to many building in the old town in which it's located. In fact Warsaw was destroyed in 80% after the war and there are no original structures here :("></td>
 
+        <img src="img/city/stadion2.jpg" alt="Stadion Narodowy" width="600" height="400" class="img-fluid"
+            title="Warsaw National Stadium was finished in 2012. It is biggest and most well equiped stadium in Poland. We do love football here and we are really on our toes when watching EURO championships. There are many concerts held there as it can accomodate more than 70 000 people.">
+        <img src="img/city/lazienki.jpg" alt="Łazienki Królewskie" width="600" height="400" class="img-fluid"
+            title="Łazienki Królewskie or Royal Baths is complex of Mansions and Parks. It's located in vivid landscape and offers beautiful place to walk in, sit and relax. Warsaw is the greenest of the large cities in Poland and there are many more places for recreation. This one is most iconic of them. Used to be hunting ground for royalty.">
