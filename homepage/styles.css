@@ -43,9 +43,8 @@ body {
 
 /* !!!!These below are of my creation !!!!*/
 header {
-    font-size: 300%;
+    font-size: 250%;
     text-align: center;
-
     color: blue;
     background: rgb(17,17,17);
     background: linear-gradient(90deg, rgba(17,17,17,1) 0%, rgba(195,195,195,1) 100%, rgba(0,212,255,1) 100%);
