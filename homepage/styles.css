@@ -43,5 +43,6 @@ body {
 
 /* !!!!These below are of my creation !!!!*/
 header {
-    font-size: 300%
+    font-size: 300%;
+    align-content: center;
 }
