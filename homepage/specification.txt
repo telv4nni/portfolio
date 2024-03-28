@@ -28,3 +28,4 @@ Bootstrap:
 Added carousel slide in city.html with bootstrap.
 
 Javascript:
+You can hide sections in hobbies.html by clicking h2.
