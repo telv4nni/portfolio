@@ -19,10 +19,11 @@
         <main class="content">
             <header>Hobbies</header>
             <h2 onclick="hide()">Video Games</h2>
-            <div></div>
+            <div id="games">
             <div>My interest in computer science, as it is with many other poeple nowadays, started with video games. I remember my dad was bringing home some new and exciting titles, he found on local bazaar. Back then in Poland there wasn't any stores you could buy video games. Everone was a pirate and these games were on copied CDs. Many times with russian voicovers.</div>
             <div>My favourite genres have always been RPGs and strategy games with my favourite Shogun 2: Total War which includes many wise advises from Sun Tzu such as:
                 <br><q>Supreme excellence consists in breaking the enemy's resistance without fighting.</q></div>
+            </div>
             <h2>Driving</h2>
             <div>After getting hired as taxi driver I found love in driving cars. I'm excellent driver and I'm getting into the car just to cruise through the city and admire night landscape. Recently I bought driving wheel for my computer setup and started racing. There's nothing better than adrenaline rush with knowledge you can't hurt yourself and others. Don't do wheels - it's addictive.</div>
             <h2>Kendo</h2>
@@ -36,4 +37,14 @@
             </div>
         </main>
     </body>
+    <script>
+    function hide() {
+        var x = document.getElementById("games");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+    </script>
 </html>
