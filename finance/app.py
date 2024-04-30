@@ -128,7 +128,8 @@ def register():
     #generate password hash
     hash = generate_password_hash('password')
     #add username and hash to database
-    db.execute("INSERT INTO finance (username, hash) VALUES(?,?)", username, hash)
+    username="misiek"
+    db.execute("INSERT INTO users (username, hash) VALUES(?,?)", username, hash)
 
     return render_template("register.html")
 
