@@ -54,7 +54,9 @@ def index():
         db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?)", name, month, day)
         return redirect("/")
 
+
         # Remove birthday from database
+        id = request.form.get("id")
         db.execute("DELETE FROM birthdays WHERE id='?'", id)
         return redirect("/")
 
