@@ -56,6 +56,7 @@ def index():
 
         # Remove birthday from database
         db.execute("DELETE FROM birthdays WHERE id='?'", id)
+        return redirect("/")
 
     else:
 
