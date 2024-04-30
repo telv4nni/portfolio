@@ -118,7 +118,11 @@ def register():
         if not username:
             return apology("TODO")
         password = request.form.get("password")
+        if not password:
+            return apology("Password is missing")
         confirmation = request.form.get("confirmation")
+        if not confirmation:
+            return apology("Password is missing")
     #check if password is correct with checkpass
 
     return render_template("register.html")
