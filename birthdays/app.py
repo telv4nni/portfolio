@@ -50,6 +50,7 @@ def index():
         if day < 1 or day > 31:
             return redirect("/")
 
+def delete_movie():
         # Add user input to database
         db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?)", name, month, day)
         return redirect("/")
