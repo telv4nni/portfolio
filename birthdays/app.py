@@ -52,22 +52,14 @@ def index():
 
         # Add user input to database
         db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?)", name, month, day)
-        return redirect("/")
 
+        # Remove from database
+        id = request.form.get("id")
+        db.execute("DELETE FROM birthdays WHERE id=?", id)
+        return redirect("/")
     else:
 
         # TODO: Display the entries in the database on index.html
-        birthdays = db.execute("SELECT * FROM birthdays")
-        return render_template("index.html", birthdays=birthdays)
-
-
-def remove():
-        # Remove birthday from database
-    if request.method == "POST":
-        deleteid = request.form['deleteid']
-        db.execute("DELETE FROM birthdays WHERE id='?'", deleteid)
-        return redirect("/")
-   #else:
         birthdays = db.execute("SELECT * FROM birthdays")
         return render_template("index.html", birthdays=birthdays)
 
