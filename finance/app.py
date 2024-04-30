@@ -110,11 +110,9 @@ def quote():
         return render_template("quote.html")
     if request.method == "POST":
         symbol = request.form.get("symbol")
-        if symbol:
-        price = lookup(symbol)
-    else:
-        price = []
-    return jsonify(price)
+    if symbol:
+            price = lookup(symbol)
+    return price
 
 
 @app.route("/register", methods=["GET", "POST"])
