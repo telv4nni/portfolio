@@ -113,6 +113,8 @@ def quote():
 def register():
     """Register user"""
     # get user inputs and check validity
+    if request.method == "GET":
+            return render_template("register.html")
     if request.method == "POST":
         username = request.form.get('username')
         if not username:
@@ -126,12 +128,11 @@ def register():
         if password != confirmation:
             return apology("Passwords do not match")
     #generate password hash
-    else:
     hash = generate_password_hash('password')
     #add username and hash to database
     db.execute("INSERT INTO users (username, hash) VALUES(?,?)", username, hash)
 
-    return render_template("register.html")
+
 
 
 @app.route("/sell", methods=["GET", "POST"])
