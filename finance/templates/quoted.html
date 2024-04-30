@@ -12,5 +12,7 @@
         <button class="btn btn-primary" type="submit">Lookup</button>
     </form>
 
-    Stock price is {{ price }}
+    {% for price in price}
+    {{price["price"]}}
+    {% endfor %}
 {% endblock %}
