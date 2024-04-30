@@ -56,8 +56,8 @@ def index():
 
 
         # Remove birthday from database
-        id = request.form.get("deleteid")
-        db.execute("DELETE FROM birthdays WHERE id='?'", deleteid)
+        id = request.form['deleteid']
+        db.execute("DELETE FROM birthdays WHERE id='?'", id)
         return redirect("/")
 
     else:
