@@ -11,5 +11,8 @@
         </div>
         <button class="btn btn-primary" type="submit">Lookup</button>
     </form>
-    {{ price.price }}
+    <form action="/quoted" method="get">
+        {{ price.price }}
+    </form>
+
 {% endblock %}
