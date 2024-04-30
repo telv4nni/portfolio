@@ -126,6 +126,7 @@ def register():
         if password != confirmation:
             return apology("Passwords do not match")
 
+    db.execute("INSERT INTO finance)
     return render_template("register.html")
 
 
