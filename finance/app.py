@@ -112,7 +112,7 @@ def quote():
         symbol = request.form.get("symbol")
         price = lookup(symbol)
         print(price)
-    return redirect("/quote")
+    return redirect("/quoted.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
