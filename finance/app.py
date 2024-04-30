@@ -116,10 +116,10 @@ def register():
     if request.method == "POST":
         username = request.form.get("username")
         password = request.form.get("password")
-        checkpassword = request.form.get("checkpassword")
+        confirmation = request.form.get("confirmation")
     #check if password is correct with checkpass
-    if password != checkpassword:
-        return apology("Passwords don't match")
+    if not password:
+        return apology("Password is missing")
 
     return render_template("register.html")
 
