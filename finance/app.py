@@ -123,6 +123,8 @@ def register():
         confirmation = request.form.get("confirmation")
         if not confirmation:
             return apology("Password is missing")
+        else if password != confirmation:
+            return apology("Passwords don't match)
     #check if password is correct with checkpass
 
     return render_template("register.html")
