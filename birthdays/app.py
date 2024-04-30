@@ -63,7 +63,11 @@ def index():
 
 def remove():
         # Remove birthday from database
-        id = request.form['deleteid']
-        db.execute("DELETE FROM birthdays WHERE id='?'", id)
+    if request.method == "POST":
+        deleteid = request.form['deleteid']
+        db.execute("DELETE FROM birthdays WHERE id='?'", deleteid)
         return redirect("/")
+   #else:
+        birthdays = db.execute("SELECT * FROM birthdays")
+        return render_template("index.html", birthdays=birthdays)
 
