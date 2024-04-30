@@ -110,8 +110,9 @@ def quote():
         return render_template("quote.html")
     if request.method == "POST":
         symbol = request.form.get("symbol")
-        lookup(symbol)
-    return apology("TODO")
+        price = lookup(symbol)
+        print(price)
+    return redirect("/quote")
 
 
 @app.route("/register", methods=["GET", "POST"])
