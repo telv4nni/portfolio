@@ -11,8 +11,5 @@
         </div>
         <button class="btn btn-primary" type="submit">Lookup</button>
     </form>
-
-    {% for price in price %}
-    {{ price["price"] }}
-    {% endfor %}
+    {{ price.price }}
 {% endblock %}
