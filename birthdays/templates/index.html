@@ -41,7 +41,8 @@
                                 <td>{{ birthday["month"] }}/{{birthday["day"] }}</td>
                                 <td>
                                     <form action="/" method="post">
-                                        <input name="deleteid" type="submit" value="Delete">
+                                        <input type="hidden" value="{{ birthdays.id }}" name="deleteid">
+                                        <input type="submit" value="Remove">
                                     </form>
                                 </td>
                             </tr>
