@@ -53,13 +53,16 @@ def index():
         # Add user input to database
         db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?)", name, month, day)
 
-        # Remove from database
-        id = request.form.get("id")
-        db.execute("DELETE FROM birthdays WHERE id=?", id)
-        return redirect("/")
     else:
 
         # TODO: Display the entries in the database on index.html
         birthdays = db.execute("SELECT * FROM birthdays")
         return render_template("index.html", birthdays=birthdays)
 
+@app.route('/removebd', methods=["POST"])
+def removebd():
+
+        # Remove from database
+        id = request.form.get("id")
+        db.execute("DELETE FROM birthdays WHERE id=?", id)
+        return redirect("/")
