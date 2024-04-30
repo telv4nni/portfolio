@@ -116,7 +116,7 @@ def register():
     if request.method == "POST":
         username = request.form.get("username")
         if not username:
-            return apology("TODO")
+            return apology("Username is missing")
         password = request.form.get("password")
         if not password:
             return apology("Password is missing")
