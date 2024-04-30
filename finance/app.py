@@ -126,11 +126,11 @@ def register():
         if password != confirmation:
             return apology("Passwords do not match")
     #generate password hash
-    hash = generate_password_hash('password')
-    #add username and hash to database
-    db.execute("INSERT INTO finance (username, hash) VALUES(?,?)", username, hash)
+    # hash = generate_password_hash('password')
+    # #add username and hash to database
+    # db.execute("INSERT INTO finance (username, hash) VALUES(?,?)", username, hash)
 
-    return redirect("/")
+    return render_template("register.html")
 
 
 @app.route("/sell", methods=["GET", "POST"])
