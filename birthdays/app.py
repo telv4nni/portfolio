@@ -61,7 +61,6 @@ def index():
 
 @app.route('/removebd', methods=["POST"])
 def removebd():
-
         # Remove from database
         id = request.form.get("id")
         db.execute("DELETE FROM birthdays WHERE id=?", id)
