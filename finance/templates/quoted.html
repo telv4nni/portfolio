@@ -11,11 +11,7 @@
         </div>
         <button class="btn btn-primary" type="submit">Lookup</button>
     </form>
-    <ul></ul>
-    <script>
-        let response = await fetch(price)
-        let price = await response.text();
-        document.querySelector('ul').innerHTML = price;
-    </script>
+    {{ price }}
+
 
 {% endblock %}
