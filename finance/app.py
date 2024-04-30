@@ -114,7 +114,7 @@ def quote():
             price = lookup(symbol)
     if price is None:
         return apology("incorrect symbol")
-    usd(price)
+    price.price = usd(price.price)
     return render_template("quoted.html", price=price)
 
 
