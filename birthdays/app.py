@@ -50,21 +50,19 @@ def index():
         if day < 1 or day > 31:
             return redirect("/")
 
-def delete_movie():
         # Add user input to database
         db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?)", name, month, day)
         return redirect("/")
 
-
-        # Remove birthday from database
-        deleteid = request.form.get("deleteid")
-        db.execute("DELETE FROM birthdays WHERE id='?'", deleteid)
-        return redirect("/")
-
-    else:
+      else:
 
         # TODO: Display the entries in the database on index.html
         birthdays = db.execute("SELECT * FROM birthdays")
         return render_template("index.html", birthdays=birthdays)
 
+#def delete():
+        # Remove birthday from database
+        #deleteid = request.form.get("deleteid")
+        #db.execute("DELETE FROM birthdays WHERE id='?'", deleteid)
+        #return redirect("/")
 
