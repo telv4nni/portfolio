@@ -118,9 +118,9 @@ def register():
         password = request.form.get("password")
         checkpassword = request.form.get("checkpassword")
     #check if password is correct with checkpass
-    if password != checkpassword:
-        return apology("Passwords don't match")
-    
+    # if password != checkpassword:
+    #     return apology("Passwords don't match")
+
     return render_template("register.html")
 
 
