@@ -12,6 +12,10 @@
         <button class="btn btn-primary" type="submit">Lookup</button>
     </form>
     <ul></ul>
-    <script>document.querySelector('ul').innerHTML = price; </script>
+    <script>
+        let response = await fetch(price)
+        let price = await response.text();
+        document.querySelector('ul').innerHTML = price;
+    </script>
 
 {% endblock %}
