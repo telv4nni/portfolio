@@ -126,9 +126,9 @@ def register():
         if password != confirmation:
             return apology("Passwords do not match")
     #generate password hash
-    hash = werkzeug.security.generate_password_hash(password, method='pbkdf2', salt_length=16)
+    hash = generate_password_hash(password, method='pbkdf2', salt_length=16)
     #add username and hash to database
-    db.execute("INSERT INTO users (username, hash) VALUES(?,?)", username, hash)
+    db.execute("INSERT INTO finance (username, hash) VALUES(?,?)", username, hash)
 
     return render_template("register.html")
 
