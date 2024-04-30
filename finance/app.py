@@ -115,11 +115,11 @@ def register():
     # get user inputs
     if request.method == "POST":
         username = request.form.get("username")
+        if not username:
+            return apology("TODO")
         password = request.form.get("password")
         confirmation = request.form.get("confirmation")
     #check if password is correct with checkpass
-    if not password:
-        return apology("Password is missing")
 
     return render_template("register.html")
 
