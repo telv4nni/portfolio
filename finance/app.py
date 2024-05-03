@@ -59,7 +59,7 @@ def buy():
             return apology("Shares must be positive value")
 
         #buy shares
-        db.execute("INSERT INTO shares (user_id, symbol, shares, price) VALUES(?,?,?,?)", session["user_id"], symbol, shares , priceprice)
+        db.execute("INSERT INTO shares (user_id, symbol, shares, price) VALUES(?,?,?,?)", session["user_id"], symbol, shares , price)
         return redirect("/")
 
 
