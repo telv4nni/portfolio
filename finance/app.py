@@ -42,7 +42,8 @@ def index():
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
         cash = cash[0]['cash']
         #check share price
-        price = lookup(symbol)
+        for share in shares:
+            price = lookup(symbol)
         return render_template("index.html", shares=shares, cash=cash)
     return apology("TODO")
 
