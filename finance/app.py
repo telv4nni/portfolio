@@ -44,7 +44,7 @@ def index():
         #check share price
         for share in shares:
             price = lookup(share['symbol'])
-            db.execute("INSERT INTO shares (currentprice) VALUES ?", price['price'])
+            db.execute("INSERT INTO shares (currentprice) VALUES (?)", price['price'])
         return render_template("index.html", shares=shares, cash=cash)
     return apology("TODO")
 
