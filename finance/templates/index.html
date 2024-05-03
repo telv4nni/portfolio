@@ -17,7 +17,7 @@
     {{ shares }}
     {% set ns = namespace(total = 0) %}
     {% for share in shares %}
-    {% set total = total + share['SUM(price*shares)'] %}
+    {% set ns.total = ns.total + share['SUM(price*shares)'] %}
     <tr>
         <td class="text-start">{{ share.symbol }}</td>
         <td class="text-end">{{ share['SUM(shares)'] }}</td>
@@ -25,6 +25,7 @@
         <td class="text-end">{{ share['SUM(price*shares)'] | usd }} </td>
     </tr>
     {% endfor %}
+    {% set ns.total = ns.total + cash %}
     </tbody>
     <tfoot>
         <tr>
@@ -33,7 +34,7 @@
         </tr>
         <tr>
             <td class="border-0 fw-bold text-end" colspan="3">TOTAL</td>
-            <td class="border-0 w-bold text-end">{{ ns.total }}</td>
+            <td class="border-0 w-bold text-end">{{ ns.total | usd }}</td>
         </tr>
     </tfoot>
 </table>
