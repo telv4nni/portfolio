@@ -52,8 +52,11 @@ def buy():
         if price is None:
             return apology("Incorrect symbol")
         ##check shares input
-        if not request.form.get("shares"):
+        shares = request.form.get("shares")
+        if not shares:
             return apology("Must provide shares")
+        elif int(shares) <= 0:
+            return apology("Shares must be positive value")
 
 
 @app.route("/history")
