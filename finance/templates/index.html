@@ -19,7 +19,7 @@
     <tr>
         <td class="text-start">{{ share.symbol }}</td>
         <td class="text-end">{{ share['SUM(shares)'] }}</td>
-        <td class="text-end">{{ share['SUM(price*shares)'] | usd }}</td>
+        <td class="text-end">{{ share.price | usd }}</td>
         <td class="text-end">{{ share['SUM(price*shares)'] | usd }}</td>
     </tr>
     {% endfor %}
@@ -27,7 +27,7 @@
     <tfoot>
         <tr>
             <td class="border-0 fw-bold text-end" colspan="3">Cash</td>
-            <td class="border-0 text-end">$9,558.94</td>
+            <td class="border-0 text-end">{{ cash | usd }}</td>
         </tr>
         <tr>
             <td class="border-0 fw-bold text-end" colspan="3">TOTAL</td>
