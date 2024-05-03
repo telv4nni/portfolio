@@ -61,7 +61,7 @@ def buy():
         #  Buy shares
         #Select users cash
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
-        cash = cash[0]['cash'] - int(price['price'])
+        cash = cash[0]['cash'] - (price['price']*int(shares))
         #check if user has enough money
         if cash < 0:
             return apology("User does not have enough money")
