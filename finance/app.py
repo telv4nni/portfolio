@@ -37,7 +37,7 @@ def index():
     """Show portfolio of stocks"""
     if request.method == "GET":
         shares = db.execute("SELECT symbol,SUM(shares),SUM(price*shares) FROM shares WHERE user_id = ? GROUP BY symbol", session["user_id"])
-        return render_template("index.html", shares)
+        return render_template("index.html", shares=shares)
     return apology("TODO")
 
 

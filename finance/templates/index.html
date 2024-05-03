@@ -17,26 +17,14 @@
    <tbody>
 
             <tr>
-                <td class="text-start">A</td>
-                <td class="text-end">1</td>
-                <td class="text-end">$137.52</td>
-                <td class="text-end">$137.52</td>
+                {% for share in shares %}
             </tr>
-
             <tr>
-                <td class="text-start">B</td>
-                <td class="text-end">5</td>
-                <td class="text-end">$36.20</td>
-                <td class="text-end">$181.00</td>
+                <td>{{ share.symbol }}</td>
+                <td>{{ share.SUM(shares) }}</td>
+                <td>{{ share.SUM(price*shares) }}</td>
             </tr>
-
-            <tr>
-                <td class="text-start">C</td>
-                <td class="text-end">2</td>
-                <td class="text-end">$61.54</td>
-                <td class="text-end">$123.08</td>
-            </tr>
-
+            {% endfor %}
     </tbody>
     <tfoot>
         <tr>
