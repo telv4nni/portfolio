@@ -42,7 +42,7 @@ def index():
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
         cash = cash[0]['cash']
         #check share price
-        
+        price = vlookup
         return render_template("index.html", shares=shares, cash=cash)
     return apology("TODO")
 
