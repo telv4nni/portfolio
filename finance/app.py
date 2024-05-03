@@ -48,7 +48,7 @@ def buy():
         ##check symbol input
         if not request.form.get("symbol"):
             return apology("Must provide symbol")
-        if symbol:
+        if request.form.get("symbol"):
             price = lookup(symbol)
         if price is None:
             return apology("incorrect symbol")
