@@ -57,6 +57,9 @@ def buy():
             return apology("Must provide shares")
         elif int(shares) <= 0:
             return apology("Shares must be positive value")
+
+        #buy shares
+        db.execute("INSERT INTO users (username, hash) VALUES(?,?)", username, hash)
         return redirect("/")
 
 
