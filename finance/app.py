@@ -61,6 +61,10 @@ def buy():
         #  Buy shares
         #Select users cash
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+        cash = cash - (price('price')*shares)
+        if cash < 0:
+            return apology("User does not have enough money")
+        
         #Add shares to the user
         db.execute("INSERT INTO shares (user_id, symbol, shares, price) VALUES(?,?,?,?)", session["user_id"], symbol, shares , price['price'])
         return redirect("/")
