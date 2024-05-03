@@ -48,8 +48,8 @@ def buy():
         ##check symbol input
         symbol = request.form.get("symbol")
         if symbol:
-            lsymbol = lookup(symbol)
-        if lsymbol is None:
+            price = lookup(symbol)
+        if price is None:
             return apology("Incorrect symbol")
         ##check shares input
         shares = request.form.get("shares")
@@ -59,7 +59,7 @@ def buy():
             return apology("Shares must be positive value")
 
         #buy shares
-        db.execute("INSERT INTO shares (user_id, symbol, shares, price) VALUES(?,?,?,?)", session["user_id"], symbol, shares , lsymbol.price)
+        db.execute("INSERT INTO shares (user_id, symbol, shares, price) VALUES(?,?,?,?)", session["user_id"], symbol, shares , )
         return redirect("/")
 
 
