@@ -43,7 +43,7 @@ def index():
         cash = cash[0]['cash']
         #check share price
         for share in shares:
-            price = lookup(db.execute("SELECT symbol FROM shares WHERE user_id = ? GROUP BY symbol")
+            price = lookup(share.symbol)
         return render_template("index.html", shares=shares, cash=cash)
     return apology("TODO")
 
