@@ -41,10 +41,10 @@ def index():
         #check user cash
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
         cash = cash[0]['cash']
-        #check share price
+        #check share prices
         for share in shares:
             price = lookup(share['symbol'])
-            db.execute("UPDATE shares SET currentprice = ? WHERE user_id = ? AND symbol = ?", price['price'], session["user_id"], price['symbol'])
+            db.execute("UPDATE shares SET currentprice = ? WHERE user_id = ? AND symbol = ?", price['price'], session["user_id"], share['symbol'])
         return render_template("index.html", shares=shares, cash=cash)
     return apology("TODO")
 
