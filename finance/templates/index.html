@@ -15,10 +15,7 @@
         </tr>
     </thead>
    <tbody>
-
-            <tr>
-                {% for share in shares %}
-            </tr>
+            {% for share in shares %}
             <tr>
                 <td>{{ share.symbol }}</td>
                 <td>{{ share.SUM(shares) }}</td>
