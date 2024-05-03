@@ -17,7 +17,7 @@
     {{ shares }}
     {% set total = 0 %}
     {% for share in shares %}
-    {% set total = total + share['SUM(price*shares)'] %}
+        {% set total = total + share['SUM(price*shares)'] %}
     <tr>
         <td class="text-start">{{ share.symbol }}</td>
         <td class="text-end">{{ share['SUM(shares)'] }}</td>
