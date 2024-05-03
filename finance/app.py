@@ -36,6 +36,7 @@ def after_request(response):
 def index():
     """Show portfolio of stocks"""
     if request.method == "GET":
+        
         return render_template("index.html")
     return apology("TODO")
 
