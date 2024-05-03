@@ -59,7 +59,7 @@ def buy():
             return apology("Shares must be positive value")
 
         #buy shares
-        db.execute("INSERT INTO shares (user_id, symbol, shares, price) VALUES(?,?,?,?)", session["user_id"], symbol, shares , price.price)
+        db.execute("INSERT INTO shares (user_id, symbol, shares, price) VALUES(?,?,?,?)", session["user_id"], symbol, shares , priceprice)
         return redirect("/")
 
 
@@ -132,8 +132,6 @@ def quote():
             price = lookup(symbol)
     if price is None:
         return apology("incorrect symbol")
-    # newval = usd(price[price])
-    # price = newval
     return render_template("quoted.html", price=price)
 
 
