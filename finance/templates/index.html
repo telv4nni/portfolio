@@ -17,9 +17,9 @@
     {{ shares }}
     {% for share in shares %}
     <tr>
-        <td>{{ share.symbol }}</td>
-        <td>{{ share['SUM(shares)'] }}</td>
-        <td>{{ share['SUM(price*shares)'] }}</td>
+        <td class="text-start">{{ share.symbol }}</td>
+        <td class="text-end">{{ share['SUM(shares)'] }}</td>
+        <td class="text-end">{{ share['SUM(price*shares)'] }}</td>
     </tr>
     {% endfor %}
     </tbody>
