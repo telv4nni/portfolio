@@ -58,7 +58,10 @@ def buy():
         elif int(shares) <= 0:
             return apology("Shares must be positive value")
 
-        #buy shares
+        #  Buy shares
+        #Select users cash
+        db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+        #Add shares to the user
         db.execute("INSERT INTO shares (user_id, symbol, shares, price) VALUES(?,?,?,?)", session["user_id"], symbol, shares , price['price'])
         return redirect("/")
 
