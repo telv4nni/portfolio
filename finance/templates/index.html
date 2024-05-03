@@ -14,7 +14,6 @@
             <th class="text-end">TOTAL</th>
         </tr>
     </thead>
-    {{ shares }}
     {% set ns = namespace(total = 0) %}
     {% for share in shares %}
     {% set ns.total = ns.total + share['SUM(price*shares)'] %}
