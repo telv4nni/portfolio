@@ -57,6 +57,7 @@ def buy():
             return apology("Must provide shares")
         elif int(shares) <= 0:
             return apology("Shares must be positive value")
+        return redirect("/index")
 
 
 @app.route("/history")
