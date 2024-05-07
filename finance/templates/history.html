@@ -6,8 +6,6 @@
 
 {% block main %}
 
-{% for history in history %}
-{{ history }}
 <table class="table">
     <thead>
         <tr>
@@ -18,42 +16,14 @@
         </tr>
     </thead>
     <tbody>
-
+        {% for history in history %}
             <tr>
-                <td class="text-start">A</td>
-                <td class="text-end">1</td>
-                <td class="text-end">$139.59</td>
-                <td class="text-end">2024-04-30 07:54:54</td>
+                <td class="text-start">{{ history.symbol }}</td>
+                <td class="text-end">{{ history.shares }}</td>
+                <td class="text-end">{{ history.price }}</td>
+                <td class="text-end">{{ history.date }}</td>
             </tr>
-
-            <tr>
-                <td class="text-start">C</td>
-                <td class="text-end">2</td>
-                <td class="text-end">$62.26</td>
-                <td class="text-end">2024-04-30 07:54:59</td>
-            </tr>
-
-            <tr>
-                <td class="text-start">B</td>
-                <td class="text-end">5</td>
-                <td class="text-end">$35.39</td>
-                <td class="text-end">2024-04-30 07:55:04</td>
-            </tr>
-
-            <tr>
-                <td class="text-start">D</td>
-                <td class="text-end">1</td>
-                <td class="text-end">$51.41</td>
-                <td class="text-end">2024-05-07 09:15:01</td>
-            </tr>
-
-            <tr>
-                <td class="text-start">D</td>
-                <td class="text-end">-1</td>
-                <td class="text-end">$51.41</td>
-                <td class="text-end">2024-05-07 09:15:08</td>
-            </tr>
-
+            {% endfor %}
     </tbody>
 </table>
 
