@@ -66,8 +66,10 @@ def buy():
         shares = request.form.get("shares")
         if not shares:
             return apology("Must provide shares")
-        elif int(shares) <= 0:
-            return apology("Shares must be positive value")
+        if not shares.isdigit():
+            return apology("Shares must be positive integer value")
+        if int(shares) <= 0:
+            return apology("Shares must be positive integer value")
 
         #  Buy shares
         #Select users cash
@@ -226,7 +228,9 @@ def sell():
         # Check if user selected correct amount of shares
         sharesdb = db.execute("SELECT ?, SUM(shares) FROM shares WHERE user_id = ? GROUP BY symbol", symbol, session["user_id"])
         shares = request.form.get("shares")
-        if int(shares) <= 0 or not shares.isdigit():
+        if not shares.isdigit():
+            return apology("Shares must be positive integer value")
+        if int(shares) <= 0:
             return apology("Shares must be positive integer value")
         if int(shares) > int(sharesdb[0]["SUM(shares)"]):
             return apology("User does not have that many shares")
