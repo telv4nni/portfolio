@@ -152,7 +152,7 @@ def changepass():
         newpassword = request.form.get("newpassword")
         repeatnewpassword = request.form.get("repeatnewpassword")
         # Check user inputs
-        if not oldpassword or newpassword or repeatnewpassword:
+        if not oldpassword or not newpassword or not repeatnewpassword:
             return apology("Missing password")
         if newpassword != repeatnewpassword:
             return apology("Passwords do not match")
