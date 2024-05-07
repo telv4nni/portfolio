@@ -16,7 +16,9 @@
     </thead>
     {% set ns = namespace(total = 0) %}
     {% for share in shares %}
-    {% if share['SUM(currentprice*shares)'] = None set share['SUM(currentprice*shares)'] = 0 %}
+    {% if share['SUM(currentprice*shares)'] == None %}
+        {% set share['SUM(currentprice*shares)'] = 0 %}
+    {% endif %}
     {% set ns.total = ns.total + share['SUM(currentprice*shares)'] %}
     <tr>
         <td class="text-start">{{ share.symbol }}</td>
