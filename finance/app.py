@@ -89,7 +89,7 @@ def buy():
 def history():
     """Show history of transactions"""
     if request.method == "GET":
-        
+        history = db.execute("")
         return render_template("history.html")
     return apology("TODO")
 
