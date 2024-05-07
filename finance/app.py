@@ -81,7 +81,7 @@ def buy():
         db.execute("UPDATE users SET cash = ? WHERE id = ?", newcash, session["user_id"])
         #Add shares to the user
         db.execute("INSERT INTO shares (user_id, symbol, shares, price) VALUES(?,?,?,?)", session["user_id"], symbol, shares , price['price'])
-        return redirect("/")
+        return redirect("/", cash=cash)
 
 
 @app.route("/history")
