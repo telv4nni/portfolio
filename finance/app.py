@@ -197,9 +197,11 @@ def sell():
             return apology("Haven't selected a symbol")
         if symbol not in symbols_list:
             return apology("User doesn't own any share of this stock")
+        # Check if user selected correct amount of shares
         sharesdb = db.execute("SELECT ?, SUM(shares) FROM shares WHERE user_id = ? GROUP BY symbol", symbol, session["user_id"])
         shares = request.form.get("shares")
         if not isinstance(shares, int) or int(shares) <= 0:
             return apology("Number is not a positive integer")
         if int(shares) > int(sharesdb[0]["SUM(shares)"]):
             return apology("User does not have that many shares")
+        #Sell shares
