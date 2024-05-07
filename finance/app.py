@@ -156,7 +156,8 @@ def changepass():
             return apology("Missing password")
         if newpassword != repeatnewpassword:
             return apology("Password do not match")
-        
+        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+
 
 
 
