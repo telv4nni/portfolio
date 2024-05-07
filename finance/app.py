@@ -88,6 +88,8 @@ def buy():
 @login_required
 def history():
     """Show history of transactions"""
+    if request.method == "GET":
+        return render_template("history.html")
     return apology("TODO")
 
 
