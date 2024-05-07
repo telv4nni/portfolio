@@ -159,6 +159,7 @@ def changepass():
         rows = db.execute("SELECT * FROM users WHERE username = ?", session["user_id"])
         if len(rows) != 1 or not check_password_hash(rows[0]["hash"], oldpassword):
             return apology("Invalid password", 403)
+        db.execute("")
 
 
 
