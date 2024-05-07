@@ -196,3 +196,4 @@ def sell():
             return apology("Haven't selected a symbol")
         if symbol not in symbols:
             return apology("User doesn't own any share of this stock")
+        sharesdb = db.execute("SELECT symbol, SUM(shares) FROM shares WHERE user_id = ? GROUP BY symbol", session["user_id"])
