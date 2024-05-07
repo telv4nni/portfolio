@@ -146,6 +146,8 @@ def logout():
 def changepass():
     if request.method == "GET":
         return render_template("changepass.html")
+    if request.method == "POST":
+        
 
 @app.route("/quote", methods=["GET", "POST"])
 @login_required
