@@ -73,12 +73,12 @@ def buy():
         #  Buy shares
         #Select users cash
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
-        cashtosubstract = cash[0]['cash'] - (price['price']*int(shares))
+        newcash = cash[0]['cash'] - (price['price']*int(shares))
         #check if user has enough money
-        if cash[0] < 0:
+        if newcash < 0:
             return apology("User does not have enough money")
         #update users money
-        db.execute("UPDATE users SET cash = ? WHERE id = ?", cash, session["user_id"])
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", newcash, session["user_id"])
         #Add shares to the user
         db.execute("INSERT INTO shares (user_id, symbol, shares, price) VALUES(?,?,?,?)", session["user_id"], symbol, shares , price['price'])
         return redirect("/")
