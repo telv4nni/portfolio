@@ -189,8 +189,10 @@ def sell():
         return render_template("sell.html", symbols=symbols)
     """Sell shares of stock"""
     if request.method == "POST":
+        # Check if user selected a stock symbol and does have a share in that stock
         symbol = request.form.get("symbol")
+        symbols = db.execute("SELECT symbol FROM shares WHERE user_id = ? GROUP BY symbol", session["user_id"])
         if symbol == "Symbol":
             return apology("Haven't selected a symbol")
-        if symbol not in symbols.symbol:
+        if symbol not in symbols:
             return apology("User doesn't own any share of this stock")
