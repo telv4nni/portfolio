@@ -209,5 +209,5 @@ def sell():
         price = lookup(symbol)
         db.execute("UPDATE users SET cash = cash + ? WHERE id = ?", price['price'], session["user_id"])
         # Update user shares
-        db.execute("UPDATE shares SET shares = shares - ? WHERE user_id = ? AND symbol = ?", int(shares), session["user_id"], symbol)
+        db.execute("UPDATE shares SET SUM(shares) = SUM(shares) - ? WHERE user_id = ? AND symbol = ?", int(shares), session["user_id"], symbol)
         return redirect("/")
