@@ -5,37 +5,53 @@
 {% endblock %}
 
 {% block main %}
-<table class="table table-striped">
+<table class="table">
     <thead>
         <tr>
             <th class="text-start">Symbol</th>
             <th class="text-end">Shares</th>
             <th class="text-end">Price</th>
-            <th class="text-end">TOTAL</th>
+            <th class="text-end">Transacted</th>
         </tr>
     </thead>
-    {% set ns = namespace(total = 0) %}
-    {% for share in shares %}
-    {% set ns.total = ns.total + share['SUM(currentprice*shares)'] %}
-    <tr>
-        <td class="text-start">{{ share.symbol }}</td>
-        <td class="text-end">{{ share['SUM(shares)'] }}</td>
-        <td class="text-end">{{ share.currentprice | usd }}</td>
-        <td class="text-end">{{ share['SUM(currentprice*shares)'] | usd }} </td>
-    </tr>
-    {% endfor %}
-    {% set ns.total = ns.total + cash %}
+    <tbody>
+
+            <tr>
+                <td class="text-start">A</td>
+                <td class="text-end">1</td>
+                <td class="text-end">$139.59</td>
+                <td class="text-end">2024-04-30 07:54:54</td>
+            </tr>
+
+            <tr>
+                <td class="text-start">C</td>
+                <td class="text-end">2</td>
+                <td class="text-end">$62.26</td>
+                <td class="text-end">2024-04-30 07:54:59</td>
+            </tr>
+
+            <tr>
+                <td class="text-start">B</td>
+                <td class="text-end">5</td>
+                <td class="text-end">$35.39</td>
+                <td class="text-end">2024-04-30 07:55:04</td>
+            </tr>
+
+            <tr>
+                <td class="text-start">D</td>
+                <td class="text-end">1</td>
+                <td class="text-end">$51.41</td>
+                <td class="text-end">2024-05-07 09:15:01</td>
+            </tr>
+
+            <tr>
+                <td class="text-start">D</td>
+                <td class="text-end">-1</td>
+                <td class="text-end">$51.41</td>
+                <td class="text-end">2024-05-07 09:15:08</td>
+            </tr>
+
     </tbody>
-    <tfoot>
-        <tr>
-            <td class="border-0 fw-bold text-end" colspan="3">Cash</td>
-            <td class="border-0 text-end">{{ cash | usd }}</td>
-        </tr>
-        <tr>
-            <td class="border-0 fw-bold text-end" colspan="3">TOTAL</td>
-            <td class="border-0 w-bold text-end">{{ ns.total | usd }}</td>
-        </tr>
-    </tfoot>
 </table>
 
 {% endblock %}
