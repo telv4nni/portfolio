@@ -46,7 +46,6 @@ def index():
             price = lookup(share['symbol'])
             db.execute("UPDATE shares SET currentprice = ? WHERE user_id = ? AND symbol = ?", price['price'], session["user_id"], share['symbol'])
         return render_template("index.html", shares=shares, cash=cash)
-    return apology("TODO")
 
 
 @app.route("/buy", methods=["GET", "POST"])
@@ -132,7 +131,6 @@ def login():
     else:
         return render_template("login.html")
 
-
 @app.route("/logout")
 def logout():
     """Log user out"""
@@ -143,6 +141,11 @@ def logout():
     # Redirect user to login form
     return redirect("/")
 
+@app.route("/changepass", methods=["GET", "POST"])
+@login_required
+def changepass():
+    if request.method == "GET":
+        return render_template("changepass.html")
 
 @app.route("/quote", methods=["GET", "POST"])
 @login_required
