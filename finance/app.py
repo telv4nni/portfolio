@@ -199,5 +199,6 @@ def sell():
             return apology("User doesn't own any share of this stock")
         sharesdb = db.execute("SELECT ?, SUM(shares) FROM shares WHERE user_id = ? GROUP BY symbol", symbol, session["user_id"])
         shares = request.form.get("shares")
-        if shares > sharesdb.sum(shares):
+        sharesnum = sharesdb[sum(shares)]
+        if shares > sharesnum:
             return apology("User does not have that many shares")
