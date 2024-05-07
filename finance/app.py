@@ -57,7 +57,7 @@ def buy():
     """Buy shares of stock"""
     if request.method == "POST":
         ##check symbol input
-        symbol = request.form.get("symbol")
+        symbol = upper(request.form.get("symbol"))
         if symbol:
             price = lookup(symbol)
         if price is None:
