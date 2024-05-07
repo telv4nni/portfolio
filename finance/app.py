@@ -203,7 +203,8 @@ def register():
         if password != confirmation:
             return apology("Passwords do not match")
     # Check if username is taken
-    usernamelist = db.execute("SELECT username FROM users")
+    usernames = db.execute("SELECT username FROM users")
+    usernamelist = [item['username'] for item in usernames]
     if username in usernamelist:
         return apology("Username already taken")
     # Generate password hash
