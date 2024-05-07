@@ -189,4 +189,7 @@ def sell():
         return render_template("sell.html", symbols=symbols)
     """Sell shares of stock"""
     if request.method == "POST":
-        return apology("TODO")
+        if not symbols:
+            return apology("Haven't selected a symbol")
+        if symbol not in symbols:
+            return apology("User doesn't own any share of this stock")
