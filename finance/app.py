@@ -201,9 +201,13 @@ def register():
             return apology("Password is missing")
         if password != confirmation:
             return apology("Passwords do not match")
-    #generate password hash
+    # Check if username is taken
+    usernamelist = db.execute("SELECT username FROM users")
+    if username in usernamelist:
+        return apology("Username already taken")
+    # Generate password hash
     hash = generate_password_hash(password)
-    #add username and hash to database
+    # Add username and hash to database
     db.execute("INSERT INTO users (username, hash) VALUES(?,?)", username, hash)
     return redirect("/")
 
