@@ -44,7 +44,7 @@ def index():
         #check share prices
         for share in shares:
             if share['SUM(currentprice*share)'] == None:
-                set share['SUM(currentprice*share)'] = 0
+                share['SUM(currentprice*share)'] = 0
             price = lookup(share['symbol'])
             db.execute("UPDATE shares SET currentprice = ? WHERE user_id = ? AND symbol = ?", price['price'], session["user_id"], share['symbol'])
         return render_template("index.html", shares=shares, cash=cash)
