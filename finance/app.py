@@ -89,8 +89,8 @@ def buy():
 def history():
     """Show history of transactions"""
     if request.method == "GET":
-        history = db.execute("SELECT symbol, shares, price, date FROM shares where user_id = ? ORDER BY date", session)
-        return render_template("history.html")
+        history = db.execute("SELECT symbol, shares, price, date FROM shares where user_id = ? ORDER BY date", session["user_id"])
+        return render_template("history.html", history = history)
     return apology("TODO")
 
 
