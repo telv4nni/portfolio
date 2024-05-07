@@ -204,4 +204,6 @@ def sell():
             return apology("Number is not a positive integer")
         if int(shares) > int(sharesdb[0]["SUM(shares)"]):
             return apology("User does not have that many shares")
-        #Sell shares
+        # Sell shares
+        # Update user money
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", cash, session["user_id"])
