@@ -226,7 +226,7 @@ def sell():
         # Check if user selected correct amount of shares
         sharesdb = db.execute("SELECT ?, SUM(shares) FROM shares WHERE user_id = ? GROUP BY symbol", symbol, session["user_id"])
         shares = request.form.get("shares")
-        if int(shares) <= 0:
+        if int(shares) <= 0 or not shares.isdigit():
             return apology("Shares must be positive integer value")
         if int(shares) > int(sharesdb[0]["SUM(shares)"]):
             return apology("User does not have that many shares")
