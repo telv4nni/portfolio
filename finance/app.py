@@ -147,7 +147,18 @@ def changepass():
     if request.method == "GET":
         return render_template("changepass.html")
     if request.method == "POST":
+        # Get user inputs
+        oldpassword = request.form.get("oldpassword")
+        newpassword = request.form.get("newpassword")
+        repeatnewpassword = request.form.get("repeatnewpassword")
+        # Check user inputs
+        if not oldpassword or newpassword or repeatnewpassword:
+            return apology("Missing password")
+        if newpassword != repeatnewpassword:
+            return apology("Password do not match")
         
+
+
 
 @app.route("/quote", methods=["GET", "POST"])
 @login_required
