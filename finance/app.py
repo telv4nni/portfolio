@@ -62,6 +62,7 @@ def buy():
         if symbol:
             price = lookup(symbol)
         if price is None:
+            price = 0
             return apology("Incorrect symbol")
         ##check shares input
         symbol = symbol.upper()
