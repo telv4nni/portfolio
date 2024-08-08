@@ -24,6 +24,11 @@ int wordcount = 0;
 // Hash table
 node *table[N];
 
+for (int i = 0; i < N; i++)
+{
+    table[i] = NULL;
+}
+
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
