@@ -117,34 +117,21 @@ unsigned int size(void)
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
+    // TODO
     for (int i = 0; i < N; i++)
     {
         node *cursor = table[i];
+        node *remove = cursor;
         while (cursor != NULL)
         {
-            node *remove = cursor;
+            remove = cursor;
             cursor = cursor->next;
             free(remove);
         }
+        if (cursor == NULL && i == (N - 1))
+        {
+            return true;
+        }
     }
-    return true;
+    return false;
 }
-// {
-//     // TODO
-//     for (int i = 0; i < N; i++)
-//     {
-//         node *cursor = table[i];
-//         node *remove = cursor;
-//         while (cursor != NULL)
-//         {
-//             remove = cursor;
-//             cursor = cursor->next;
-//             free(remove);
-//         }
-//         if (cursor == NULL && i == (N - 1))
-//         {
-//             return true;
-//         }
-//     }
-//     return false;
-// }
