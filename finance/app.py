@@ -61,6 +61,7 @@ def buy():
         symbol = request.form.get("symbol")
         if symbol:
             price = lookup(symbol)
+            print(price)
             if price is None:
                 return apology("Incorrect symbol")
         ##check shares input
