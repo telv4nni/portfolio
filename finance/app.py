@@ -246,7 +246,7 @@ def sell():
         # Sell shares
         # Update user money
         price = lookup(symbol)
-        db.execute("UPDATE users SET cash = cash + ? WHERE id = ?", price['price'], session["user_id"])
+        db.execute("UPDATE users SET cash = cash + ? WHERE id = ?", price['price']*shares, session["user_id"])
         # Update user shares
         db.execute("INSERT INTO shares (user_id, symbol, shares, price) VALUES(?,?,-?,?)", session["user_id"], symbol, shares, price['price'])
         return redirect("/")
