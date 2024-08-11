@@ -23,16 +23,23 @@ int main(void)
     int s = (sentences / words) * 100;
     int index = 0.0588 * l - 0.296 * s - 15.8;
     // Print the grade level
+    printf(letters);
     printf(index);
 }
 
 int count_letters(string text)
 {
     // Return the number of letters in text
+    int letters = 0;
     for (int i = 0; i < strlen(text); i++)
     {
-        
+       char letter = text[i];
+       if (letter == isalpha())
+       {
+        letters++;
+       }
     }
+    return letters;
 }
 
 int count_words(string text)
