@@ -34,10 +34,8 @@ int count_letters(string text)
     for (int i = 0; i < strlen(text); i++)
     {
        char letter = text[i];
-       if (letter == isalpha())
-       {
+       if (isalpha(letter))
         letters++;
-       }
     }
     return letters;
 }
