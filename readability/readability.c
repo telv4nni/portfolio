@@ -19,12 +19,12 @@ int main(void)
     int sentences = count_sentences(text);
 
     // Compute the Coleman-Liau index
-    int l = (letters / words) * 100;
-    int s = (sentences / words) * 100;
+    float l = (letters / words) * 100;
+    float s = (sentences / words) * 100;
     int index = 0.0588 * l - 0.296 * s - 15.8;
     // Print the grade level
-    printf(letters);
-    printf(index);
+    printf("%d\n", letters);
+    printf("%d\n", index);
 }
 
 int count_letters(string text)
