@@ -24,7 +24,7 @@ int main(void)
     int index = 0.0588 * l - 0.296 * s - 15.8;
     // Print the grade level
     printf("%d\n", letters);
-    printf("%d\n", index);
+    printf("%.2f\n", index);
 }
 
 int count_letters(string text)
