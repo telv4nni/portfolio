@@ -43,9 +43,25 @@ int count_letters(string text)
 int count_words(string text)
 {
     // Return the number of words in text
+    int words = 1;
+    for (int i = 0; i < strlen(text); i++)
+    {
+       char letter = text[i];
+       if (letter == ' ')
+        words++;
+    }
+    return words;
 }
 
 int count_sentences(string text)
 {
     // Return the number of sentences in text
+    int sentences = 0;
+    for (int i = 0; i < strlen(text); i++)
+    {
+       char letter = text[i];
+       if (letter == '.' || letter == '!' || letter == '?')
+        sentences++;
+    }
+    return sentences;
 }
