@@ -22,11 +22,11 @@ int main(void)
     float l = ((float) letters / words) * 100;
     float s = ((float) sentences / words) * 100;
     float index = 0.0588 * l - 0.296 * s - 15.8;
-    int grade = round(index);
+    double grade = index;
     // Print the grade level
     printf("%d\n", letters);
     printf("%.2f\n", index);
-    printf("%d\n", grade);
+    printf("%d\n", round(index));
 }
 
 int count_letters(string text)
