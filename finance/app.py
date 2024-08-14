@@ -61,7 +61,6 @@ def buy():
         symbol = request.form.get("symbol")
         if symbol:
             price = lookup(symbol)
-            print(price)
             if price is None:
                 return apology("Incorrect symbol")
         ##check shares input
@@ -83,7 +82,7 @@ def buy():
         #update users money
         db.execute("UPDATE users SET cash = ? WHERE id = ?", newcash, session["user_id"])
         #Add shares to the user
-        db.execute("INSERT INTO shares (user_id, symbol, shares, price) VALUES(?,?,?,?)", session["user_id"], symbol, shares , price['price'])
+        db.execute("INSERT INTO shares (user_id, symbol, shares, price, currentprice) VALUES(?,?,?,?,?)", session["user_id"], symbol, shares , price['price'], price['price'])
         return redirect("/")
 
 
@@ -91,10 +90,8 @@ def buy():
 @login_required
 def history():
     """Show history of transactions"""
-    if request.method == "GET":
-        history = db.execute("SELECT symbol, shares, price, date FROM shares where user_id = ? ORDER BY date", session["user_id"])
-        return render_template("history.html", history = history)
-    return apology("TODO")
+    history = db.execute("SELECT symbol, shares, price, date FROM shares where user_id = ? ORDER BY date", session["user_id"])
+    return render_template("history.html", history = history)
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -246,7 +243,8 @@ def sell():
         # Sell shares
         # Update user money
         price = lookup(symbol)
-        db.execute("UPDATE users SET cash = cash + ? WHERE id = ?", price['price']*shares, session["user_id"])
+        print(type(price['price']), type(shares))
+        db.execute("UPDATE users SET cash = cash + ? WHERE id = ?", price['price']*int(shares), session["user_id"])
         # Update user shares
         db.execute("INSERT INTO shares (user_id, symbol, shares, price) VALUES(?,?,-?,?)", session["user_id"], symbol, shares, price['price'])
         return redirect("/")
