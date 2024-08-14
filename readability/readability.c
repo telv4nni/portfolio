@@ -24,9 +24,18 @@ int main(void)
     float index = 0.0588 * l - 0.296 * s - 15.8;
     int grade = round(index);
     // Print the grade level
-    printf("%d\n", letters);
-    printf("%.2f\n", index);
-    printf("%d\n", grade);
+    if (grade <= 1)
+        {
+            printf("Before Grade 1\n");
+        }
+    else if (grade >= 16)
+        {
+            printf("Grade 16+\n");
+        }
+    else
+        {
+            printf("Grade %d\n", grade);
+        }
 }
 
 int count_letters(string text)
