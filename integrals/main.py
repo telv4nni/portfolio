@@ -18,3 +18,5 @@ def main():
     # Graphs
 
     # Step by step solution
+
+main()
