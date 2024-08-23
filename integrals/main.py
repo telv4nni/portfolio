@@ -1,11 +1,10 @@
 import csv
 import sys
-import random
 import math
 import integrals
 
 def main():
-
+    
     integral = ixndx(x, 3)
 
     print(integral)
