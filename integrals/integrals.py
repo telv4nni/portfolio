@@ -2,7 +2,7 @@ import csv
 import sys
 import random
 import math
-import integrals
+
 # Create Integrals Formulas for calculation
 
 # Count integral x^n dx
