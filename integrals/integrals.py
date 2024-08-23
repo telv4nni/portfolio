@@ -16,14 +16,15 @@ def ixndx(x, n):
             lower = n+1
             integral = upper/lower
             return integral
-        else:
     ## x is defined and n is undefined
+        else:
+            upper = pow(x, (n+1))
+            lower = n+1
+            integral = upper/lower
             return integral
     ## x is undefined and n is defined
     else if type(n) == int or type(n) == float:
             upper = "x^" + str(n)
             lower = n+1
             integral = str(upper) + "/" + str(lower)
-            return integral
-        else:
             return integral
