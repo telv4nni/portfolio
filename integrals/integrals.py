@@ -16,9 +16,9 @@ def ixndx(x, n):
             lower = n+1
             integral = upper/lower
             return integral
+    ## x is undefined
     else:
             upper = "x^" + str(n)
             lower = n+1
-            integral = (str)upper + "/" + (str)lower
+            integral = str(upper) + "/" + str(lower)
             return integral
-        return("not defined")
