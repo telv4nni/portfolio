@@ -28,3 +28,9 @@ def ixndx(x, n):
             lower = n+1
             integral = str(upper) + "/" + str(lower)
             return integral
+    ## x and n are undefined
+    else:
+            upper = str(x) + "^" + str(n) + "+1"
+            lower = str(n) + "+1"
+            integral = str(upper) + "/" + str(lower)
+            return integral
