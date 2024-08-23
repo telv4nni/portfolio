@@ -14,4 +14,3 @@ def ixndx(x, power):
     integral = str(upper) + "/" + str(lower)
 
     return integral
-
