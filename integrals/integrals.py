@@ -11,7 +11,7 @@ def ixndx(x, power):
     n = power
     upper = pow(x, (n+1))
     lower = n+1
-    integral = string(upper + "/" + lower)
+    integral = str(upper) + "/" + str(lower)
 
     return integral
 

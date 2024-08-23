@@ -8,7 +8,7 @@ def main():
 
     integral = ixndx(x, 3)
 
-    print integral
+    print(integral)
     # Ask user for input
 
     # Select method
