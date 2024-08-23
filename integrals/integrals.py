@@ -16,7 +16,7 @@ def ixndx(x, n):
             lower = n+1
             integral = upper/lower
             return integral
-        else
+        else:
     ## x is defined and n is undefined
             return integral
     ## x is undefined and n is defined
