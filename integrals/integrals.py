@@ -17,7 +17,7 @@ def ixndx(x, n):
             integral = upper/lower
             return integral
     else:
-            upper = pow(x, (n+1))
+            upper = "x^" + str(n)
             lower = n+1
             integral = (str)upper + "/" + (str)lower
             return integral
