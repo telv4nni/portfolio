@@ -11,7 +11,7 @@ def ixndx(x, power):
     n = power
     integral = None
 
-    integral = string(x^(n+1))/n+1 + C
+    integral = x^(n+1)/n+1
 
     return integral
 
