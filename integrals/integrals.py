@@ -24,7 +24,7 @@ def ixndx(x, n):
             return integral
     ## x is undefined and n is defined
     elif type(n) == int or type(n) == float:
-            upper = "x^" + str(n)
+            upper = "x^" + str(n + 1)
             lower = n+1
             integral = str(upper) + "/" + str(lower)
             return integral
