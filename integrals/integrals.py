@@ -14,16 +14,16 @@ def ixndx(x, n):
     # Check if inputs are numbers
     ## n is defined
     if type(n) == int or type(n) == float:
-            upper = "x^" + str(n + 1)
-            lower = n+1
-            integral = str(upper) + "/" + str(lower)
-            return integral
+          upper = "x^" + str(n + 1)
+          lower = n+1
+          integral = str(upper) + "/" + str(lower)
+          return integral
     ## n is undefined
     else:
-            upper = str(x) + "^" + str(n) + "+1"
-            lower = str(n) + "+1"
-            integral = str(upper) + "/" + str(lower)
-            return integral
+          upper = str(x) + "^" + str(n) + "+1"
+          lower = str(n) + "+1"
+          integral = str(upper) + "/" + str(lower)
+          return integral
 
 # Count integral x dx
 def ixdx(x):
