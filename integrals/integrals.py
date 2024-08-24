@@ -53,5 +53,8 @@ def ixdx(x):
 def i1xdx(x):
      ## x is defined
      if type(x) == int or type(x) == float:
-          integral = 
+          integral = math.log(x)
+          return integral
      ## x is undefined
+     else:
+          integral = "ln|
