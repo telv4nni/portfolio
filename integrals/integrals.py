@@ -54,3 +54,19 @@ def isinxdx(x):
 def icosxdc(x):
      integral = f"sin{x}"
      return integral
+
+# Count integral tgx dx
+def itgxdx(x):
+     integral = f"-ln|cos{x}|"
+     return integral
+
+# Count integral ctgx dx
+def ictgxdx(x):
+     integral = f"ln|sin{x}|"
+     return integral
+
+# Count integral 1/cos^2(x) dx
+def i1cos2x(x):
+     integral = f"tg{x}"
+     return 0
+
