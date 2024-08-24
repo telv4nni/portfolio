@@ -57,5 +57,5 @@ def i1xdx(x):
           return integral
      ## x is undefined
      else:
-          integral = "ln|{x}|", x
+          integral = f"ln|{x}|"
           return integral
