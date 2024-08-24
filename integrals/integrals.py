@@ -6,8 +6,6 @@ import math
 
 # Count integral x^n dx
 def ixndx(x, n):
-    x = x
-    n = n
     # Check if inputs are numbers
     ## x and n are defined:
     if type(x) == int or type(x) == float:
