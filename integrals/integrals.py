@@ -14,7 +14,7 @@ def ixndx(x, n):
     # Check if inputs are numbers
     ## n is defined
     if type(n) == int or type(n) == float:
-          upper = "x^" + str(n + 1)
+          upper = f"{x}^{n+1}"
           lower = n+1
           integral = str(upper) + "/" + str(lower)
           return integral
