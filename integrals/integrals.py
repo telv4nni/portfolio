@@ -4,6 +4,11 @@ import math
 
 # Create Integrals Formulas for calculation
 
+# Count integral a dx
+def adx():
+     integral = "x + C"
+     return integral
+
 # Count integral x^n dx
 def ixndx(x, n):
     # Check if inputs are numbers
@@ -32,3 +37,21 @@ def ixndx(x, n):
             lower = str(n) + "+1"
             integral = str(upper) + "/" + str(lower)
             return integral
+
+# Count integral x dx
+def ixdx(x):
+     ## x is defined
+     if type(x) == int or type(x) == float:
+          integral = (pow(x, 2))/2
+          return integral
+     ## x is undefined
+     else:
+          integral = str(x) + "^2 * 1/2"
+          return integral
+
+# Count integral 1/x dx
+def i1xdx(x):
+     ## x is defined
+     if type(x) == int or type(x) == float:
+          integral
+     ## x is undefined

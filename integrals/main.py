@@ -4,7 +4,7 @@ import math
 import integrals
 
 def main():
-    integral = integrals.ixndx('x',4)
+    integral = integrals.ixdx('x')
 
     print(integral)
     # Ask user for input
