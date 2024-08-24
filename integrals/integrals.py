@@ -85,5 +85,12 @@ def i1x2a2p(x, a):
      integral = f"(1/2*{a})*ln|({x}-{a})/({x}+{a})|"
      return integral
 
-#Count integral 1/sqrt(a^2 - x^2) dx
- 
+# Count integral 1/sqrt(a^2 - x^2) dx
+def i1sqrta2x2m(x, a):
+     integral = f"arcsin({x}/{a})"
+     return integral
+
+# Count integral 1/sqrt(x^2 + q) dx
+def i1sqrtx2q(x, q):
+     integral = f"ln|{x}+sqrt({x}^2+{q})|"
+     return integral
