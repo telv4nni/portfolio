@@ -6,7 +6,7 @@ import integrals
 ## TODO: add brackets when x is complex eg. x+1 -> (x+1)
 
 def main():
-    integral = integrals.i1x2a2m('x', 2)
+    integral = integrals.i1x2a2p('x', 'a')
 
     print(integral)
     # Ask user for input
