@@ -5,7 +5,7 @@ import math
 # Create Integrals Formulas for calculation
 
 # Count integral a dx
-def adx():
+def iadx():
      integral = "x + C"
      return integral
 
@@ -59,3 +59,9 @@ def i1xdx(x):
      else:
           integral = f"ln|{x}|"
           return integral
+
+# Count integral ax dx
+def iaxdx(x, a):
+     ## x and a are defined
+     if type(x) == int or type(x) == float:
+          if type(a) == int or type(a) == float:
