@@ -3,8 +3,10 @@ import sys
 import math
 import integrals
 
+## TODO: add brackets when x is complex eg. x+1 -> (x+1)
+
 def main():
-    integral = integrals.iaxdx('x', 'a+1')
+    integral = integrals.isinxdx('x+1')
 
     print(integral)
     # Ask user for input

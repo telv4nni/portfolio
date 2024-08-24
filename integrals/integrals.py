@@ -37,8 +37,20 @@ def i1xdx(x):
 
 # Count integral a^x dx
 def iaxdx(x, a):
-     ## a is defined
-     # if type(a) == int or type(a) == float:
      integral = f"({a}^{x})/ln{a}"
      return integral
 
+# Count integral e^x dx
+def iexdx(x):
+     integral = f"e^{x}"
+     return integral
+
+# Count integral sinx dx
+def isinxdx(x):
+     integral = f"-cos{x}"
+     return integral
+
+# Count integral cosx dx
+def icosxdc(x):
+     integral = f"sin{x}"
+     return integral
