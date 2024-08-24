@@ -68,5 +68,13 @@ def ictgxdx(x):
 # Count integral 1/cos^2(x) dx
 def i1cos2x(x):
      integral = f"tg{x}"
-     return 0
+     return integral
 
+# Count integral 1/sin^2(x) dx
+def i1sin2x(x):
+     integral = f"-ctg{x}"
+     return integral
+
+# Count integral 1/(x^2 - a^2) dx
+def i1x2-a2(x, a):
+     integral = 
