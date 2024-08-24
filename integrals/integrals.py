@@ -27,28 +27,18 @@ def ixndx(x, n):
 
 # Count integral x dx
 def ixdx(x):
-     ## x is defined
-     if type(x) == int or type(x) == float:
-          integral = (pow(x, 2))/2
-          return integral
-     ## x is undefined
-     else:
-          integral = str(x) + "^2 * 1/2"
-          return integral
+     integral = str(x) + "^2 * 1/2"
+     return integral
 
 # Count integral 1/x dx
 def i1xdx(x):
-     ## x is defined
-     if type(x) == int or type(x) == float:
-          integral = math.log(x)
-          return integral
-     ## x is undefined
-     else:
-          integral = f"ln|{x}|"
-          return integral
+     integral = f"ln|{x}|"
+     return integral
 
-# Count integral ax dx
-# def iaxdx(x, a):
-#      ## x and a are defined
-#      if type(x) == int or type(x) == float:
-#           if type(a) == int or type(a) == float:
+# Count integral a^x dx
+def iaxdx(x, a):
+     ## a is defined
+     # if type(a) == int or type(a) == float:
+     integral = f"({a}^{x})/ln{a}"
+     return integral
+
