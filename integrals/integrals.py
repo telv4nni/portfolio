@@ -48,7 +48,7 @@ def i1xdx(x):
           return integral
 
 # Count integral ax dx
-def iaxdx(x, a):
-     ## x and a are defined
-     if type(x) == int or type(x) == float:
-          if type(a) == int or type(a) == float:
+# def iaxdx(x, a):
+#      ## x and a are defined
+#      if type(x) == int or type(x) == float:
+#           if type(a) == int or type(a) == float:
