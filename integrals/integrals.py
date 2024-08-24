@@ -79,3 +79,8 @@ def i1sin2x(x):
 def i1x2a2m(x, a):
      integral = f"((1/{a})*arctg({x}/{a}))"
      return integral
+
+# Count integral 1/(x^2 + a^2) dx
+def i1x2a2p(x, a):
+     integral = f"((1/{a})*arctg({x}/{a}))"
+     return integral
