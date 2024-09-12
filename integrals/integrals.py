@@ -2,7 +2,7 @@ import csv
 import sys
 import math
 
-# Create Integrals Formulas for calculation
+# Create Integrals Formulas for calculation (16 formulas)
 
 # Count integral a dx
 def iadx():
