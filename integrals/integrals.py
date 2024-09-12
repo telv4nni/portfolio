@@ -152,7 +152,7 @@ def integral_selector(expression):
           return i1sin2x('x')
 
      # if 1/(x^2 + a^2)
-     elif re.match(r"1/x\^2\+\d+", expression):
+     elif re.match(r"1/\(x\^2\+\d+", expression):
           parts = expression.split("+")
           a = parts[1][0]
           return i1x2a2p('x', a)
