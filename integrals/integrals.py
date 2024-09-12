@@ -107,7 +107,7 @@ def integral_selector(expression):
           n = int(parts[1])
           return ixndx(x, n)
      elif "/x" in expression:
-          return i1xdx(x)
+          return i1xdx('x')
      ##Add more elifs for integrals
      else:
           return "Formula not found."
