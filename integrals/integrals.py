@@ -115,6 +115,8 @@ def integral_selector(expression):
           return iaxdx(x, a)
      elif "e^" in expression:
           return iexdx('x')
+     elif "sinx" in expression
+          return isinxdx('x')
      ##Add more elifs for integrals
      else:
           return "Formula not found."
