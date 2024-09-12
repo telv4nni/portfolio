@@ -10,7 +10,8 @@ def main():
 
     print(integral)
     # Ask user for input
-
+    integral = input("Enter your integral: ")
+    print(integral)
     # Select method
 
     # Calculate integral
