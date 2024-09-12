@@ -2,6 +2,7 @@ import csv
 import sys
 import math
 import integrals
+from sympy import symbols
 
 ## TODO: add brackets when x is complex eg. x+1 -> (x+1)
 
