@@ -51,7 +51,7 @@ def isinxdx(x):
      return integral
 
 # Count integral cosx dx
-def icosxdc(x):
+def icosxdx(x):
      integral = f"sin{x}"
      return integral
 
@@ -115,8 +115,14 @@ def integral_selector(expression):
           return iaxdx(x, a)
      elif "e^" in expression:
           return iexdx('x')
-     elif "sinx" in expression
+     elif "sinx" in expression:
           return isinxdx('x')
+     elif "cosx" in expression:
+          return icosxdx('x')
+     elif "tgx" in expression:
+          return itgxdx('x')
+     elif "ctgx" in expression:
+          return ictgxdx('x')
      ##Add more elifs for integrals
      else:
           return "Formula not found."
