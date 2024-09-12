@@ -97,15 +97,19 @@ def i1sqrtx2q(x, q):
 
 #### Integral selector
 def integral_selector(expression):
+
      if expression == "x":
           return ixdx('x')
-     elif expression.isnumeric():
+
+     elif expression.isdigit():
           return iadx()
+
      elif "x^" in expression and not "1/x" in expression and not "1/sqrt" in expression:
           parts = expression.split("^")
           x = parts[0]
           n = int(parts[1])
           return ixndx(x, n)
+     
      elif "/x" in expression and not "/x^" in expression:
           return i1xdx('x')
      elif "^x" in expression and "e" not in expression:
