@@ -127,6 +127,8 @@ def integral_selector(expression):
           return i1cos2x('x')
      elif "1/sin^2" in expression:
           return i1sin2x('x')
+     elif "1/x^2+" in expression:
+          parts = expression.split("+")
      ##Add more elifs for integrals
      else:
           return "Formula not found."
