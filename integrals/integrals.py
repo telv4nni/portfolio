@@ -2,7 +2,7 @@ import csv
 import sys
 import math
 
-# Create Integrals Formulas for calculation (16 formulas)
+##### Create Integrals Formulas for calculation (16 formulas)
 
 # Count integral a dx
 def iadx():
@@ -95,7 +95,7 @@ def i1sqrtx2q(x, q):
      integral = f"ln|{x}+sqrt({x}^2+{q})|"
      return integral
 
-# Integral selector
+#### Integral selector
 def integral_selector(expression):
      if expression == "x":
           return ixdx('x')
@@ -108,11 +108,13 @@ def integral_selector(expression):
           return ixndx(x, n)
      elif "/x" in expression:
           return i1xdx('x')
-     elif "^x" in expression:
+     elif "^x" in expression and "e" not in expression:
           parts = expression.split("^")
           x = parts[1]
           a = parts[0]
           return iaxdx(x, a)
+     elif "e^" in expression:
+          return iexdx('x')
      ##Add more elifs for integrals
      else:
           return "Formula not found."
