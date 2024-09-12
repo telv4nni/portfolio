@@ -1,6 +1,7 @@
 import csv
 import sys
 import math
+import re
 
 ##### Create Integrals Formulas for calculation (16 formulas)
 
@@ -101,52 +102,66 @@ def integral_selector(expression):
      if expression == "x":
           return ixdx('x')
 
+     # if expression is number
      elif expression.isdigit():
           return iadx()
 
-     elif "x^" in expression and not "1/x" in expression and not "1/sqrt" in expression:
+     # if expression is power of x (eg. x^n)
+     elif re.match(r"x/^/d+", expression):
           parts = expression.split("^")
           x = parts[0]
           n = int(parts[1])
           return ixndx(x, n)
-     
+
      elif "/x" in expression and not "/x^" in expression:
           return i1xdx('x')
+
      elif "^x" in expression and "e" not in expression:
           parts = expression.split("^")
           x = parts[1]
           a = parts[0]
           return iaxdx(x, a)
+
      elif "e^" in expression:
           return iexdx('x')
+
      elif "sinx" in expression:
           return isinxdx('x')
+
      elif "cosx" in expression:
           return icosxdx('x')
+
      elif "tgx" in expression:
           return itgxdx('x')
+
      elif "ctgx" in expression:
           return ictgxdx('x')
+
      elif "1/cos^2" in expression:
           return i1cos2x('x')
+
      elif "1/sin^2" in expression:
           return i1sin2x('x')
+
      elif "1/x^2+" in expression:
           parts = expression.split("+")
           a = parts[1][0]
           return i1x2a2p('x', a)
+
      elif "1/x^2-" in expression:
           parts = expression.split("-")
           a = parts[1][0]
           return i1x2a2m('x', a)
+
      elif "1/sqrt(x^2" in expression:
           parts = expression.split("+")
           q = parts[1][0]
           return i1sqrtx2q('x', q)
+
      elif "1/sqrt" in expression and not "1/sqrt(x^2" in expression:
           parts = expression.split("(")
           a = parts[1][0]
           return i1sqrta2x2m('x', a)
-     ##Add more elifs for integrals
+
      else:
           return "Formula not found."
