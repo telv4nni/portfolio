@@ -101,12 +101,12 @@ def integral_selector(expression):
           return ixdx('x')
      elif expression.isnumeric():
           return iadx()
-     elif "x^" in expression:
+     elif "x^" in expression and not "1/x" in expression:
           parts = expression.split("^")
           x = parts[0]
           n = int(parts[1])
           return ixndx(x, n)
-     elif "/x" in expression:
+     elif "/x" in expression and not "/x^" in expression:
           return i1xdx('x')
      elif "^x" in expression and "e" not in expression:
           parts = expression.split("^")
