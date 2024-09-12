@@ -99,7 +99,9 @@ def i1sqrtx2q(x, q):
 #### Integral selector
 def integral_selector(expression):
 
-     # 
+     # Clean up input and remove spaces
+     expression = expression.replace(" ", "")
+
      if expression == "x":
           return ixdx('x')
 
@@ -176,5 +178,6 @@ def integral_selector(expression):
           q = parts[1][0]
           return i1sqrtx2q('x', q)
 
+     # if no match
      else:
           return "Formula not found."
