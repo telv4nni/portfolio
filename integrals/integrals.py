@@ -129,8 +129,12 @@ def integral_selector(expression):
           return i1sin2x('x')
      elif "1/x^2+" in expression:
           parts = expression.split("+")
-          a = parts[1]
+          a = parts[1][0]
           return i1x2a2p('x', a)
+     elif "1/x^2-" in expression:
+          parts = expression.split("-")
+          a = parts[1][0]
+          return i1x2a2m('x', a)
      ##Add more elifs for integrals
      else:
           return "Formula not found."
