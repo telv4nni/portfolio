@@ -108,6 +108,11 @@ def integral_selector(expression):
           return ixndx(x, n)
      elif "/x" in expression:
           return i1xdx('x')
+     elif "a^" in expression:
+          parts = expression.split("^")
+          x = parts[1]
+          a = parts[0]
+          return iaxdx(x, a)
      ##Add more elifs for integrals
      else:
           return "Formula not found."
