@@ -9,7 +9,6 @@ def main():
     # Ask user for input
     integral = input("Enter your integral: ")
     final = integrals.integral_selector(integral)
-    print(integral)
     print(final)
     # Select method
 
