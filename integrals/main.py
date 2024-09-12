@@ -6,9 +6,6 @@ import integrals
 ## TODO: add brackets when x is complex eg. x+1 -> (x+1)
 
 def main():
-    integral = integrals.i1sqrtx2q('x', 'a')
-
-    print(integral)
     # Ask user for input
     integral = input("Enter your integral: ")
     final = integrals.integral_selector(integral)

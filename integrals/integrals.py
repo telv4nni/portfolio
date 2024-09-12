@@ -106,28 +106,32 @@ def integral_selector(expression):
      elif expression.isdigit():
           return iadx()
 
-     # if expression is power of x (eg. x^n)
-     elif re.match(r"x/^/d+", expression):
+     # if x^n
+     elif re.match(r"x\^\d+", expression):
           parts = expression.split("^")
           x = parts[0]
           n = int(parts[1])
           return ixndx(x, n)
 
-     elif "/x" in expression and not "/x^" in expression:
+     # if 1/x
+     elif re.match(r"1/x$", expression):
           return i1xdx('x')
 
-     elif "^x" in expression and "e" not in expression:
+     # if a^x
+     elif re.match(r"\d+\^x", expression):
           parts = expression.split("^")
-          x = parts[1]
           a = parts[0]
-          return iaxdx(x, a)
+          return iaxdx('x', a)
 
-     elif "e^" in expression:
+     # if e^x
+     elif re.match(r"e\^x", expression):
           return iexdx('x')
 
-     elif "sinx" in expression:
+     # if sinx
+     elif re.match(r"sin\(?x\)?", expression):
           return isinxdx('x')
 
+     # if cosx
      elif "cosx" in expression:
           return icosxdx('x')
 
