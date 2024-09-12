@@ -135,6 +135,10 @@ def integral_selector(expression):
           parts = expression.split("-")
           a = parts[1][0]
           return i1x2a2m('x', a)
+     elif "1/sqrt" in expression:
+          parts = expression.split("(")
+          a = parts[1][0]
+          return i1sqrta2x2m('x', a)
      ##Add more elifs for integrals
      else:
           return "Formula not found."
