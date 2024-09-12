@@ -7,9 +7,9 @@ import integrals
 
 def main():
     # Ask user for input
-    integral = input("Enter your integral: ")
+    integral = input("Enter your expression: ")
     final = integrals.integral_selector(integral)
-    print(final)
+    print(f"The integral of the expression is: {final}")
     # Select method
 
     # Calculate integral
