@@ -164,13 +164,13 @@ def integral_selector(expression):
           return i1x2a2m('x', a)
 
      # if 1/sqrt(a^2 - x^2)
-     elif re.match(r"", expression)
+     elif re.match(r"1/sqrt\(\d+\^2-\^2\)", expression)
           parts = expression.split("(")
           a = parts[1][0]
           return i1sqrta2x2m('x', a)
 
      # if 1/sqrt(x^2 + q)
-     elif "1/sqrt(x^2" in expression:
+     elif re.match(r"1/sqrt\(x\^2\+\d+\)", expression)
           parts = expression.split("+")
           q = parts[1][0]
           return i1sqrtx2q('x', q)
