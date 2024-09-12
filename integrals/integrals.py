@@ -148,7 +148,7 @@ def integral_selector(expression):
           return i1cos2x('x')
 
      # if 1/sin^2(x)
-     elif re.match(r"1/cos\^2\(?x\)?", expression):
+     elif re.match(r"1/sin\^2\(?x\)?", expression):
           return i1sin2x('x')
 
      # if 1/(x^2 + a^2)
