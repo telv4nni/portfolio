@@ -94,3 +94,16 @@ def i1sqrta2x2m(x, a):
 def i1sqrtx2q(x, q):
      integral = f"ln|{x}+sqrt({x}^2+{q})|"
      return integral
+
+# Integral selector
+def integral_selector(expression):
+     if expression == "x":
+          return ixdx('x')
+     elif "x^" in expression:
+          parts = expression.split("^")
+          x = parts[0]
+          n = int(parts[1])
+          return ixndx(x, n)
+     ##Add more elifs for integrals
+     else:
+          return "Formula not found."
