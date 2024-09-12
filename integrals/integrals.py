@@ -76,12 +76,12 @@ def i1sin2x(x):
      return integral
 
 # Count integral 1/(x^2 - a^2) dx
-def i1x2a2m(x, a):
+def i1x2a2p(x, a):
      integral = f"((1/{a})*arctg({x}/{a}))"
      return integral
 
 # Count integral 1/(x^2 + a^2) dx
-def i1x2a2p(x, a):
+def i1x2a2m(x, a):
      integral = f"(1/2*{a})*ln|({x}-{a})/({x}+{a})|"
      return integral
 
@@ -130,7 +130,7 @@ def integral_selector(expression):
      elif "1/x^2+" in expression:
           parts = expression.split("+")
           a = parts[1]
-          return
+          return i1x2a2p('x', a)
      ##Add more elifs for integrals
      else:
           return "Formula not found."
