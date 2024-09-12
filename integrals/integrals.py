@@ -132,40 +132,48 @@ def integral_selector(expression):
           return isinxdx('x')
 
      # if cosx
-     elif "cosx" in expression:
+     elif re.match(r"cos\(?x\)?", expression):
           return icosxdx('x')
 
-     elif "tgx" in expression:
+     # if tgx
+     elif re.match(r"tg\(?x\)?", expression):
           return itgxdx('x')
 
-     elif "ctgx" in expression:
+     # if ctx
+     elif re.match(r"ctg\(?x\)?", expression):
           return ictgxdx('x')
 
-     elif "1/cos^2" in expression:
+     # if 1/cos^2(x)
+     elif re.match(r"1/cos\^2\(?x\)?", expression)
           return i1cos2x('x')
 
-     elif "1/sin^2" in expression:
+     # if 1/sin^2(x)
+     elif re.match(r"1/cos\^2\(?x\)?", expression)
           return i1sin2x('x')
 
-     elif "1/x^2+" in expression:
+     # if 1/(x^2 + a^2)
+     elif re.match(r"1/x\^2\+\d+", expression):
           parts = expression.split("+")
           a = parts[1][0]
           return i1x2a2p('x', a)
 
-     elif "1/x^2-" in expression:
+     # if 1/(x^2 - a^2)
+     elif re.match(r"1/x\^2\+\d+", expression):
           parts = expression.split("-")
           a = parts[1][0]
           return i1x2a2m('x', a)
 
+     # if 1/sqrt(a^2 - x^2)
+     elif re.match(r"", expression)
+          parts = expression.split("(")
+          a = parts[1][0]
+          return i1sqrta2x2m('x', a)
+
+     # if 1/sqrt(x^2 + q)
      elif "1/sqrt(x^2" in expression:
           parts = expression.split("+")
           q = parts[1][0]
           return i1sqrtx2q('x', q)
-
-     elif "1/sqrt" in expression and not "1/sqrt(x^2" in expression:
-          parts = expression.split("(")
-          a = parts[1][0]
-          return i1sqrta2x2m('x', a)
 
      else:
           return "Formula not found."
