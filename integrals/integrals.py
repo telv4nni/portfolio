@@ -123,6 +123,10 @@ def integral_selector(expression):
           return itgxdx('x')
      elif "ctgx" in expression:
           return ictgxdx('x')
+     elif "1/cos^2" in expression:
+          return i1cos2x('x')
+     elif "1/sin^2" in expression:
+          return i1sin2x('x')
      ##Add more elifs for integrals
      else:
           return "Formula not found."
