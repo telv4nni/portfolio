@@ -165,8 +165,8 @@ def integral_selector(expression):
 
      # if 1/sqrt(a^2 - x^2)
      elif re.match(r"1/sqrt\(\d+\^2-\^2\)", expression):
-          parts = expression.split("(")
-          a = parts[1][0]
+          parts = expression.split("-")
+          a = parts[1]
           return i1sqrta2x2m('x', a)
 
      # if 1/sqrt(x^2 + q)
