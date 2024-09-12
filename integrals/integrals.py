@@ -101,7 +101,7 @@ def integral_selector(expression):
           return ixdx('x')
      elif expression.isnumeric():
           return iadx()
-     elif "x^" in expression and not "1/x" in expression:
+     elif "x^" in expression and not "1/x" in expression and not "1/sqrt" in expression:
           parts = expression.split("^")
           x = parts[0]
           n = int(parts[1])
@@ -135,6 +135,10 @@ def integral_selector(expression):
           parts = expression.split("-")
           a = parts[1][0]
           return i1x2a2m('x', a)
+     elif "1/sqrt(x^2)" in expression:
+          parts = expression.split("+")
+          q = parts[1][0]
+          return i1sqrtx2q('x', q)
      elif "1/sqrt" in expression:
           parts = expression.split("(")
           a = parts[1][0]
