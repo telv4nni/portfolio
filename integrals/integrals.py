@@ -99,6 +99,7 @@ def i1sqrtx2q(x, q):
 def integral_selector(expression):
      if expression == "x":
           return ixdx('x')
+     elif expression == numerical
      elif "x^" in expression:
           parts = expression.split("^")
           x = parts[0]
