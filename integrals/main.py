@@ -2,7 +2,17 @@ import csv
 import sys
 import math
 import integrals
-import tkinter as tk
+import customtkinter as tk
+
+# Set GUI
+tk.set_appearance_mode("System")
+tk.set_default_color_theme("green")
+
+app = tk.CTk()
+app.geometry("600x300")
+
+def button():
+        print("button pressed")
 
 def main():
 
@@ -18,5 +28,5 @@ def main():
     # Graphs
 
     # Step by step solution
-
-main()
+app.mainloop()
+#main()
