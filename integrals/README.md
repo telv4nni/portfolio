@@ -1,9 +1,9 @@
 # Integral Calculus
-#### Video Demo:  <URL HERE>
+#### Video Demo:  <[URL HERE](https://www.youtube.com/watch?v=D-wO7E12Kpc)>
 #### Description:
 
 This is Python-base application with Graphical Interface that calculates both definite and indefinite integrals of various mathematical functions. It uses CustomTkinter for the graphical interface and SymPy for symbolic mathematics. Additionally, the app can plot the integral functions using Matplotlib.
-
+y
 **Features:**
 *Indefinite Integrals: Computes the indifinite integral of common mathematical *functions.
 *Definite Integrals: Computes the definite integral of a given function within a specified limits.
@@ -45,7 +45,7 @@ Inputs user added formula to integrate and limits after clicking the button. Get
 Afterwards is setup of the GUI elements. Frames, apptitle, labels, entrymessage, buttons, image, user prompts, input fields.
 
 ***backup.py***
-Application originally was intended to not include SymPy library and make calculations from the start. However because I decided to include definite integrals as option, SymPy library was used to save a lot of time and my own sanity. Kept it to show progress of the application during creation. This is only one of the changes made to the project over time. 
+Application originally was intended to not include SymPy library and make calculations from the start. However because I decided to include definite integrals as option, SymPy library was used to save a lot of time and my own sanity. Kept it to show progress of the application during creation. This is only one of the changes made to the project over time.
 
 **Installation:**
 1. To make sure that application works install mentioned before libraries:
@@ -61,9 +61,9 @@ source myvenv/bin/activate # On windows, use myvenv/Scripts/activate
 **Usage:**
 1. Run the application:
 python main.py
-2. Enter your mathematical function in the input box. 
+2. Enter your mathematical function in the input box.
 3. Enter your limits (optional)
 4. Click calculate, the program will compute the integral and plot the graph of entered function.
 5. Done!
 
-Application was made solely by ***Hubert Jasiński*** with help of ChatGPT. 
+Application was made solely by ***Hubert Jasiński*** with help of ChatGPT.
