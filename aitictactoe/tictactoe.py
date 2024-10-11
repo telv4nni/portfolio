@@ -130,7 +130,7 @@ def minimax(board):
     else:
         bestmove = min_value(board)
 
-        bestmove = actions
+        bestmove = actions(board)
     return bestmove
 
 def max_value(board):
