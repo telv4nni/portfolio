@@ -113,7 +113,7 @@ def minimax(board):
     """
     Returns the optimal action for the current player on the board.
     """
-    # if game over return None
+    # If game over return None
     if terminal(board):
         return None
 
@@ -127,5 +127,12 @@ def minimax(board):
     return move
 
 def max_value(board):
-    if terminal(board):
 
+    # if game's over
+    if terminal(board):
+        return utility(board)
+    # Set v to minus infinity
+    v = -math.inf
+    for action in actions(board):
+        v = MAX(v, min_value(result(board,action)))
+    return v
