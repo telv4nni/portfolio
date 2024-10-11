@@ -118,4 +118,11 @@ def minimax(board):
         return None
 
     current_player = player(board)
-    
+
+    if current_player == X:
+        value, move = max_value(board)
+    else:
+        value, move = min_value(board)
+
+    return move
+
