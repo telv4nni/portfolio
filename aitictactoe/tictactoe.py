@@ -127,23 +127,35 @@ def minimax(board):
     return move
 
 def max_value(board):
-
-    # if game's over
+    """
+    Returns the maximum utility value for X and the corresponding move.
+    """
     if terminal(board):
-        return utility(board)
-    # Set v to minus infinity
+        return utility(board), None
+
     v = -math.inf
+    best_move = None
     for action in actions(board):
-        v = MAX(v, min_value(result(board,action)))
-    return v
+        min_val, _ = min_value(result(board, action))
+        if min_val > v:
+            v = min_val
+            best_move = action
+
+    return v, best_move
 
 def min_value(board):
-
-    # if game's over
+    """
+    Returns the minimum utility value for O and the corresponding move.
+    """
     if terminal(board):
-        return utility(board)
-    # Set v to minus infinity
+        return utility(board), None
+
     v = math.inf
+    best_move = None
     for action in actions(board):
-        v = MIN(v, max_value(result(board,action)))
-    return v
+        max_val, _ = max_value(result(board, action))
+        if max_val < v:
+            v = max_val
+            best_move = action
+
+    return v, best_move
