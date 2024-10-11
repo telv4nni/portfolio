@@ -139,6 +139,7 @@ def max_value(board):
         return utility(board)
     # Set v to minus infinity
     v = -math.inf
+    best_action = None
     for action in actions(board):
         v = max(v, min_value(result(board,action)))
     return v
