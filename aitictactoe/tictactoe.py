@@ -50,6 +50,11 @@ def result(board, action):
     """
     Returns the board that results from making move (i, j) on the board.
     """
+    # Check if move is out of bounds (out of grid)
+    i, j = action
+    if i < 0 or i >= 3 or j < 0 or j >= 3:
+        raise ValueError("Move is out of bounds")
+
     # If space is not empty show invalid move
     if board[action[0]][action[1]] is not EMPTY:
         raise ValueError("Invalid Move")
