@@ -85,12 +85,17 @@ def terminal(board):
     """
     Returns True if game is over, False otherwise.
     """
-    for i in range (3):
-        for j in range(3):
-            if board[i][j] == EMPTY:
-                return False
-            else
-                return True
+    # Checks if there is a winner
+    if winner(board) is not None:
+        return True
+
+    # Check if there are empty spaces on the board
+    for row in board:
+        if EMPTY in row:
+            return False
+
+    # No empty spaces and winner means it's game over
+    return True
 
 
 def utility(board):
