@@ -126,9 +126,9 @@ def minimax(board):
     current_player = player(board)
 
     if current_player == X:
-        bestmove = max_value(board)
+        _, bestmove = max_value(board)
     else:
-        bestmove = min_value(board)
+        _, bestmove = min_value(board)
 
     return bestmove
 
