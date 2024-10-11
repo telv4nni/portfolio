@@ -63,7 +63,9 @@ def winner(board):
     """
     Returns the winner of the game, if there is one.
     """
-    raise NotImplementedError
+    # Check rows for the winner
+    for i in range(3):
+        if board[i]
 
 
 def terminal(board):
