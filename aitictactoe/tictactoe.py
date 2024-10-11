@@ -126,9 +126,9 @@ def minimax(board):
     current_player = player(board)
 
     if current_player == X:
-        value, move = max_value(board)
+        move = max_value(board)
     else:
-        value, move = min_value(board)
+        move = min_value(board)
 
     return move
 
@@ -139,7 +139,6 @@ def max_value(board):
         return utility(board)
     # Set v to minus infinity
     v = -math.inf
-    best_action = None
     for action in actions(board):
         v = max(v, min_value(result(board,action)))
     return v
