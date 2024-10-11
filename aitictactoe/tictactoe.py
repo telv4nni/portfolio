@@ -37,7 +37,7 @@ def actions(board):
     Returns set of all possible actions (i, j) available on the board.
     """
     for i, j in range (3)
-        if board[i][j]
+        if board[i][j] == EMPTY
 
 
 def result(board, action):
