@@ -127,4 +127,5 @@ def minimax(board):
     return move
 
 def max_value(board):
-    
+    if terminal(board):
+
