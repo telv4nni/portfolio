@@ -122,13 +122,36 @@ def minimax(board):
     # If game over return None
     if terminal(board):
         return None
-
+    # Get player and initialize best move
     current_player = player(board)
+    bestmove = None
 
+    # If it's X turn
     if current_player == X:
-        bestmove = max_value(board)
+        # Start with lowest possible score
+        bestscore = -math.inf
+        for action in actions(board):
+            # Get result of making this action
+            new_board = result(board, action)
+            # Get the score from O perspective
+            score = min_value(new_board)
+            # If this score is better than the best found update best move to this action
+            if score > bestscore:
+                bestscore = score
+                bestmove = action
+    # If it's O turn
     else:
-        bestmove = min_value(board)
+        # Start with highest possible score
+        bestscore = math.inf
+        for action in actions(board):
+            # Get result of making this action
+            new_board = result(board, action)
+            # Get the score from X perspective
+            score = max_value(new_board)
+            # If this score is better than the best found update best move to this action
+            if score < bestscore:
+                bestscore = score
+                bestmove = action
 
     return bestmove
 
