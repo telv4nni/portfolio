@@ -50,8 +50,14 @@ def result(board, action):
     """
     Returns the board that results from making move (i, j) on the board.
     """
-    raise NotImplementedError
+    # If space is not empty show invalid move
+    if board[action[0]][action[1]] is not EMPTY:
+        raise ValueError("Invalid Move")
 
+    # Create a copy of the board
+    new_board = [row[:] for row in board]
+    #
+    new_board[action[0]][action[1]] = player(board)
 
 def winner(board):
     """
