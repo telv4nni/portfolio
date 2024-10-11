@@ -56,7 +56,7 @@ def result(board, action):
 
     # Create a copy of the board
     new_board = [row[:] for row in board]
-    #
+    # Apply move with actual player
     new_board[action[0]][action[1]] = player(board)
 
 def winner(board):
