@@ -136,3 +136,14 @@ def max_value(board):
     for action in actions(board):
         v = MAX(v, min_value(result(board,action)))
     return v
+
+def min_value(board):
+
+    # if game's over
+    if terminal(board):
+        return utility(board)
+    # Set v to minus infinity
+    v = math.inf
+    for action in actions(board):
+        v = MIN(v, max_value(result(board,action)))
+    return v
