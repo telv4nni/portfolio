@@ -58,6 +58,7 @@ def result(board, action):
     new_board = [row[:] for row in board]
     # Apply move with actual player
     new_board[action[0]][action[1]] = player(board)
+    return new_board
 
 def winner(board):
     """
@@ -113,6 +114,7 @@ def minimax(board):
     """
     Returns the optimal action for the current player on the board.
     """
+    # If game over return None
     if terminal(board):
         return None
 
@@ -126,35 +128,23 @@ def minimax(board):
     return move
 
 def max_value(board):
-    """
-    Returns the maximum utility value for X and the corresponding move.
-    """
+
+    # if game's over
     if terminal(board):
-        return utility(board), None
-
+        return utility(board)
+    # Set v to minus infinity
     v = -math.inf
-    best_move = None
     for action in actions(board):
-        min_val, _ = min_value(result(board, action))
-        if min_val > v:
-            v = min_val
-            best_move = action
-
-    return v, best_move
+        v = MAX(v, min_value(result(board,action)))
+    return v
 
 def min_value(board):
-    """
-    Returns the minimum utility value for O and the corresponding move.
-    """
+
+    # if game's over
     if terminal(board):
-        return utility(board), None
-
+        return utility(board)
+    # Set v to minus infinity
     v = math.inf
-    best_move = None
     for action in actions(board):
-        max_val, _ = max_value(result(board, action))
-        if max_val < v:
-            v = max_val
-            best_move = action
-
-    return v, best_move
+        v = MIN(v, max_value(result(board,action)))
+    return v
