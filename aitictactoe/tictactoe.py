@@ -38,6 +38,7 @@ def actions(board):
     """
     for i, j in range (3)
         if board[i][j] == EMPTY
+        return board[i][j]
 
 
 def result(board, action):
