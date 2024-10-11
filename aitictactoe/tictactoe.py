@@ -26,9 +26,9 @@ def player(board):
     x_count = sum(row.count(X) for row in board)
     o_count = sum(row.count(O) for row in board)
 
-    if x_count <= o_count
+    if x_count <= o_count:
         return X
-    else
+    else:
         return O
 
 
