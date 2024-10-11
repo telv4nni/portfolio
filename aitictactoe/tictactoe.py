@@ -36,7 +36,8 @@ def actions(board):
     """
     Returns set of all possible actions (i, j) available on the board.
     """
-    raise NotImplementedError
+    for i, j in range (3)
+        if board[i][j]
 
 
 def result(board, action):
