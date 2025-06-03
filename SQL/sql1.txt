@@ -1,0 +1,175 @@
+Source of case study: https://8weeksqlchallenge.com/case-study-1/
+Exercise: https://www.db-fiddle.com/f/2rM8RAnq7h5LLDTzZiRWcd/138
+
+/* --------------------
+   Case Study Questions
+   --------------------*/
+
+-- 1. What is the total amount each customer spent at the restaurant?
+-- 2. How many days has each customer visited the restaurant?
+-- 3. What was the first item from the menu purchased by each customer?
+-- 4. What is the most purchased item on the menu and how many times was it purchased by all customers?
+-- 5. Which item was the most popular for each customer?
+-- 6. Which item was purchased first by the customer after they became a member?
+-- 7. Which item was purchased just before the customer became a member?
+-- 8. What is the total items and amount spent for each member before they became a member?
+-- 9.  If each $1 spent equates to 10 points and sushi has a 2x points multiplier - how many points would each customer have?
+-- 10. In the first week after a customer joins the program (including their join date) they earn 2x points on all items, not just sushi - how many points do customer A and B have at the end of January?
+
+-- 1:
+SELECT customer_id, SUM(price) AS total_spent
+FROM sales
+JOIN menu
+ON sales.product_id = menu.product_id
+GROUP BY customer_id
+ORDER BY customer_id;
+
+-- 2:
+SELECT DISTINCT customer_id, COUNT(order_date) AS days_visited
+FROM sales
+GROUP BY customer_id
+ORDER BY customer_id;
+
+--3: 
+SELECT
+ sales.customer_id,
+ sales.order_date,
+ menu.product_name
+FROM sales
+JOIN (
+  SELECT
+  	customer_id,
+  	MIN(order_date) AS first_order
+  FROM sales
+  GROUP BY customer_id
+  ) first_orders
+ON sales.customer_id = first_orders.customer_id
+AND sales.order_date = first_orders.first_order
+JOIN menu
+ON sales.product_id = menu.product_id
+ORDER BY sales.customer_id;
+
+-- 4:
+SELECT menu.product_name, COUNT(sales.product_id) as times_sold
+FROM sales
+JOIN menu
+ON sales.product_id = menu.product_id
+GROUP BY menu.product_name
+ORDER BY times_sold DESC
+LIMIT 1;
+
+-- 5:
+WITH product_sales AS(
+	SELECT sales.customer_id, COUNT(sales.product_id) AS times_sold, sales.product_id
+	FROM sales
+	GROUP BY sales.customer_id, sales.product_id
+	ORDER BY sales.customer_id
+  ),
+ranked_sales AS(
+  	SELECT 
+		product_sales.customer_id,
+		product_sales.times_sold,
+    	product_sales.product_id,
+    	RANK() OVER (PARTITION BY product_sales.customer_id ORDER BY times_sold DESC) AS rank
+	FROM product_sales
+  )
+SELECT ranked_sales.customer_id, ranked_sales.rank, menu.product_name
+FROM ranked_sales
+JOIN menu
+ON ranked_sales.product_id = menu.product_id
+WHERE rank = 1
+ORDER BY customer_id;
+
+-- 6:
+WITH first_order_dates AS (
+	SELECT sales.customer_id, MIN(order_date) AS first_order_date
+	FROM sales
+	JOIN members
+	ON sales.customer_id = members.customer_id
+	WHERE sales.order_date >= members.join_date
+	GROUP BY sales.customer_id
+	)
+SELECT sales.customer_id, first_order_dates.first_order_date, menu.product_name
+FROM first_order_dates
+JOIN sales
+ON first_order_dates.customer_id = sales.customer_id
+JOIN menu
+ON sales.product_id = menu.product_id
+WHERE sales.order_date = first_order_dates.first_order_date;
+
+--7:
+WITH last_order_dates AS(
+	SELECT sales.customer_id, MAX(order_date) AS last_order
+	FROM sales
+	JOIN members
+	ON sales.customer_id = members.customer_id
+	WHERE sales.order_date < members.join_date
+	GROUP BY sales.customer_id
+	)
+SELECT sales.customer_id, last_order_dates.last_order, menu.product_name
+FROM last_order_dates
+JOIN sales
+ON last_order_dates.customer_id = sales.customer_id
+JOIN menu
+ON sales.product_id = menu.product_id
+WHERE sales.order_date = last_order_dates.last_order;
+
+
+--8:
+WITH bought_products AS(
+	SELECT sales.customer_id, sales.order_date, sales.product_id
+	FROM sales
+	JOIN members
+	ON sales.customer_id = members.customer_id
+	WHERE sales.order_date < members.join_date
+),
+total_products AS(
+	SELECT
+		bought_products.customer_id,
+		COUNT(bought_products.product_id) AS products_bought,
+		menu.product_name,
+  		menu.price
+	FROM bought_products
+	JOIN menu
+	ON bought_products.product_id = menu.product_id
+	GROUP BY bought_products.customer_id, menu.product_name, menu.price
+)
+SELECT customer_id, products_bought * price AS amount_spent, product_name
+FROM total_products
+ORDER BY customer_id;
+
+--9:
+WITH points AS(
+	SELECT *,
+  	CASE WHEN product_name = 'sushi' THEN price * 20
+  	ELSE price * 10 END AS points
+	FROM menu
+)
+SELECT DISTINCT sales.customer_id, SUM(points.points) AS total_points
+FROM sales
+JOIN points
+ON sales.product_id = points.product_id
+GROUP BY sales.customer_id;
+
+--10:
+WITH points AS(
+	SELECT *,
+  	CASE WHEN product_name = 'sushi' THEN price * 20
+  	ELSE price * 10 END AS points
+	FROM menu
+),
+customer_points AS(
+	SELECT 
+		sales.customer_id,
+    	CASE WHEN sales.order_date BETWEEN members.join_date AND members.join_date + 7 THEN points * 2
+    	ELSE points END AS points
+	FROM sales
+	JOIN points
+	ON sales.product_id = points.product_id
+	JOIN members
+	ON sales.customer_id = members.customer_id
+  )
+ SELECT customer_id, SUM(customer_points.points) AS total_points
+ FROM customer_points
+ GROUP BY customer_id;
+
