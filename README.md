@@ -2,6 +2,8 @@ Here's a repository with portfolio of my works. There are a lot of python applic
 
 Please especially take a look into /Integrals Calculator as it is my most complex project yet and done by myself from top to the bottom. It calculates integrals with visual GUI written in Python. 
 
+There is my case study made in /PowerBI to showcase another necessary set of skills for data analysis.
+
 You may want to look into /SQL too. You will find there SQL queries that showcase my skills with data manipulation. They are part of https://8weeksqlchallenge.com/ and will get updated in the future. Each file represents one week.
 
 Most of my works are part of CS50 and are done by myself.
