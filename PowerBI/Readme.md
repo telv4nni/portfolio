@@ -1,6 +1,6 @@
 Hi there,
 
-This is my Data Analysis case study in PowerBI. The purpose is to learn something new and showcase my familiarity with PowerBI environment. 
+This is my Data Analysis case study in PowerBI. The purpose is to learn something new and showcase my familiarity with PowerBI environment. I had not only made visualizations but needed to do a lot of data transformation for this one.
 
 Data Source: 
 https://www.kaggle.com/datasets/artermiloff/steam-games-dataset
