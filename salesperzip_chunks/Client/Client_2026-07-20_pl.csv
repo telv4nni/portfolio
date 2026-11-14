@@ -1,0 +1,9 @@
+transaction_id,transaction_date,seller,delivery_country,delivery_zip_code,sales_value,sales_units
+10001,2026-07-20,Retailer 1P,Poland,00-001,150.50,2
+10002,2026-07-20,Retailer 1P,poland,00001,49.50,1
+10003,2026-07-20,Partner_3P_A,POLAND,30-123,200.00,4
+10004,2026-07-20,Partner_3P_B,Poland,123,80.00,1
+10005,2026-07-20,Retailer 1P,Germany,10115,300.00,3
+10006,2026-07-20,Retailer 1P,Poland,50-100,0.00,1
+10007,2026-07-20,Partner_3P_A,Poland,50-100,120.00,0
+0,2026-07-20,Retailer 1P,Poland,50-100,90.00,1

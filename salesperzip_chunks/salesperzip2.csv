@@ -1,0 +1,4 @@
+seller,transaction_date,delivery_zip_code,sales_value
+Partner_3P_A,2026-07-20,30-123,200.0
+Partner_3P_B,2026-07-20,OTHERS,80.0
+Retailer 1P,2026-07-20,00-001,200.0
